@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main()
+{
+    long h,m,s;
+    scanf("%ld/%ld/%ld",&h,&m,&s);
+    if(h<24 && m<60 && s<60)
+          printf("VALID\n");
+    else
+          printf("NOT VALID\n");
+    return 0;
+}
