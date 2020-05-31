@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+    long n,t,i,r,s,a;
+    scanf("%ld",&n);
+    t=n;
+
+    s=0;
+   while(n!=0)
+    {
+        r=n%10;
+       a=1;
+       for(i=1;i<=r;i++)
+       {
+        a=a*i;
+       }
+       s=s+a;
+       n=n/10;
+    }
+    if(s==t)
+        printf("Strong Number");
+    else
+        printf("Not a strong number");
+    return 0;
+}
