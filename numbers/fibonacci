@@ -1,0 +1,42 @@
+with recursion:
+#include<stdio.h>
+int fib(int n);
+int main()
+{
+    int n;
+	printf("Enter number");
+	scanf("%d",&n);
+	printf(fib(n));
+	return 0;
+}
+int fib(int n)
+{
+    if(n==1&&n!=0)
+      return 0;
+     else if(n==2)
+      return 1;
+     else
+     {
+      return (fib(n-1)+fib(n-2));
+     }
+}
+
+without recursion:
+
+#include <stdio.h>
+int main()
+{
+    int z=0,i,x=0,y=1,n;
+    printf("enter number");
+    scanf("%d",&n);
+    printf("\n%d",x);
+    printf("\n%d",y);
+    for(i=0;i<n-2;i++)
+    {
+      z=x+y;
+      printf("\n%d",z);
+      x=y;
+      y=z;
+    }
+    return 0;
+}
