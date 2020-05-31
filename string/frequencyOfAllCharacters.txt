@@ -1,0 +1,200 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+   char string[100];
+   int c = 0, count[26] = {0}, x;
+
+   printf("Enter a string\n");
+  scanf("%s",string);
+
+   while (string[c] != '\0') {
+   /** Considering characters from 'a' to 'z' only and ignoring others. */
+
+      if (string[c] >= 'a' && string[c] <= 'z') {
+         x = string[c] - 'a';
+         count[x]++;
+      }
+
+      c++;
+   }
+
+   for (c = 0; c < 26; c++)
+         printf("%c occurs %d times in the string.\n", c + 'a', count[c]);
+
+   return 0;
+}
+
+frequency of characters only in given string :
+
+#include <stdio.h>
+#include <string.h>
+#define MAX_SIZE 100 // Maximum string size
+
+int main()
+{
+    char str[MAX_SIZE];
+    int i, len;
+    int freq[26];
+
+    /* Input string from user */
+    printf("Enter any string: ");
+    gets(str);
+
+    len = strlen(str);
+
+    /* Initialize frequency of each character to 0 */
+    for(i=0; i<26; i++)
+    {
+        freq[i] = 0;
+    }
+
+
+    /* Find total number of occurrences of each character */
+    for(i=0; i<len; i++)
+    {
+        /* If the current character is lowercase alphabet */
+        if(str[i]>='a' && str[i]<='z')
+        {
+            freq[str[i] - 97]++;
+        }
+        else if(str[i]>='A' && str[i]<='Z')
+        {
+            freq[str[i] - 65]++;
+        }
+    }
+
+    /* Print the frequency of all characters in the string */
+    printf("\nFrequency of all characters in the given string: \n");
+    for(i=0; i<26; i++)
+    {
+        /* If current character exists in given string */
+        if(freq[i] != 0)
+        {
+            printf("'%c' = %d\n", (i + 97), freq[i]);
+        }
+    }
+
+    return 0;
+}
+Output
+Enter any string: Codeforwin
+
+Frequency of all characters in the given string:
+'c' = 1
+'d' = 1
+'e' = 1
+'f' = 1
+'i' = 1
+'n' = 1
+'o' = 2
+'r' = 1
+'w' = 1
+
+
+another way:
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+int i=0,count[26]={0};
+char a[200];
+scanf("%s",a);
+while(a[i]!=0)
+{
+if((a[i]>='a') &&( a[i]<='z'))
+{
+count[a[i]-'a']++;
+}
+i++;
+}
+for(i=0;i<26;i++)
+{
+printf("%c = %d\n",i+'a',count[i]);
+}
+}
+
+OTHER WAY:
+
+#include <string.h>
+ 
+int main()
+{
+    char s[1000];  
+    int  i,j,k,count=0,n;
+ 
+    printf("Enter  the string : ");
+    gets(s);
+     
+    for(j=0;s[j];j++);
+	 n=j; 
+    
+	printf(" frequency count character in string:\n");
+ 
+    for(i=0;i<n;i++)  
+    {
+     	count=1;
+    	if(s[i])
+    	{
+		
+ 		  for(j=i+1;j<n;j++)  
+	      {   
+	    	
+	        if(s[i]==s[j])
+    	    {
+                 count++;
+                 s[j]='\0';
+	     	}
+	      }  
+	      printf(" '%c' = %d \n",s[i],count);
+ 
+	       
+	   
+       }
+	   
+	   
+ 	} 
+ 	 
+     
+    return 0;
+}
+Output:
+
+OutputC
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+ Enter  the string: hello world
+ frequency count character in string:
+ 'h' = 1
+ 'e' = 1
+ 'l' = 3
+ 'o' = 2
+ ' ' = 1
+ 'w' = 1
+ 'r' = 1
+ 'd' = 1
+ 
+ Enter  the string : abcd abc ab a
+ frequency count character in string:
+ 'a' = 4
+ 'b' = 3
+ 'c' = 2
+ 'd' = 1
+ ' ' = 3

@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main ()
+{
+     char a[100];
+     scanf("%[^\n]s",a);
+     int l=strlen(a);
+     int i=0,n;
+     printf("enter size:");
+     scanf("%d",&n);   //slice size
+    int d=n;  // store in temporary variable
+    
+    
+    for (i = 0; i<l; i++) 
+    { 
+    if (d % n==0)   //to take substring with required size
+    {
+      for(i=d-1;i>=d-n;i--)  //to reverse certain substring
+     {
+      printf("%c",a[i]);
+     }
+    } 
+    d++; //incrementing 
+    }
+     return 0;
+ }
