@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+    long number,rem,t,count,ans,k;
+    scanf("%ld",&number);
+    scanf(" %ld",&k); // k is the digit to be counted for repetition
+    t=number;
+    count=0;
+    while(t!=0)
+    {
+        rem=t%10;
+        if(rem==k) //get element to be checked for repetition
+        {
+        count++;
+        }
+        t=t/10;
+    }
+      printf("%ld",count);
+    return 0;
+}
