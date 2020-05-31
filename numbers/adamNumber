@@ -4,33 +4,34 @@
 #include <stdlib.h>
 int sqr(int num)
 {
-    int s;
-    s=num*num;
-    return s;
+    int square;
+    square=num*num;
+    return square;
 }
 int reverse(int num)
 {
-    int r,s;
-    s=0;
+    int r,reverse_number;
+    reverse_number=0;
     while(num!=0)
     {
         r=num%10;
-        s=s*10+r;
+        reverse_number=reverse_number*10+r;
         num=num/10;
     }
-    return s;
+    return reverse_number;
 }
 
 int main()
 {
-    int n,t,ans,ans1,x,ans2;
+    int n,t,sqr_1,rev_1,sqr_2,rev_2;
+    printf("Enter Number");
     scanf("%d",&n);
     t=n;
-    ans=sqr(n);
-    x=reverse(t);
-    ans1=sqr(x);
-    ans2=reverse(ans1);
-    if(ans==ans2)
+    sqr_1=sqr(n);
+    rev_1=reverse(n);
+    sqr_2=sqr(rev_1);
+    rev_2=reverse(sqr_2);
+    if(sqr_1==rev_2)
     printf("Adam Number");
     else
     printf("Not a adam number");
