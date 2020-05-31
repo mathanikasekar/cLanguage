@@ -1,0 +1,16 @@
+int main() {
+    int n,i,j;
+    char a[20];
+    scanf("%s",a);
+    n=strlen(a);
+    if(n==1){
+        printf("%s",a);
+    }
+    else{
+        for(i=0,j=i+1;i<n-1 && j<n;i=i+2,j=j+2){
+            a[i]^=a[j]^=a[i]^=a[j];
+        }
+        printf("%s",a);
+    }
+    return 0;
+}
