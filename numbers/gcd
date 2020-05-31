@@ -1,0 +1,53 @@
+GCD USING RECURSION:
+
+
+#include <stdio.h>
+int gcd(int n1, int n2);
+int main()
+ {
+    int n1, n2;
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &n1, &n2);
+    printf("\nG.C.D of  is %d",  hcf(n1, n2));
+    return 0;
+}
+int gcd(int n1, int n2)
+{
+    if (n2 != 0)
+        return gcd(n2, n1 % n2);
+    else
+        return n1;
+}
+
+
+GCD WITHOUT USING RECURSION:
+
+
+#include <stdio.h>
+int gcd(int, int);
+int main()
+{
+    int a, b, result;
+    printf("Enter the two numbers to find their gcd: ");
+    scanf("%d%d", &a, &b);
+    result = gcd(a, b);
+    printf("The gcd of %d and %d is %d.\n", a, b, result);
+
+    return 0;
+}
+
+int gcd(int a, int b)
+{
+    while (a != b)
+    {
+        if (a > b)
+        {
+            a = a - b;
+        }
+        else
+        {
+            b = b - a;
+        }
+    }
+    return a;
+}
