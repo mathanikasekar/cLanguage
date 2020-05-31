@@ -1,0 +1,64 @@
+#include<stdio.h>
+
+int sort(int a[],int n)
+{
+    int i,j,t;
+    for(i=0;i<n;++i)
+    {
+    for(j=i+1;j<n;++j)
+    {
+        if(a[i]>a[j])
+        {
+            t=a[i];
+            a[i]=a[j];
+            a[j]=t;
+    }
+    }
+    }
+}
+
+int main()
+{
+    int n1,n2,r1=0,r2=0,t1,t2,i;
+    printf("enter number 1"); //get 1st number
+    scanf("%d",&n1);
+    printf("enter number 2"); //get 2nd number
+    scanf("%d",&n2);
+    int a[10],b[10],y=0,x=0;
+    t1=n1;
+    t2=n2;
+
+    while(t1!=0)  //split digits of  1st number
+    {
+        r1=t1%10;
+        a[x]=r1;
+        x++;
+        t1=t1/10;
+    }
+
+    while(t2!=0)  //split digits of  2nd number
+    {
+        r2=t2%10;
+        b[y]=r2;
+        y++;
+        t2=t2/10;
+    }
+
+    /* important note:you should not give like sort(a[x],x) because array is a pointer and stores 1st address of its element by default*/
+  sort(a,x);  // sort digits of 1st number in ascending order
+  sort(b,y);  // sort digits of 2nd number in ascending order
+
+int f=0;
+for(i=0;i<x;i++)
+{
+    if(a[i]==b[i])  //compare digits of both inputs
+    {
+        f=1;
+    }
+}
+
+if(f==1)
+    printf("Anagram");
+else
+    printf("Not Anagram");
+}
