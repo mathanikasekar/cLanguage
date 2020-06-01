@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    long a,b,i,ans=1;
+    scanf("%ld\n%ld",&a,&b);
+    for(i=1;i<=b;i++)
+        ans=ans*a;
+    printf("%ld",ans);
+    return 0;
+}

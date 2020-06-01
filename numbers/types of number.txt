@@ -1,0 +1,44 @@
+Different Type of Numbers:- 
+
+1. Natural Numbers
+
+2. Whole Numbers
+
+3. Integers
+
+4. Even Numbers
+
+5. Odd Numbers
+
+6. Prime Numbers
+
+7. Composite Numbers
+
+Natural Numbers:-
+Counting numbers 1, 2, 3, 4, 5, are called Natural Numbers.
+
+Whole Numbers:- 
+All counting numbers together with zero forms the set of whole numbers. Thus,
+
+  *** 0 is the only whole number which is not a natural number.
+ Every natural number is a whole number. ***
+ 
+Integers:- 
+All natural numbers, 0 and negatives of counting numbers i.e., { ...... -3, -2, -1, 0, 1, 2, 3, ...........} together form the set of integers.
+
+Positive Integers:- 
+{1, 2, 3, 4, 5, .... } is the set of all positive integers.
+
+Negative Integers:-
+{-1, -2, -3, -4, ......} is the set of all negative integers.
+
+Non-Positive and Non-Negative Integers:- 
+0 is neither positive nor negative. So, {0, 1, 2, 3, 4, ...} represents the set of non-negative integers, while {0, -1, -2, -3, -4, .....} represents the set of non-positive integers.
+
+Different Type of Numbers
+
+Even Numbers:-
+A number divisible by 2 is called an even number. eg, 2, 4, 6, 8, 10 etc.,
+
+Odd Numbers:-
+A number not divisible by 2 is called an odd number. eg, 1, 3, 5, 7, 9, 11, etc.,

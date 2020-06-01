@@ -1,0 +1,66 @@
+Pointers In C:
+
+What Is A Pointer?
+
+-variable store the address of a variable.
+-use: points to the memory location of the variable whose address is provided.
+ This property helps in Dynamic memory allocation, which is an important aspect of programming.
+
+syntax:
+Data_Type *pointer_name;   Example: int *ptr;
+
+Reference And De-Reference Operators:
+-Reference Operators:
+  Address of’ operator (ampersand)
+  returns memory location/address of the given variable.
+   int *ptr;
+   int a;
+   ptr = &a;
+   The address of variable ‘a’ is stored in variable ptr.
+-De-Reference Operators:
+‘Value at’ operator asterisk (*).
+ retrieving the value from the memory location which is stored in the pointer variable
+
+int *ptr;
+int a;
+*ptr = &a;
+printf("Value of a = %dn", *ptr);
+
+MY EXAMPLE:
+
+# include <stdio.h>
+void main()
+{
+    int a=5;
+    int *p1=&a;
+    int **p2=&p1;
+    printf("%d\n",a);   // value stored in a
+    printf("%d\n",p1);  // value  stored in p1(address of a)
+    printf("%d\n",*p1); // value present in address stored in p1
+    printf("%d\n",p2);  // value  stored in p2(address of p1)
+    printf("%d\n",*p2); // value present in address stored in p2(address of a)
+    printf("%d\n",**p2);//value present in address stored by p1 i.e,value of a
+}
+O/P:
+5
+6356728
+5
+6356724
+6356728
+5
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int i;
+char str[]="Hello World";
+char *p;
+p=str;
+for(i=0;i<strlen(str);i++,p++)
+{
+printf("%c",*p);
+}
+return 0;
+}
+O/P:Hello World

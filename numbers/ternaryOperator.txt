@@ -1,0 +1,74 @@
+General Form:
+
+(expression_1) ? (expression_2) : (expression_3);
+
+(condition/comparison) ? (true) : (false);
+
+expression_1 is a comparison/conditional argument.
+expression_2 is executed/returned if expression_1 results in true,
+expression_3 gets executed/returned if expression_1 is false.
+
+
+#include < stdio.h >
+int main()
+{
+ int a = 1, b = 1, c;
+
+ // (expression1) ? (expression2) : (expression3);
+
+  (a+b) ? (c = 10) : (c = 20);
+   printf("Value of C is %d\n", c);
+   return 0;
+}
+Output:
+Value of C is 10
+
+a+b is 2 which is non-zero,
+so it is considered as true.
+So c = 10 gets executed.
+
+#include < stdio.h >
+int main()
+{
+ int a = 1, b = 1, c;
+
+ // (expression1) ? (expression2) : (expression3);
+
+  (a-b) ? (c = 10) : (c = 20);
+  printf("Value of C is %d\n", c);
+  return 0;
+}
+Output:
+Value of C is 20
+
+a-b is 0 which is zero,
+so it is considered as false.
+So c = 20 gets executed.
+
+#include < stdio.h >
+
+int main()
+{
+ int a = 1, b = 1, c;
+
+ // (expression1) ? (expression2) : (expression3);
+
+  *** c = (a+b) ? (10) : (20);
+  printf("Value of C is %d\n", c);
+  return 0;
+}
+Output:
+Value of C is 10
+
+BIGGEST OF THREE and FOUR NUMBER:
+
+# include <stdio.h>
+void main()
+{
+    int a,b,c,d,big1,big2 ;
+    printf("Enter three numbers : ") ;
+    scanf("%d %d %d %d", &a, &b, &c, &d) ;
+    big1 = a > b ? (a > c ? a : c) : (b > c ? b : c) ;
+    big2=(a > b && a > c && a > d)? a :((b > c && b > d) ? b : (( c > d) ? c : d ));
+    printf("\nThe biggest number is : %d", big) ;
+}

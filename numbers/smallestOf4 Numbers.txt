@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+#define max(x,y) (x)>(y)?(x):(y)
+
+#define min(x,y) (x)<(y)?(x):(y)
+
+int main()
+{
+
+   int i;
+
+   long n,n1,n2,n3,n4,m1,m2,mid1,mid2;
+   
+   printf("how many rows?");
+
+   scanf("%d",&n);
+    
+   printf("Enter the numbers");
+    
+   for(i=0;i<n;i++)
+    {
+        scanf("%ld%ld%ld%ld",&n1,&n2,&n3,&n4);
+        
+        m1=max(max(max(n1,n2),n3),n4);
+
+            m2=min(min(min(n1,n2),n3),n4);
+
+            mid1=min(max(n1,n2),max(n3,n4));
+
+            mid2=max(min(n1,n2),min(n3,n4));
+
+            if(mid1<mid2)
+
+                printf("%ld < %ld < %ld < %ld",m2,mid1,mid2,m1);
+            else
+
+                printf("%ld < %ld < %ld < %ld",m2,mid2,mid1,m1);
+
+            printf("\n");
+    }
+
+    return 0;
+}

@@ -1,0 +1,30 @@
+Logically it’s seems impossible to write a C program without using a main() function. Since every program must have a main() function because:-
+
+It’s an entry point of every C/C++ program.
+All Predefined and User-defined Functions are called directly or indirectly through the main.
+Therefore we will use preprocessor(a program which processes the source code before compilation) directive #define with arguments to give an impression that the program runs without main. But in reality it runs with a hidden main function. Let’s see how the preprocessor doing their job:-
+Hence it can be solved in following ways:-
+
+Using a macro that defines main
+
+#include<stdio.h> 
+#define fun main 
+int fun(void) 
+{ 
+    printf("deva"); 
+    return 0; 
+}
+Output:deva
+
+Using Token-Pasting Operator
+
+The above solution has word ‘main’ in it. If we are not allowed to even write main, we can use token-pasting operator (see this for details)
+
+#include<stdio.h> 
+#define fun m##a##i##n 
+int fun() 
+{ 
+    printf("deva"); 
+    return 0; 
+}
+Output: deva

@@ -1,0 +1,40 @@
+  
+2-even numbers
+
+3-sum of digits divide by 3
+
+4-last 2 digit divide by 4
+
+5-5 or 0
+
+6-divide by 2 and 3
+
+7-take last digit 
+  multiply by 2
+  sub from truncated number
+  repeat upto original number becomes 2 digit 
+  check if final 2 digits are divisible by 7
+  if yes original number is divisible by 7
+  
+  eg:
+  
+  6132 =>613
+         -4
+         =609 =>60
+               -18
+                =42
+                 42%7 != 0
+  so 6132 is not divisible by 7..
+
+8-last 3 digit divisible by 8
+
+9-sum of digits divisible by 9
+
+11-sum of even place digit - odd place digit = 0
+
+eg:
+1562(142*11=1562)
+(1+6)-(5+2)=0
+yes
+
+12-divisible by 3 and 4

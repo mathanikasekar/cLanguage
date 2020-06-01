@@ -1,0 +1,49 @@
+using construction method:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{ 
+    long n,t,r,rev,pv;
+    scanf("%ld",&n);
+    t=n;
+    pv=1;
+    while(t/pv>9) ***************divide not modulo
+    {
+        pv=pv*10;
+    }
+    rev=0;
+    while(pv!=0) *********************************very imp line
+    {
+        r=n/pv%10;
+        printf("%ld",r); 
+        pv=pv/10; ******************************* vry imp line
+    }
+    return 0;
+}
+
+destruction method:
+
+// prgm to count digits of a number
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    long n,c,r,t;
+    scanf("%ld",&n);
+    c=0;
+    while(n!=0)
+    {
+    r=n%10;
+    c++;
+    n=n/10;
+    }
+    printf("%ld",c);
+    return 0;
+}

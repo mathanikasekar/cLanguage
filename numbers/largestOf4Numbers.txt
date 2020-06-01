@@ -1,0 +1,19 @@
+#include <stdio.h>
+#define max(x,y) (x)>(y)?(x):(y)
+#define min(x,y) (x)<(y)?(x):(y)
+int main() {
+int i;
+long n1,n2,n3,n4,m1,m2,mid1,mid2;
+printf("Enter 4 numbers :");
+scanf("%ld%ld%ld%ld",&n1,&n2,&n3,&n4);
+m1=max(max(max(n1,n2),n3),n4);
+m2=min(min(min(n1,n2),n3),n4);
+mid1=min(max(n1,n2),max(n3,n4));
+mid2=max(min(n1,n2),min(n3,n4));
+if(mid1>mid2)
+     printf("%ld > %ld > %ld > %ld",m1,mid1,mid2,m2);
+else
+     printf("%ld > %ld > %ld > %ld",m1,mid2,mid1,m2);
+     printf("\n");
+return 0;
+}

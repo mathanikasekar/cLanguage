@@ -1,0 +1,48 @@
+atoi() library function
+C programming supports a pre-defined library function atoi() to handle string to integer conversion. The function is defined in stdlib.h header file.
+
+Syntax of atoi() function
+int atoi(const char * str);
+It accepts a pointer to constant character str. Which is string representation of integer.
+It return an integer. If str is valid integer string then returns that number as int type otherwise returns 0.
+Note: atoi() function behaviour is undefined if converted integer underflows or overflows integer range. Use more robust and reliable strtol() function to convert string to integer.
+
+#include <stdio.h>
+#include <stdlib.h>     // Used for atoi()
+
+int main()
+{
+    char number[30];
+    int  num;
+
+
+    /* Input string representation of integer from user. */
+    printf("Enter any integer: ");
+    fgets(number, 30, stdin);
+
+
+    /* Convert string representation of number to integer */
+    num = atoi(number);
+
+
+    /* Print converted integer */
+    printf("Converted integer = %d\n", num);
+
+
+    return 0;
+}
+Output
+Enter any integer: a
+Converted integer = 0
+
+Enter any integer: 12
+Converted integer = 12
+
+Enter any integer: 1.5
+Converted integer = 1
+
+Enter any integer: 1111111111111
+Converted integer = -1285418553
+
+Enter any integer: -99999999999999999
+Converted integer = -1569325055

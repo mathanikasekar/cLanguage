@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+    
+    long pv=1,r,n,s,t;
+    scanf("%ld",&n);
+    t=n;
+    while(n!=0)
+    {
+        r=n%2;
+        s=s+r*pv; // ******* dont make error (+ and then *)
+        pv=pv*10;
+        n=n/2;
+    }
+    printf("%ld",s);
+    return 0;
+}
