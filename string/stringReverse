@@ -14,6 +14,29 @@ int main ()
     return 0;
 }
 
+#include<stdio.h>
+#include<string.h>
+void reverse(char *str,int begin,int end);
+int main()
+{
+ char s[100],rev[100];
+ int i,j,c=0;
+ printf("Enter the String\n");
+ scanf("%s",s);
+ while(s[c]!='\0')
+ c++;
+ j=c-1;
+ for(i=0;i<c;i++)
+ {
+     rev[i]=s[j];
+     j--;
+ }
+ rev[i]='\0';
+ printf("Reversed String is %s\n",rev);
+ return 0;
+}
+
+
 
 #include <stdio.h>
 #include <string.h>

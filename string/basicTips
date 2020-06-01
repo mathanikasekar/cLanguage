@@ -1,0 +1,17 @@
+-input only alphabets :
+  scanf("%[a-zA-Z]c",str);
+  scanf("%[a-zA-Z]s",str);
+  i/p:abcABC123,o/p:abcABC
+
+-only lowercase :
+  scanf("%[a-z]c",str);
+  i/p:abcABC123,o/p:abc
+
+-display float value as integer
+  printf("%0.f",num);
+  i/p:15.2,o/p:15
+
+-2 inputs.2nd number should be printed with respect to 15 width space from 1st number.
+   printf("%-15d %d",num1,num2);
+   i/p:15 7,o/p:15            7
+   i/p:1234567890 12,o/p:1234567890    12
