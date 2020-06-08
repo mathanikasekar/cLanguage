@@ -1,0 +1,36 @@
+
+(FLOW is from left to right)
+ int a=10,b,c;
+ b=a++;  //b=10==>a=11
+ c=++b;  //b=11==>c=11
+ printf("%d %d %d",a,b,c);
+ o/p:11 11 11
+
+BITWISE:
+int num1=2,num2=3;
+printf("%d",(num1*num2));
+o/p:
+2   0010
+3   0011
+--------
+2*3 0010
+--------
+
+BITWISE OPERATOR:
+                16 8 4 2 1
+           20=   1 0 1 0 0
+  right shift:   0 1 0 1 0(10)
+-right shift of 20 is 10.
+
+formula 2^y*x;
+  x=20
+  y=1(shifting count)
+
+  unary operator:
+    change + to - and - to +
+    int a=-10,b;
+    b=-a
+    pf(b); o/p:10
+    int a=10,b;
+    b=-a
+    pf(b); o/p:-10

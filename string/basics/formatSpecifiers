@@ -1,0 +1,86 @@
+
+printf(),scanf()
+ -both are function
+ -return type of them is INTEGER
+printf()
+ -content should be rinted in console screen(o/p screen)
+scanf()
+ -%d / %f..-format specifier
+ -&-storing address
+ -&a-a is name for particular mem location to use and retrieve.
+
+format specifier
+ -[format][flag][width].[precision][length][specifier]
+ format-> %
+ flag-> -,+,0,*,#
+ width-> no of character/number
+ what's to print in console screen(allocate the space)
+ precision -> how many no of char/integer printed
+ length-> L,ll,h,u
+ specifier-> d(int),s(string),f(float),c(char)
+
+data types
+ character can be easily converted into storing
+  char ch;
+  char ch[100];
+ float
+  does not give accurate value,after 3 digit of decimal point
+  it round off or any garbage value gets filled
+  so we move for double
+
+ int-2 bytes
+ double-4 bytes
+ long double-8 bytes %Ld
+ long int-4 bytes
+ long long int-8 bytes
+
+1 bytes=8 bits
+1 bits=32
+
+256
+-128 to -1 0 1 to 127
+unsingned int(negative numbers can be converted to positive i.e.range->-127 to 128 can be converted fully from 0 to ...)
+
+if we use short int(%h) in 64 bit compiler integer it takes 2  bytes instead of four bytes(saves some memory)
+
+FORMAT SPECIFIERS:
+ %n-no of input we get
+ %o-octal(only printf())
+ %i-octal/hexa
+ %x-hexa(only printf())
+ %X-hexa(only printf())
+ %h-short
+ %e-exponential - 10e^4
+ %E-exponential - 10E^4
+ deciaml-0 to 9 combinations only possible
+ octal-0 to 7 combinations only possible
+ hexa-16 digit
+     -0 to 9
+     -a to f=%x
+     -A to F=%X
+ printf() %d and %i are same
+ scanf() %d and %i are NOT same
+  %d-only it takes decimal value
+  %i-it takes octal/hexa decimal
+
+width:
+ int num=15;
+  -printf("%10d",num); o/p:        15
+  -printf("%010d",num);o/p:0000000015
+  -printf("%-10d",num);
+   printf("#");
+   o/p:15        #
+ -printf("%+d",num);
+ -printf("%#x",num); o/p:0xa
+ char ch[10]="mathu";
+
+%n:
+ int num,len;
+ scanf("%d%n",&num,&len);
+ printf(""%d",len);
+ i/p:12345
+ o/p:5
+
+int num1=10,num2=20;
+printf("%d",(num1>=10 && num2>=30));
+o/p:

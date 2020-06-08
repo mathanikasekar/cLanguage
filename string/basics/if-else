@@ -1,0 +1,31 @@
+nested if:
+if()
+{
+if()
+{
+if()
+{}
+}
+}
+
+
+cascade if:
+only if present no else blocks
+if()
+{
+}
+if()
+{
+}
+if()
+{
+}
+example:
+if(a==7)
+pf("equal");
+if(a>5)
+pf("greater");
+if(a<=10)
+pf("lesser");
+if(a!=7)
+pf("not equal")
