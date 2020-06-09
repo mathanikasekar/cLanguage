@@ -15,3 +15,6 @@
    printf("%-15d %d",num1,num2);
    i/p:15 7,o/p:15            7
    i/p:1234567890 12,o/p:1234567890    12
+
+break,continue must be given inside for loop
+if it is given within if also it search for its parent for loop and exits from it
