@@ -1,0 +1,71 @@
+*****
+*   *
+*   *
+*   *
+*****
+#include<stdio.h>
+int main()
+{
+    int n=5,r,c;
+    for(r=1;r<=n;r++,printf("\n"))
+    {
+        for(c=1;c<=n;c++)
+        {
+            if(r==1 || r==n ||c==1 || c==n)
+            printf("*");
+            else
+            printf(" ");
+        }}}
+
+*   *
+ * *
+  *
+ * *
+*   *
+#include<stdio.h>
+int main()
+{
+    int n=5,r,c;
+    for(r=1;r<=n;r++,printf("\n"))
+    {
+        for(c=1;c<=n;c++)
+        {
+            if(r==c || r+c==n+1)
+            printf("*");
+            else
+            printf(" ");
+        }}}
+
+        *****
+       *****
+      *****
+     *****
+    *****
+    #include<stdio.h>
+int main()
+{
+int n=5,r,c,sp;
+for(r=1;r<=n;r++,printf("\n"))
+{
+    for(sp=n;sp>r;sp--,printf(" "));
+    for(c=1;c<=n;c++)
+    {
+        printf("*");
+    }}}
+
+*****
+ *****
+  *****
+   *****
+    *****
+#include<stdio.h>
+int main()
+{
+int n=5,r,c,sp;
+for(r=1;r<=n;r++,printf("\n"))
+{
+    for(sp=1;sp<r;sp++,printf(" "));
+    for(c=1;c<=n;c++)
+    {
+        printf("*");
+    }}}

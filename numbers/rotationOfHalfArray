@@ -1,0 +1,41 @@
+RIGHT ROTATION:
+
+/*array will be given we have to divide it and right half should be rotated "n" times
+left rotation=i/p: 1 2 3 4 5
+                   -
+                   --------->
+              o/p: 2 3 4 5 1
+right rotation=i/p:1 2 3 4 5
+                           -
+                   <--------
+               o/p:5 1 2 3 4 */
+
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter no of elements");
+    scanf("%d",&n);
+    int a[n],i,j,rot;
+    for(i=0;i<n;i++)
+    {
+        printf("Enter element");//get elements
+        scanf("%d",&a[i]);
+    }
+    int half=n/2;    //find half of array 0 1 2 3 4 - 5 6 7 8 9
+    printf("Enter rotation");
+    scanf("%d",&rot);
+    n--;//because n value 10 array index range is 0 to 9
+    for(j=0;j<rot;j++) //no of times to be rotated
+    {
+        int last=a[n];
+        for(i=n;i>half;i--)// n=9,half=5
+        {
+            a[i]=a[i-1];
+        }
+        a[half]=last;
+    }
+    printf("Array after rotation\n");
+    for(i=0;i<=n;i++)//already n is decremented to 9 so ,to print we have to give i<=n
+        printf("%d ",a[i]);
+}
