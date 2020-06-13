@@ -1,0 +1,90 @@
+1 1 0 1 1
+1 1 0 1 1
+0 0 0 0 0
+1 1 0 1 1
+1 1 0 1 1
+
+#include<stdio.h>
+int main()
+{
+    int n=5,r,c,count;//count to give condition row or column equal to n and n may be odd or even
+    if(n%2==0)
+        count=n;//if n is even
+    else
+        count=n+1;//if n is odd
+    for(r=1;r<=n;r++,printf("\n"))
+    {
+    for(c=1;c<=n;c++)
+    {
+        if(r==count/2 || c==count/2)
+                printf("0 ");
+            else
+                printf("1 ");
+    }}}
+
+1 1 1 1 1
+1 0 0 0 1
+1 0 0 0 1
+1 0 0 0 1
+1 1 1 1 1
+
+#include<stdio.h>
+int main()
+{
+int n=5,r,c;
+
+for(r=1;r<=n;r++,printf("\n"))
+{
+for(c=1;c<=n;c++)
+{
+    if(r==1 || r==n || c==1 || c==n)
+    printf("1 ");
+else
+    printf("0 ");
+}}}
+
+11111
+11111
+11011
+11111
+11111
+
+#include<stdio.h>
+int main()
+  {
+        int n=5,r,c,count;        //count to give condition row or column equal to n and n may be odd or even
+        if(n%2==0)
+            count=n;             //if n is even
+        else
+            count=n+1;           //if n is odd
+        for(r=1;r<=n;r++,printf("\n"))
+        {
+        for(c=1;c<=n;c++)
+        {
+            if(r==count/2 && c==count/2)
+                    printf("0 ");
+                else
+                    printf("1 ");
+  }}}
+
+  1111111
+  1100011
+  1010101
+  1001001
+  1010101
+  1100011
+  1111111
+
+  #include<stdio.h>
+    int main()
+    {
+        int n=7,r,c;
+        for(r=1;r<=n;r++,printf("\n"))
+        {
+        for(c=1;c<=n;c++)
+        {
+            if(r==1 || r==n ||c==1 || c==n ||r==c || r+c==n+1)
+                printf("1");
+            else
+                printf("0");
+    }}}

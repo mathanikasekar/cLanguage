@@ -1,0 +1,32 @@
+l value-left value,r value-right value
+
+-pointer
+  store address of another variable
+  when l value becomes r value it is called as pointer
+-3 parts of pointer
+  declaration
+  initialization
+  accessing
+int a;
+int *ptr; // * is differentiator between normal variable and pointer variable
+
+#include<stdio.h>
+int main()
+{
+int a=5;
+int *ptr=&a;
+printf(" a value %d\n",a);
+printf(" ptr value %d\n",*ptr);
+printf("\n");
+printf("ptr value without dereferencing %d\n",ptr);
+printf("size of a %d\n",sizeof(a));
+printf("size of ptr %d\n",sizeof(ptr));
+
+}
+o/p:
+ a value 5
+ ptr value 5
+
+ ptr value without dereferencing 6356728 //address of a
+ size of a 4
+ size of ptr 4
