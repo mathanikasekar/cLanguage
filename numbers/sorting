@@ -10,9 +10,10 @@ for(i=0;i<n;i++)
     printf("enter elements");
     scanf("%d",&a[i]);
 }
-for(i=0;i<n;++i)
+for(i=0;i<n-1;++i) // no need to take last element
 {
-    for(j=i+1;j<n;++j)
+    for(j=i+1;j<n;++j) // we take one element and check with all other elements on its right side.
+     // so this loop need to go till last element
     {
         if(a[i]>a[j])
         {

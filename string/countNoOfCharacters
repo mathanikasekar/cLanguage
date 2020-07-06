@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[20]="aaaabbBnnu";
+    int i,j,count;
+    int length=strlen(str);
+    for(i=0;i<length;i++)
+    {
+        count=0;  // make count 0 here because we are counting for every character
+        for(j=i+1;j<length;j++)
+        {
+            if(str[i]==str[j])
+            {
+                count++;
+                i++; //to check similar characters only once
+            }
+        }
+        printf("%c%d",str[i],count+1);
+    }
+
+}
