@@ -1,0 +1,34 @@
+/*we need to traverse from last
+check last element with all other element (last element should be greater)
+likewise do for all elements
+*/
+#include<stdio.h>
+int main()
+{
+int i,j,t,n;
+printf("enter no of elements");
+scanf("%d",&n);
+int a[n];
+for(i=0;i<n;i++)
+{
+    printf("enter elements");
+    scanf("%d",&a[i]);
+}
+for(i=n-1;i>0;i--) //traversing from last element to second element of array
+{
+    for(j=i-1;j>0;j--) //traversing from element left side to i to all elements of array
+    {
+        if(a[i]<a[j])
+        {
+            t=a[i];
+            a[i]=a[j];
+            a[j]=t;
+        }
+    }
+}
+printf("elements after sorting");
+for(i=0;i<n;i++)
+{
+    printf("%d ",a[i]);
+}
+}
