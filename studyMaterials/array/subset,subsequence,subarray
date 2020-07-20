@@ -1,0 +1,19 @@
+array:
+{1,2,3}
+
+sub array:
+ mem location of elements in subarray must be in inceasing order
+    {1},{1,2},{1,2,3},
+    {2},{2,3},
+    {3}
+
+sub sequence:
+ obtained by deleting(leaving) one or more elements in i/p array
+ no contiguous memory location of elements in subsequence
+  {1},{1,3},{3,2,1},{2,1},{3,1}....
+
+sub set:
+ all possible combinations of i/p subarray
+ 2^n combinations
+ {},{1},{2},{3},{1,2},{1,3},{2,3},{1,2,3}
+          

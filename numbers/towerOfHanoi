@@ -1,0 +1,32 @@
+Tower of Hanoi
+i/p: 3
+o/p:
+move a disk from A to C
+move a disk from A to B
+move a disk from  C to B
+move a disk from A to C
+move a disk from B to A
+move a disk from B to C
+move a disk from A to C
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+void TOH(int n,char source,char helping,char dest)
+{
+    if(n==1){
+        printf("Move a disk from %c to %c\n",source, dest);
+        return ;
+    }
+    TOH(n-1,source,dest,helping);
+    printf("move a disk from %c to %c \n",source,dest);
+    TOH(n-1,helping,source,dest);
+}
+int main()
+{
+    int n=7;
+    char source='A',helping='B',dest='C';
+    TOH(n,source,helping,dest);
+    return 0;
+}
