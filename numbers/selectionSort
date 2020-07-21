@@ -1,3 +1,5 @@
+w/o recursion:
+
 #include<stdio.h>
 int main()
 {
@@ -28,4 +30,48 @@ for(i=0;i<n;++i)
 {
     printf("%d ",a[i]);
 }
+}
+
+with recursion:
+
+
+int minimum(int a[],int start,int end)
+{
+    int minIndex=start,i;
+    for(i=start;i<=end;i++)
+    {
+        if(a[i]<a[minIndex])
+        {
+            minIndex=i;
+        }
+    }
+        return minIndex;
+}
+
+void sort(int a[],int start,int end)
+{
+    int min,temp;
+    if(start==end)//we keep end constant and increasing only start variable.
+        return ;
+    min=minimum(a,start,end);
+    temp=a[min];
+    a[min]=a[start];
+    a[start]=temp;
+    sort(a,start+1,end);
+}
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter no of elements");
+    scanf("%d",&n);
+    int a[n],i;
+    for(i=0;i<n;i++)
+    {
+        printf("Enter elements");
+        scanf("%d",&a[i]);
+    }
+    sort(a,0,n-1);
+    for(i=0;i<n;i++)
+        printf("%d ",a[i]);
 }

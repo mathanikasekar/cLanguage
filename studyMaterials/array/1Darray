@@ -1,0 +1,57 @@
+heap  -HARD DISK-> high memory,slow process
+      -heap very safe,cant access without knowing exact address
+stack -RAM-> low memory,high speed
+
+
+program has 3 areas
+ code section
+ stack(16 gb like that)
+ heap(128 gb like that)
+always in a program num,i,j,count,a[100] all stores in stack by default
+normal variable-static
+poniter variable-dynamic
+
+1D array
+ declaration
+ initialization
+ accessing
+Declaration
+ static -normal variable
+ dynamic-poniter variable
+
+ arr[0]=address of array+(0*mem byte of variable)
+ arr[1]=address of array+(1*mem byte of variable)
+ arr[2]=address of array+(2*mem byte of variable)
+ arr[3]=address of array+(3*mem byte of variable)
+
+ eg:
+ 2x2 array:
+ 1 2
+ 3 4
+ 1000 1004 1008 1012
+ 1    2    3    4
+ arr[0]=1000+0*4=1000
+ arr[1]=1000+1*4=1004
+
+
+dynamic-
+ adv:
+  extend size
+  free the memory
+  vast memory
+malloc-garbage value-declaration
+calloc-0 is stored in all elements of array while declaration
+realloc-extend size of already declared array
+free-free up the memory
+
+SYNTAX:
+malloc
+ int *a[]=(int*)malloc(n*sizeof(int));
+  return type void
+  so typecasting(int) at beginning
+calloc-contiguous [CONTINUOUS] allocation
+ int *a[]=(int*)calloc(n,sizeof(int)); // comma*********
+realloc
+   a[]=realloc(a,n*sizeof(int));
+free
+ free(a);
