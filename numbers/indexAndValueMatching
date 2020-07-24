@@ -1,0 +1,39 @@
+we need to find index value is present anywhere in the input array and need to fill the element as that index
+eg:
+  i/p   3 2 0 1
+  index 0 1 2 3
+now index is 0 it is present at a[2] so now make a[0]=2
+
+#include<stdio.h>
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    int *a;
+    a=(int*)malloc(n*sizeof(int));
+    for(i=0;i<n;i++)
+    scanf("%d",(a+i));
+    swapArr(a,n);
+    for(i=0;i<n;i++)
+    printf("%d ",*(a+i));
+}
+
+        int swapArr(int *a,int n)
+        {
+            int i,j;
+        for(i=0;i<n;i++)
+        {
+        for(j=0;j<n;j++)
+        {
+        if(i==*(a+j))
+        {
+            *(a+i)=j;
+        }
+        else
+            continue;
+        }
+        }
+        }
+
+        i/p: 3 2 0 1
+        o/p: 2 3 0 1

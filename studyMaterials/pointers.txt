@@ -11,7 +11,7 @@ Data_Type *pointer_name;   Example: int *ptr;
 
 Reference And De-Reference Operators:
 -Reference Operators:
-  Address of’ operator (ampersand)
+  'Address of' operator (ampersand)
   returns memory location/address of the given variable.
    int *ptr;
    int a;
