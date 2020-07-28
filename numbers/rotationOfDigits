@@ -1,5 +1,61 @@
-#include<stdio.h>
+my code/optimised shrtcut:
+shrtcut:
+/*
+n=5
+nor=3
+i/p: 1 2 3 4 5 6 7
+o/p: 4 5 6 7 1 2 3 //left rot
+     5 6 7 1 2 3 4 //right rot
+steps:
+      split the array into 2 by nor
+      1 2 3      4 5 6 7
+      left rot:
+      3 2 1      4 5 6 7  //rev 1st half
+      1 2 3      7 6 5 4  //rev 2nd half
+      4 5 6 7 3 2 1       // rev whole array
+      right rot:
+      7 6 5 4 3 2 1       //rev whole array
+      5 6 7     4 3 2 1   //rev 1st half
+      5 6 7     1 2 3 4   //rev 2nd half
+*/
 
+#include<stdio.h>
+void reverse (int *,int,int);
+void reverse (int *arr,int start,int end)
+{
+    int temp;
+    for(;start<end;start++,end--)
+    {
+      temp=arr[start];
+      arr[start]=arr[end];
+      arr[end]=temp;
+    }
+}
+int main()
+{
+    int n,nor,arr[100],itr;
+    scanf("%d",&n);
+    for(itr=0;itr<n;itr++)
+        scanf("%d",&arr[itr]);
+    scanf("%d",&nor);
+    //left rot
+    reverse(arr,0,nor-1);
+    reverse(arr,nor,n-1);
+    reverse(arr,0,n-1);
+        for(itr=0;itr<n;itr++)
+        printf("%d ",arr[itr]);
+        printf("\n");
+   //right rot
+   reverse(arr,0,n-1);
+   reverse(arr,0,nor-1);
+   reverse(arr,nor,n-1);
+        for(itr=0;itr<n;itr++)
+        printf("%d ",arr[itr]);
+        printf("\n");
+}
+
+my code:
+#include<stdio.h>
 int main()
 {
     long int i,n,t,rem,rem1,sum=0,a[10],x=0,j,rotation;
@@ -60,6 +116,6 @@ Enter number
 Enter rotation
 3
 left rotation:
-34512
+45123
 right rotation:
-12345*/
+34512*/

@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("enter");
+    scanf("%d",&n);
+    printf("%d ",n);
+    printf("enter");
+    scanf("%d",&n);  //reinitialization of same variable is possible*************
+    printf("%d ",n);
+}
