@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+    int r=2,c=2,i,j,**a;
+    a=(int **)malloc(sizeof(int*)*r);
+    for(i=0;i<r;i++)
+        *(a+i)=(int *)malloc(sizeof(int)*r);
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("enter");
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d",a[i][j]);
+        }
+    }
+}
