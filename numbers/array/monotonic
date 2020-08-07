@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int isMonotonic(int a[],int n)
+{
+    int i,c=0,c1=0;
+    for(i=0;i<n;i++)
+    {
+        if(a[i]<=a[i+1])
+            c++;
+        else
+            c1++;
+    }
+    if(c==n-1 || c1==n-1)
+        return 1;
+    else
+        return 0;
+
+}
+int main()
+{
+
+    int n,i;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+        scanf("%d ",&a[i]);
+    int result=increasing(a,n);
+    (result==1)? printf("Monotonic") : printf("Not Monotonic");
+    return 0;
+}
