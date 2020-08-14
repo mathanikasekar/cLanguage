@@ -1,0 +1,74 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+struct stack
+ {
+	int *dataArray;
+	int top;
+	int size;
+};
+void initStack(struct stack *p,int maxSize)
+{
+    p->top=-1;
+    p->size=maxSize;
+    p->dataArray=(int*)malloc(maxSize*(sizeof(int)));
+    return;
+}
+void push(struct stack*p,int data)
+{
+//printf("%d",p->top);
+p->top++;
+if(p->top >= p->size)
+{
+printf("Stack is full");
+p->top--;
+}
+else
+{
+   p->dataArray[p->top]=data;
+}
+return 0;
+}
+void display(struct stack p)
+{
+ int i;
+ if(p.top==-1)
+ {
+  printf("stack is empty");
+ }
+ else
+ {
+  for(i=p.top;i>=1;i--)
+  {
+      printf(" %d",p.dataArray[i]);
+  }
+ }
+ }
+
+void pop(struct stack *p)
+{
+if(p->top==-1)
+    printf("Stack is empty");
+else
+    p->top--;
+}
+int main()
+{
+    struct stack *head=NULL;
+     int n,i,data,maxSize;
+    printf("Enter maximum size");
+    scanf("%d",&maxSize);
+    initStack(&head,maxSize);
+    printf("Enter no of elements");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("\n%d",i);
+        printf("Enter elements");
+        scanf("%d",&data);
+        push(&head,data);
+    }
+    //display(head);
+    pop(&head);
+}

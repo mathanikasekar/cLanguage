@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <string.h>
+#include <malloc.h>
+struct node
+{
+    int data;
+    struct node *next;
+}*top=NULL;
+
+struct node * push(int data)
+{
+    struct node *new=(struct node*)malloc(sizeof(struct node));
+    new->data=data;
+    new->next=top;
+    top=new;
+}
+
+void display(struct node *first)
+{
+    while(top!=NULL)
+    {
+       printf("%d ",first->data);
+        first=first->next;
+    }
+}
+struct node * pop(struct node *first)
+{
+    if(top==NULL)
+    {
+        printf("Empty stack");
+    }
+    else
+    {
+        struct node *temp=top;
+        first=first->next;
+        free(temp);
+    }
+    return first;
+}
+int main()
+{
+    struct node *first;
+    int data;
+    printf("Enter element");
+    scanf("%d",&data);
+    first=push(data);
+    printf("Enter element");
+    scanf("%d",&data);
+    while(data!=-1)
+    {
+    first=push(data);
+    printf("Enter element");
+    scanf("%d",&data);
+    }
+  // display(first);
+   first=pop(first);
+   printf("After deletion");
+   display(first);
+}
