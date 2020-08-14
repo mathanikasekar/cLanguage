@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+int len,num=0,itr,dots=0;
+char str[100];
+scanf("%s",str);
+len=strlen(str);
+for(itr=0;itr<len;itr++)
+if(str[itr]=='.')
+dots++;
+if(dots==3)
+{
+for(itr=0,dots=1;itr<len;itr++)
+{
+if(str[itr]>='0'&&str[itr]<='9')
+num++;
+else if(str[itr]=='.')
+{
+if(num==3&&dots==1)
+{
+num=0;
+dots=2;
+}
+else if(num==1||num==2&&dots==2)
+{
+num=0;
+dots=3;
+}
+else if(num==3&&dots==3)
+{
+num=0;
+dots=4;
+}
+else
+{
+printf("Invalid");
+return 0;
+}
+}
+else
+{
+printf("Invalid");
+return 0;
+}
+
+}
+
+if(num==1)
+printf("valid");
+else
+printf("Invalid");
+}
+else
+printf("Invalid");
+return 0;
+}

@@ -1,0 +1,72 @@
+QN.1. Alternate rows of 1's and 0's
+Input Format:
+ Integer 
+Output Format:
+ Matrix 
+Sample Input
+5
+Sample Output
+11111
+00000
+11111
+00000
+11111
+
+QN.2. Box lled with 1's and 0's forming a plus sign
+Input Format :
+Integer 
+Output Format :
+ Matrix 
+Sample Input 
+5
+Sample Output
+11011
+11011
+00000
+11011
+11011
+
+QN.3. Box made of 1's and lled with 0's
+Input Format :
+Integer 
+Output Format :
+Matrix 
+Sample Input 
+5
+Sample Output
+11111
+10001
+10001
+10001
+11111
+
+QN.4. Box pattern made of center as 0 and remaining lled in 1's
+Input Format :
+Integer 
+Output Format :
+Matrix 
+Sample Input 
+5
+Sample Output
+11111
+11111
+11011
+11111
+11111
+
+
+QN.5. Hollow Square Pattern with X pattern inside(Made of 0's and 1's)
+Input Format :
+Integer 
+Output Format :
+Matrix 
+Sample Input
+7 
+Sample Output
+1111111
+1100011 
+1010101
+1001001
+1010101
+1100011
+1111111

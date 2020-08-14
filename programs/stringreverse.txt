@@ -1,0 +1,55 @@
+#include<stdio.h>
+int main()
+{
+
+    char str[100],temp;
+    int start,end,len;
+    scanf("%[^\n]s",str);
+    for(len=0;str[len]!='\0';len++);
+  for(start=0,end=len-1;start<end;start++,end--)
+    {
+    while(!((str[start]>='A'&&str[start]<='Z')||(str[start]>='a'&&str[start]<='z')||(str[start]>='0'&&str[start]<='9')))
+          start++;
+    while(!((str[end]>='A'&&str[end]<='Z')||(str[end]>='a'&&str[end]<='z')||(str[end]>='0'&&str[end]<='9')))
+      end--;
+    if(start<end)
+    {
+    temp=str[start];
+    str[start]=str[end];
+    str[end]=temp;
+
+    }
+
+    }
+    printf("%s",str);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

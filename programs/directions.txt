@@ -1,0 +1,148 @@
+Direction: Nine people in a family have to go out for dinner. There are two available cars - Car 1 and Car 2 - each of which can accommodate five persons. But there are certain conditions that need to be followed:
+(i) Vats will always go in Car 1 and does not want Aks in the same car.
+(ii) Exactly two out of the three children - Meh, Rey and Dan - will be in one car.
+(iii) Chat and Nag will always be together in a car.
+(iv) If Ana and Aks are in the same car, then Vij will also be in the same car.
+(v) Any car cannot have more than five persons.
+Questions : 
+1)	If Meh and Rey are in Car 1, how many different
+ combination are possible ?
+
+A.	Six
+B.	Five
+C.	Three
+D.	Four
+   
+
+2)	If Ana and Aks are not in the same car, then which among the 
+following cannot be the complete list of the occupants of Car 1 ?
+
+A.	Vats, Ana, Chat, Nag, Rey
+B.	Vats, Ana, Vij, Rey, Meh
+C.	Vats, Nag, Chat, Ana
+D.	Vats, Ana, Rey, Dan
+
+
+
+3)	If Ana is in Car 2 which has four persons, then which of 
+the following is definitely true ?
+
+A.	Nag is in Car 2.
+B.	Car 1 has exactly one child.
+C.	Vij is in Car 1.
+D.	Car 2 has exactly one child.
+
+
+4)	If Chat is in Car 2, then who among the following is definitely 
+in Car 1 ?
+
+A.	Rey
+B.	Vij
+C.	Ana
+D.	Dan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Direction: Big B, the political wizard, was selecting his team for the forthcoming elections. 
+His team was to have two speechwriters, two spokesman and two media coordinators. The 
+available speechwriters for selection were A, B, C and D. Similarly, the available spokesmen 
+were E, F and G and the available media coordinators were H, I, J, K. Further conditions are as follows:
+(i) If A is selected, neither F nor J can be selected.
+(ii) If C is selected, then J is definitely selected .
+(iii) H and K will always be selected together.
+(iv) I and K will never be selected together.
+1) Which two people cannot be a part of the same team ?
+
+A.	I and J
+B.	A and D
+C.	B and D
+D.	A and C
+
+2) Which among the following is an acceptable combination ?
+
+A.	A, B, E, F, H, I
+B.	A, B, E, G, I, K
+C.	C, D, E, G, F, I
+D.	None of these
+
+3) If C is selected, who among the following will definitely not 
+get selected ?
+
+A.	B
+B.	K
+C.	E
+D.	J
+4)If A is selected, in how many ways can the team be selected ?
+A.	Two
+B.	One
+C.	Three
+D.	Four
+
+A team is to be selected out of the four boys - Prashant, Amit, Sood and Gupta - and the 
+four girls - Ruchi, Neha, Deepti and Sriya - such that the team should have at least
+ two boys and two girls. Further conditions are as follows:
+(i) If Ruchi is selected, neither Amit nor Sood can be selected.
+(ii) If Prashant is selected, Gupta is also selected.
+(iii) Sriya will be in the team only if Sood is also in the team.
+(iv) Amit, if selected would not like to have Neha in the team.
+1)What could be the maximum strength of a team so formed ?
+
+A.	Four
+B.	Six
+C.	Five
+D.	Seven
+
+2) If Ruchi is a part of th team, then who among the following will definitely not be a part of the team ?
+A.	Prashant
+B.	Deepti
+C.	Sriya
+D.	Gupta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

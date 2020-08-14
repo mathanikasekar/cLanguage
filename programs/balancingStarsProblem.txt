@@ -1,0 +1,65 @@
+#include<stdio.h>
+int openBracket(char ch){
+  if(ch=='{'||ch=='['||ch=='(')//true
+    return 1;
+  else
+    return 0;
+}
+int closeBracket(char ch){
+  if(ch=='}'||ch==']'||ch==')')//true
+    return 1;
+  else
+    return 0;
+}
+int matchingPair(char open,char close){
+  int diff=close-open;
+  if(diff==2||diff==1)//true
+    return 1;
+  else
+    return 0;
+}
+int main()
+{
+  //char str[100]="{[]()}";
+  //char str[100]="{[)(]}";
+  //char str[]="{[]})";
+  //char str[]="{[]";
+  //char str[]="{*(*)*}";
+  //char str[]="{[**][**]}";
+  //char str[]="*abc{*ABC*}09123";
+  char str[1001];
+  int index,stack[100],tos=-1,count=0,flag=0;
+  scanf("%s",str);
+  for(index=0;str[index]!=NULL;index++)
+  {
+    if(openBracket(str[index])==1)
+    {
+      tos++;
+      stack[tos]=str[index];
+      tos++;
+      stack[tos]=0;
+    }
+    else if(closeBracket(str[index])==1)
+    {
+      int poppedValue=stack[tos];
+      if(stack[tos]<2)
+        flag=1;
+      tos--;
+      if(tos!=-1 && matchingPair(stack[tos],str[index])==1)
+        count++;
+      else
+        flag=1;
+      tos--;
+      if(tos!=-1)
+        stack[tos]+=poppedValue;
+    }
+    else if(tos!=-1 && str[index]=='*')
+      stack[tos]++;
+  }
+  if(flag==0 && tos==-1)
+    printf("Yes ");
+  else
+    printf("No ");
+  printf("%d",count);
+  return 0;
+}

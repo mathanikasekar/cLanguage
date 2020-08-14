@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+int data;
+struct Node *next;
+};
+void display(struct Node *head) //f(n)=n+n+n=3n->O(n)
+{
+    while(head!=NULL) //n unit 
+    {
+        printf("%d ",head->data); //n unit
+        head=head->next;  // n unit
+    }
+}
+
+
+void rdisplay(struct Node *head)
+{
+    if(head!=NULL)
+    {
+        printf("%d",head->data);
+        rdisplay(head->next);
+    }
+}
+
+
+void create() //f(n)=2+2+1+1+1+1+1+1+n+n+n+n+n+n=>>6n+10->O(n)+n-->O(n)
+  1+1+1+1=4*N^0-->O(1)
+{
+    struct Node *first,*last;  // 2 unit
+    first=(struct Node*)malloc(sizeof(struct Node)); // 2 unit
+
+    int x;                     //1 unit
+    scanf("%d",&x); 
+           // 1 unit 
+    first->data=x;           // 1 unit
+    last=first;              // 1 unit
+    last->next=NULL;      
+    // 1 unit
+    scanf("%d",&x);            // 1unit
+    while(x!=-1)               // n unit
+    {
+    struct Node *temp=(struct Node*)malloc(sizeof(struct Node));// n unit
+    temp->data=x;   // n unit
+    last->next=temp;  // n unit
+    last=temp;         // n unit
+    last->next=NULL;   // n unit
+    scanf("%d",&x);   // n unit 
+    }
+    display(first);//n
+
+}
+int main()
+{
+    create();
+}

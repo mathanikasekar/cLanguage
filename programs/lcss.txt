@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<string.h>
+void LCSS(char *x,char *y,int m,int n)
+{
+    int lcss[m+1][n+1];
+    int len=0,row,col,i,j;
+    for(i=0;i<=m;i++)
+    {
+     for(j=0;j<=n;j++)
+     {
+       if(i==0||j==0)
+        lcss[i][j]=0;
+        else if(x[i-1]==y[j-1])
+        {
+            lcss[i][j]=1+lcss[i-1][j-1];
+            if(len<lcss[i][j])
+            {
+                len=lcss[i][j];
+                row=i;
+                col=j;
+            }
+        }
+        else
+        {
+            lcss[i][j]=0;
+        }
+     }
+    }
+    if(len==0)
+    {
+        printf("No Common substring");
+        return ;
+    }
+    char* resultstr =(char*)malloc((len+1)*sizeof(char));
+    resultstr[len]='\0';
+    while(lcss[row][col]!=0)
+    {
+        resultstr[--len]=x[row-1] ;
+        row--;
+        col--;
+    }
+    printf("%s",resultstr);
+
+
+}
+int main()
+{
+
+    char x[]="welcomesyouinthisession";
+    char y[]="thissessionwelcomesyou";
+    int m=strlen(x);
+    int n=strlen(y);
+    LCSS(x,y,m,n);
+}

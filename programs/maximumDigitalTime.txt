@@ -1,0 +1,63 @@
+#include<stdio.h>
+int main()
+{
+  int digit[10]={0},time[6];
+  int itr,index,pos,flag=0;
+  //input
+  for(itr=1;itr<=9;itr++)
+  {
+    int num;
+    scanf("%d,",&num);
+    digit[num]++;
+  }
+  if(digit[2]>0 && digit[4]>0 && digit[0]>=4)//24:00:00
+    printf("24:00:00");
+  //00:00:01 to 24:00:00
+  else if(digit[0]==9)
+    printf("Impossible");
+  //calculate maximum possible time
+  else
+  {
+    for(pos=0;pos<=5;pos++)
+    {
+      switch(pos)
+      {
+        case 0:
+              index=2;
+              break;
+        case 1:
+              if(time[0]==2)
+                index=3;
+              else
+                index=9;
+              break;
+        case 2:
+              index=5;
+              break;
+        case 3:
+              index=9;
+              break;
+        case 4:
+              index=5;
+              break;
+        case 5:
+              index=9;
+              break;
+      }
+      for(;index>=0 && digit[index]==0;index--);
+      if(index==-1)
+      {
+        //not a valid time
+        flag=1;
+        break;
+      }
+      time[pos]=index;
+      digit[index]--;
+    }
+    if(flag==1)
+      printf("Impossible");
+    else
+      printf("%d%d:%d%d:%d%d",time[0],time[1],time[2],time[3],time[4],time[5]);
+  }
+  return 0;
+}

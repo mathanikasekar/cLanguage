@@ -1,0 +1,209 @@
+				TRIGNOMETRY
+          Sin = opp/hyp  or    1/cosec		cosec = hyp/opp   or  1/sin
+         Cos = adj/hyp    or    1/sec			sec = hyp/adj         or   1/cos
+         Tan = opp/adj   or    1/cot	or  sin/cos	Cot = adj/opp         or    1/tan     or cos/sin
+         Sin^2+cos^2=1
+        Sin(A+B)=SinACosB+CosASinB		Sin(A-B)=SinACosB-CosASinB
+       Cos(A+B)=CosACosB-SinASinB		Cos(A-B)=CosACosB+SinASinB
+      Tan(A+B)           tanA+tanB                                        Tan(A-B)           tanA-tanB
+                          =    --------------------                                                      =    --------------------
+		      1-tanAtanB                                                                   1+tanAtanB
+                          
+              Formulate:
+1)	Tanx sinx+cox=?
+a)secx		b)2secx		c)sec^2x		d)secx+1
+
+
+ sinx
+------- sinx + cosx
+ cosx
+
+sin^2x
+---------   + cosx
+ Cosx
+
+Sin^2x+cos^2x		1
+-------------------        =  -----------    =Secx
+      Cosx                             Cosx
+
+2)sinx - sinxcos^2x=?
+a)sin^4		b)sin^2xcos^2x		c)sin^3x	d)sin^2xcos^3x
+
+sinx(1-cos^2x)                           sin^2x+cos^2x=1
+sinx(sin^2x)	                       sin^2x=1-cos^2x
+ sin^3x                                          cos^2=1-sin^2x
+
+3)sin^4x-cos^4x=?
+a)2cos^2x	b)1-cosx	c)1-2cos^2x	d)cosx
+
+(sin^2x)^2 – (cos^2x)^2             //a^2-b^2 =(a-b)(a+b)
+
+(sin^2x -  cos^2x) ( sin^2x + cos^2x)  =   (sin^2x -  cos^2x) ( 1)= sin^2x -  cos^2x
+sin^2x -  cos^2x  = (1-cos^x) – cos^2x
+
+=1-cos^2x-cos^2
+=1-2cos^2x
+
+4)	Tan^2x+1+tanxsecx
+a)1+sinx	b)cos^2x	c)1/cos^2x	d)1+sinx/cos^2x
+
+
+sin^2x                  sinx        1
+---------   + 1 +    -------  .   -----
+  Cos^2x               cosx       cosx
+
+sin^2x                  sinx        
+---------   + 1 +    ----------
+  Cos^2x               cos^2x       
+
+
+Sin^2x + cos^2x +  sinx
+-----------------------------------
+                Cos^2x
+
+1+  sinx
+-----------------------------------
+                Cos^2x
+
+
+
+                    TT/6        TT/4        TT/3         TT/2
+0	30	 45	  60	90
+0	1/2	1/r2	r  3/2  	1
+ 1	r 3/2	1/r 2	1/2	0
+0	1/ r 3	1	R 3	Un
+un	2	R 2	2 / r 3	1
+1	2/r 3	R 2	2	Un
+un	R 3	1	1/r 3	0
+
+
+1)	Sin(TT /3 + TT/4)
+
+Sin(A+B)=SinACosB+CosASinB 
+                =SinTT/3 CosTT/4 + CosTT/3 SinTT/4
+                =r 3/2 .  1/r 2 + ½ . 1/r 2
+                                      = r 3/2.r2     +  ½ .r2
+               
+= r 3/2.r2     +  ½ .r2
+
+ (  r 3 + 1)            2 r 2
+ ------------  x  -----------
+    2 r 2            2 r 2
+ (r 6 + r 2)
+--------------------------
+             4
+2)	Cos(45-60)
+              Cos(A-B)=CosACosB+SinASinB
+                               =Cos45Cos60+Sin45Sin60
+                              =1/ r 2 . ½ + 1 / r 2 . r 3 / 2
+                              = ½ r 2 + r 3/2 r 2
+                           (1+r 3)        2 r2         (r 2+ r 6)
+                           -------   x  --------   =    ----------------
+                              2 r2          2 r 2                4
+3)	Tan(TT/4 + TT/3)
+
+Tan(A+B)           1+ r 3           1 + r 3        (1 + r 3)^2       (1 + 2 (1)(r 3)+3)
+                  =      -----------   x   ---------   =  -------------    =--------------------------                           
+		      1-r 3               1 + r 3       1 – (r 3)^2           1 – 3
+
+
+       = (4 + 2 r 3)                2 (2+ r 3)              -(2+ r 3)   = -2 – r3
+    -----------------       =   ----------------    = 
+-	 2                               -   2 
+
+Write the expression in single trigonometric term:
+sinTT/6 cosTT/2 + cosTT/6 sin TT/2
+SinACosB+CosASinB
+Sin(A+B)
+Sin(TT/6 + TT/2)
+Sin(2 TT /3)
+
+Exact value of each expression:
+1)Cos15
+      cos(45-60)=cos45cos60+sin45sin60
+                        = 1/r 2 . r 3/2 + 1/ r 2 . ½
+                     = r 3/2 r 2 + 1/ 2 r 2
+                   = r 3 + 1                     2 r 2              (r 6 +  r 2)
+                 -------------------   x   -----------   = ------------------
+                          2 r 2                   2 r 2                       4
+
+Cot 10 cot 60 cot 20 cot 70 cot 80                  cotx tanx=1  
+                1/ r 3 cot 20        tan 20                   tan(90-x)=cotx
+Cot 10 . 1/r 3.cot80	=cot10.1/r3.tan10	Cot(90-x)=tanx
+cot 70=cot(90-20)  = tan 20
+cot 80=cot(90-80)=tan10
+1/ r 3
+
+Tan7 tan 23 tan 60 tan 67 tan 83                  tan67-> tan(90-23)=cot23
+            tan 23           R 3       cot23
+tan 7 . 1.R3.tan83
+tan 7 . r 3 .cot 7
+ r3
+
+                                        ARRANGEMENTS & Ranking
+LINEAR
+A,B,C,D,E,F,G,H are facing north in the same order.            North – Left,right  (vice vera  South)
+1)	2nd right of D  -  F
+2)	2 places to the right of D – F
+3)	2 places away to the right of D – F
+4)	Right of F – G,H
+5)	A is _______  of D(left / 3rd left)
+6)	B is _______ of C.( immediate left)
+
+
+A,B,C,D,E,F,G,H,I are nine friends standing in a row. I is the middle of the row,A is to the third
+Right of I and second right of B.C is three places away from left of B,Who is immediate
+Left of E.D is to the left of F.G is not standing at the ends of the row and is to the second
+Left of H.
+
+            D  G C   H     I   B  E  A    F                           D   F               -G   -    H
+          _    _   _   _   _   _   _   _   _
+
+Eight friends P,Q,R,S,T,U,V,Y and Z are sitting in two oppsite rows,facing each other.
+Each row has 4 persons.P is between  V and Y and they all facing north.Z is the opposite
+To U who is to the immediate left of Q. R is between T and Q,Z is the immediate right of
+Y.Plot the arrangement.
+ 								 V   P   Y
+		T_	R_	_Q	_   U                     1st 
+		V_	P_	Y_	_ Z                      2nd 
+ 
+                               V       P     Y    z                             
+                                T       R          Q  U
+A,B,C,D,E,F and G are sitting on chairs in a straight line facing North.A is sitting on the 
+Chair which is to the left side of C.G is sitting on the chair that is to the immediate
+Left of F. E is sitting on a chair such that there are equal number of people on his left as
+Well as his right.B is sitting to the immediate left of E and D is sitting in the first position 
+From the left.
+     D   A       B E  G F         C             				A     C	           GF            
+   D A B E C G F
+
+1)who is sitting at the right end?
+  a)C		b)F		c)C or F		d)cannot be determined
+2)Who is sitting to the immediate right of E?
+a)C		b)G		c)F		d)cannot be determined.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+

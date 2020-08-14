@@ -1,0 +1,85 @@
+i/p : 2 5
+o/p : 32
+
+1*2*2*2*2*2=32         ans=base*power(5-1)
+power(2,5)   -->ans=2*power(2,4)--> 2*16=32
+power(2,4)   --> ans=2*power(2,3)--> 2*8=16
+power(2,3)   --> ans=2*power(2,2)--> 2*4=8
+power(2,2)   --> ans=2*power(2,1)--> 2*2=4
+power(2,1)    --> ans=2*power(2,0)--> 2*1=2
+power(2,0)    ---> return 1;
+
+
+1-> 1*2
+2-> 2*2
+3-> 4*2
+4-> 8*2
+5-> 16*2=31 
+
+
+reverse a number using recursion
+
+i/p : 12345
+o/p : 54321
+
+pv=1
+cnt=5
+len=pow(10,5-1)
+                 num%10*pv+rev(num/10)
+12345--> 5*10000+rev(1234)---> 5*10000+4321=54321
+1234 --> 4*1000+rev(123)---> 4*1000+321=4321
+123--> 3*100+rev(12)--->  3*100+21=321
+12-->  2*10+rev(1)----> 2*10+1=21
+1--> 1*1+rev(0)----> 1*1+0=1
+
+
+
+rev(0)---> return 0;
+
+
+
+
+#include<stdio.h>
+int power(int num)
+{
+    static  int ans=1;
+    int res=0;
+    if(num>0)
+    {
+        ans=10*power(num/10);
+    }
+    else
+        return 1;
+    res=ans;
+    ans=1;
+    return res;
+}
+int rev(int num)
+{
+    int pv;
+    static ans=0;
+    pv=power(num)/10;
+    if(num>0)
+    {
+      ans=num%10*pv+rev(num/10);
+
+    }
+    else
+        return 0;
+
+    return ans;
+
+
+
+
+}
+
+int main()
+{
+    int num=12345;
+   printf(" %d",rev(num));
+    return 0;
+
+}
+
+

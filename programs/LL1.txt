@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+int data;
+struct Node *next;
+};
+struct Node* insertNode(struct Node* temp,int element,int pos)
+{
+  struct Node *p=temp;
+  for(int i=0;i<pos-1;i++)
+  {
+
+      p=p->next;
+  }
+  struct Node* newNode =(struct Node*)malloc(sizeof(struct Node));
+  newNode->data=element;
+  if(pos==0)
+  {
+     newNode->next=temp;
+     temp=newNode;
+
+  }
+  else{
+
+    newNode->next=p->next;
+    p->next=newNode;
+  }
+return temp;
+}
+struct Node* Lsearch(struct Node *temp,int key)//f(n)=n+1+1+n+n+1=3n+3=O(n)
+{
+    while(temp!=NULL)   //n+1 unit
+    {
+        if(temp->data==key)  // n unit
+        return temp;        // 1 unit
+        temp=temp->next;   //n unit
+
+    }
+    return NULL;   //1 unit
+}
+struct Node* Rsearch(struct Node *temp,int key)
+{
+    if(temp==NULL)
+    return NULL;
+    if(temp->data==key)
+    return temp;
+    Rsearch(temp->next,key);
+}
+void display(struct Node *head) //f(n)=n+n+n=3n->O(n)
+{
+    while(head!=NULL) //n unit
+    {
+        printf("%d ",head->data); //n unit
+        head=head->next;  // n unit
+    }
+}
+/*void rdisplay(struct Node *head)//T(n)=T(n-1)+1;
+{
+    if(head!=NULL)             // 1 unit
+    {
+        printf("%d",head->data); // 1 unit
+        rdisplay(head->next);  // T(n-1) unit
+    }
+}*/
+void create() //f(n)=2+2+1+1+1+1+1+1+n+n+n+n+n+n=>>6n+10->O(n)+n-->O(n)
+ // 1+1+1+1=4*N^0-->O(1)
+{
+    struct Node *first,*last;  // 2 unit
+    first=(struct Node*)malloc(sizeof(struct Node)); // 2 unit
+    int x;                     //1 unit
+    scanf("%d",&x);            // 1 unit
+    first->data=x;           // 1 unit
+    last=first;              // 1 unit
+    last->next=NULL;          // 1 unit
+    scanf("%d",&x);            // 1unit
+    while(x!=-1)               // n unit
+    {
+    struct Node *temp=(struct Node*)malloc(sizeof(struct Node));// n unit
+    temp->data=x;   // n unit
+    last->next=temp;  // n unit
+    last=temp;         // n unit
+    last->next=NULL;   // n unit
+    scanf("%d",&x);   // n unit
+    }
+    display(first);
+    printf("\n");
+    first=insertNode(first,5,1);
+   first=insertNode(first,34,4);
+   display(first);
+
+
+
+}
+int main()
+{
+    create();
+}

@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+  int testcases,count;
+  scanf("%d",&testcases);
+  for(count=1;count<=testcases;count++)
+  {
+    int f,b,t,d,position,distance;
+    int remPos,pairCount,lastSet,totalDistance,totalTime;
+    scanf("%d %d %d %d",&f,&b,&t,&d);
+    distance=b+f;
+    position=b-f;
+    remPos=d-b;
+    pairCount=remPos/position;
+    if(remPos%position!=0)
+      pairCount++;
+    lastSet=d-pairCount*position;
+    totalDistance=pairCount*distance + lastSet;
+    totalTime=totalDistance*t;
+    printf("%d\n",totalTime);
+  }
+  return 0;
+}

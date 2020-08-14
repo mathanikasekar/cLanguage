@@ -1,0 +1,38 @@
+#include<stdio.h>
+void reverse (int *,int,int);
+
+void reverse (int *arr,int start,int end)
+{
+    int temp;
+    for(;start<end;start++,end--)
+    {
+      temp=arr[start];
+      arr[start]=arr[end];
+      arr[end]=temp;
+    }
+}
+
+int main()
+{
+    int n,nor,arr[100],itr;
+    scanf("%d",&n);
+    for(itr=0;itr<n;itr++)
+        scanf("%d",&arr[itr]);
+    scanf("%d",&nor);
+
+    reverse(arr,0,nor-1);
+        for(itr=0;itr<n;itr++)
+        printf("%d ",arr[itr]);
+        printf("\n");
+    reverse(arr,nor,n-1);
+        for(itr=0;itr<n;itr++)
+        printf("%d ",arr[itr]);
+        printf("\n");
+    reverse(arr,0,n-1);
+        for(itr=0;itr<n;itr++)
+        printf("%d ",arr[itr]);
+        printf("\n");
+
+
+
+}

@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+    struct Node *prev;
+    int data;
+    struct Node *next;
+};
+void display(struct Node *First)
+{
+    while(First!=NULL)
+    {
+        printf("%d ",First->data);
+        First=First->next;
+    }
+}
+struct Node* create()
+{
+    struct Node *first=(struct Node*)malloc(sizeof(struct Node));
+    struct Node *last;
+    last=first;
+    int x;
+    scanf("%d",&x);
+    last->prev=NULL;
+    last->data=x;
+    last->next=NULL;
+    scanf("%d",&x);
+    while(x!=-1)
+    {
+        struct Node *temp=(struct Node*)malloc(sizeof(struct Node));
+        temp->data=x;
+        last->next=temp;
+        temp->prev=last;
+        last=temp;
+        last->next=NULL;
+        scanf("%d",&x);
+    }
+    return first;
+}
+int main()
+{
+    struct Node *First=create();
+    display(First);
+}

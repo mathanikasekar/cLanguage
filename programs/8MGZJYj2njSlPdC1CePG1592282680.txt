@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include<malloc.h>
+struct ADT
+{
+  int *ptr;
+  int n;
+  int itr;
+};
+void insert(struct ADT *arr,int value)
+{
+
+    arr->ptr[arr->itr]=value;
+    arr->itr++;
+    
+}
+void insert_position(struct ADT *arr,int value,int index)
+{
+    int i;
+    for(i=arr->itr;i>index;i--){
+    arr->ptr[i]=arr->ptr[i-1];
+    //printf("%d\n",arr->ptr[i]);
+    }
+    arr->ptr[index]=value;
+    arr->itr++;
+}
+void display(struct ADT arr)
+{
+    int i;
+    for(i=0;i<arr.itr;i++)
+    printf("%d ",arr.ptr[i]);
+}
+int main()
+{
+    int size;
+    scanf("%d",&size);
+    struct ADT arr;
+    arr.ptr=(int*)malloc(size*sizeof(int));
+    arr.n=size;
+    arr.itr=0;
+    insert(&arr,10);
+    insert(&arr,20);
+    insert(&arr,30);
+    insert(&arr,40);
+    //printf("%d ",arr.itr);
+    insert_position(&arr,5,0);
+    display(arr);
+}

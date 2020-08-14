@@ -1,0 +1,31 @@
+Five people – Somu,Suraj,Sandhya,Simran and Sujith – Wrote letters and posted them,
+Through the same post office, to five different places – tirupathi,Kurnool,vizag,pune
+And Chennai not necessarily in the same order.But , those letters were mixed up and
+None of the letters reached the correct destination.
+Further:
+(1)	Neither Somu posted his letter to pune nor his letter reached pune.
+(2)	Neither Suraj posted his letter to Chennai nor his letter reached Chennai.
+(3)	Neither Sandhya posted his letter to Vizag nor his letter reached Vizag.
+(4)	Neither Simran posted his letter Tirupathi  nor his letter reached Tirupathi.
+(5)	Neither Sujith posted his letter to Kurnool nor his letter reached Kurnool.
+(6)	Sommu  neither posted his letter to Vizag or Kurnool nor  his letter reached Vizag or
+Kurnool.
+(7)	Suraj did not post his letter to pune or vizag.
+(8)	The letter that is posted to pune did not reach Kurnool.
+(9)	Sandhya’s letter reached Chennai and she did not post to Tirupathi or Pune.
+(10)	Neither Simran’s letter nor his Suraj’s letter reached pune.
+
+	Tir	Kur	Viz	Pun	Che	Tir	Kur	Viz	Pun	Che
+Som	x	x	x	 x	yes	yes	x	x	x	x
+Sur	yes	x	x	x	x	x	yes	x	x	x
+San	x	yes	x	x	x	x	x	x	x	yes
+Sim	x	x	x	yes	x	x	x	yes	x	x
+Suj	x	x	yes	x	x	x	x	x	yes	x
+ 			Post                                                                            Reach
+
+
+
+
+
+
+

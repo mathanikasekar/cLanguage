@@ -1,0 +1,39 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>   // 4 variable O(4)
+void duplicate (char str[])3+1+n+1+n+n+n+n+n+n=7n+5
+{
+    int hash=0,mask=1,pos,itr; 3 unit
+    for(itr=0;str[itr]!='\0';itr++)  1 unit; n+1; n
+    {
+        mask=1;   n unit
+        pos=str[itr]-97;  n unit
+        mask=mask<<pos;    n unit
+        if(((hash&mask))==mask){   n unit 
+           // if(((rem&(1<<pos))!=rem))
+        printf("%c duplicate element\n",str[itr]); n unit
+      //  rem=rem|(1<<pos);
+        
+        }
+        
+        else
+        hash=hash|mask; n unit 
+    }
+}
+
+int main()
+{
+    char str[100];
+    scanf("%s",str);
+    duplicate(str);
+
+    return 0;
+}
+O(n) -< time 
+O(1)   -> space 

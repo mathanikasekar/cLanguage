@@ -1,0 +1,118 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+    struct Node *prev;
+    int data;
+    struct Node *next;
+};
+int count(struct Node *first)
+{
+    int count=0;
+    while(first!=NULL)
+    {
+        count++;
+        first=first->next;
+    }
+    return count;
+}
+struct Node* DeleteDLL(struct Node *first,int pos,int len)
+{
+    struct Node *p,*q,*t;  // 3 unit 
+    p=first;         // 1 unit
+    for(int i=0;i<pos-1;i++) 
+    {  
+        q=t=p;    // 
+        p=p->next; 
+    }
+    if(pos==1)     // 1 unit
+    {
+        first=first->next; // 1 unit
+        first->prev=NULL; // 1 unit 
+        free(p); // 1 unit
+    }
+    else if(pos==len)   
+    {
+        q->next=NULL; 
+        free(p);    
+    }
+    else
+    {
+       q->next=p->next;
+       t=t->next;
+       t->prev=q;
+       free(p);
+    }
+    return first;  // 1 unit
+}
+struct Node* InsertDLL(struct Node *first,int element,int pos)//f(n)=2n+9=O(n);
+{   // 2 unit=2*n^0=O(1)
+    struct Node *p=first;   // 1 unit
+    for(int i=0;i<pos-1;i++)  //n unit
+    {
+        p=p->next;   // n-1 unit
+    }
+    struct Node *new=(struct Node*)malloc(sizeof(struct Node));// 1 unit
+    new->data=element;  // 1 unit
+    if(pos==0)
+    {
+        new->next=first;
+        new->prev=NULL;
+        first->prev=new;
+        first=new;
+        }
+        else
+        {
+            new->prev=p;  // 1 unit
+            new->next=p->next; // 1 unit
+            p->next=new;  // 1 unit 
+            p=p->next;  // 1 unit
+            p=p->next;  // 1 unit
+            p->prev=new;  // 1 unit
+        
+        }
+        return first;  // 1 unit
+        
+}
+void display(struct Node *first)
+{
+    while(first!=NULL)
+    {
+        printf("%d ",first->data);
+        first=first->next;
+    }
+}
+struct Node* create()
+                     
+{
+    struct Node *first=(struct Node*)malloc(sizeof(struct Node));
+    struct Node *last;   
+    last=first;   
+    int x;    
+    scanf("%d",&x);  
+    last->prev=NULL; 
+    last->data=x;   
+    last->next=NULL; 
+    scanf("%d",&x);  
+    while(x!=-1)     
+    {
+        struct Node *temp=(struct Node*)malloc(sizeof(struct Node)); 
+        temp->data=x; 
+        last->next=temp; 
+        temp->prev=last; 
+        last=temp;   
+        last->next=NULL;
+        scanf("%d",&x);
+    }
+    return first;
+}
+int main()
+{
+    struct Node *First=create();
+    int len,m;
+    len=count(First);
+    printf("%d ",len);
+    scanf("%d",&m);
+    First=DeleteDLL(First,m,len);
+    display(First);
+}

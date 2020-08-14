@@ -1,0 +1,65 @@
+input : 5
+output :
+**********
+****  ****
+***    ***
+**      **
+*        *
+*        *
+**      **
+***    ***
+****  ****
+**********
+
+#include<stdio.h>
+void pattern(int num,int num1)
+{
+    int col,sp;
+    const int row=num1;
+
+
+    if(num>0)
+    {
+
+        for(col=1;col<=num;col++)
+        {
+          printf("*");
+        }
+
+        for(sp=1;sp<=(row-num)*2;sp++)
+        {
+
+          printf(" ");
+        }
+        for(col=1;col<=num;col++)
+        {
+            printf("*");
+        }
+        printf("\n");
+        pattern(num-1,num1);
+        for(col=1;col<=num;col++)
+        {
+          printf("*");
+        }
+
+        for(sp=1;sp<=(row-num)*2;sp++)
+        {
+
+          printf(" ");
+        }
+        for(col=1;col<=num;col++)
+        {
+            printf("*");
+        }
+        printf("\n");
+
+    }
+
+}
+int main()
+{
+    int num=5;
+    pattern(num,num);
+    return 0;
+
+}

@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,j,pr;
+    scanf("%d",&n);
+    for(i=0;i<n;i=i+2)
+    {
+        pr=(i*n)+1;
+        for(j=0;j<n;j++){
+            printf("%2d ",pr);
+            pr++;
+        }
+        printf("\n");
+    }
+    if(n%2==0)
+        i=n-1;
+    else
+        i=(n/2)+1;
+    for(;i>=1;i=i-2)
+    {
+
+        pr=(i*n)+1;
+        for(j=0;j<n;j++){
+            printf("%2d ",pr);
+            pr++;
+        }
+        printf("\n");
+    }
+
+}

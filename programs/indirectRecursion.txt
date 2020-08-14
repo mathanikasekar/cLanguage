@@ -1,0 +1,36 @@
+/* indirect recursion example
+Odd and even value printed
+i/p : 2, 5
+o/p: even -> 2
+odd-> 3
+even->4
+odd->5*/
+
+#include <stdio.h>
+#include <stdlib.h>
+void funA(int n)
+{
+    if(n>0)
+    {
+
+        printf("%d ",n);
+        funB(n-1);
+    }
+
+}
+void funB(int n)
+{
+
+    if(n>1){
+        printf("%d ",n-1 );
+        funA(n/2);
+    }
+}
+
+int main()
+{
+    int n=20;
+    funA(n);
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+ /*
+only one X is present
+there is no repeatation of X and
+ remaining are fully numberic*/
+i/p -> 2463781X95
+o/p -> valid
+#include<stdio.h>
+int main()
+{
+
+    int len,itr,ans;
+    char str[100];
+    scanf("%s",str);
+    for(len=0;str[len]!='\0';len++);
+    if(len==10&&str[0]!='X')
+    {
+        for(itr=0;itr<len;itr++)
+        {
+            if(str[itr]=='X')
+                ans=ans+(10*(10-itr));
+            else
+                ans=ans+((str[itr]-48)*(10-itr));
+        }
+        if(ans%11==0)
+            printf("ISBN number is valid");
+        else
+            printf("ISBN number is invalid");
+
+    }
+    else
+        printf("ISBN number is not valid");
+}

@@ -1,0 +1,26 @@
+#include<stdio.h>    26 space-> O(1)
+void duplicate(char str[])
+{
+    int hash[26]={0},itr;
+    for(itr=0;str[itr]!='\0';itr++)
+    {
+    if(hash[str[itr]-97]==1){
+    printf("%c duplicate element \n",str[itr]);
+    hash[str[itr]-97]++;
+    }
+    else
+        hash[str[itr]-97]++;
+
+
+    }
+
+
+
+}
+int main()
+{
+
+    char str[100];
+    scanf("%s",str);
+    duplicate(str);
+}

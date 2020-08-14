@@ -1,0 +1,96 @@
+
+		ASSERTION AND REASON
+
+
+Assertion :  Ice floats on water   ->T
+Reason : The mass per unit volume of ice is less than that of water  ->T
+
+options:
+
+1)Both Assertion and Reason are true and Reason is the correct explanation
+of Assertion.
+
+2)Both Assertion and Reason are true and Reason is not the correct 
+explanation of Assertion.
+
+3)Assertion is true but Reason is false
+
+4)Assertion is false and Reason is true
+
+5)Both Assertion and Reason are false.
+
+
+
+
+
+		TEAM FORMATION
+
+5 people -> 5C3
+P1 P2 P3 P4 P5  = P1P2P3	P2P3P4	P2P3P4	P3P4P5 
+ 
+                      5x4x3
+                   ------------- = 10
+                       3x2x1
+
+In how many ways can you form a cricket team of 11(batsmen=6 and
+bowlers=5) from a squad of 16(batsmen=8 and bowlers=8).
+
+
+                           8c6 x 8c5
+                        
+                  8x7x...   answer
+
+
+
+
+				 
+				
+				
+				
+speech writers --->   A,B,C,D                A,B,D        E,G     H,I/K               
+
+spokesmen     ------>  E,F,G                       A,B        E,G      H,K
+
+media coordinator-> H,I,J,K                   A,D          E,G         H,K
+
+
+cnds:     (i) A select   [F,J] no                                    2 , 1 , 3 , 4        
+                                                                                                
+                (ii) C select J select
+
+                (iii)   H=K together
+
+                (iv)  I != K (never together)
+
+
+
+                  A,B,C         E,G        H,K
+
+                  2 X 1 X 1 =2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

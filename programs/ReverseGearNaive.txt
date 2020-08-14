@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+  int testcases,count;
+  scanf("%d",&testcases);
+  for(count=1;count<=testcases;count++)
+  {
+    int f,b,t,d,timeTaken,totalDistance=0;
+    scanf("%d %d %d %d",&f,&b,&t,&d);
+
+    while(1)
+    {
+      if(d<=b)//car hits the wall
+      {
+        totalDistance=totalDistance+d;
+        //stop moving the car
+        break;
+      }
+      //car moves backward
+      d=d-b;
+      totalDistance=totalDistance+b;
+      //car moves forward
+      d=d+f;
+      totalDistance=totalDistance+f;
+    }
+
+    timeTaken=totalDistance*t;
+    printf("%d\n",timeTaken);
+  }
+  return 0;
+}

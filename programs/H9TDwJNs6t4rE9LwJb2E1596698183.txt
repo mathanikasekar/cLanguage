@@ -1,0 +1,192 @@
+1)singly linked list 
+2)doubly linked list 
+3)circular linked list 
+   1)singly circular
+   2)doubly circular
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+int data;
+struct Node *next;
+};
+struct Node* mergell(struct Node *first,struct Node *second)//f(n)=6n+12=O(n)
+                                                            //O(1)
+{
+ struct Node *last,*third;       // 2 unit 
+ if(first->data<second->data)   // 1 unit
+ {
+     last=third=first;           // 1 unit
+     first=first->next;          // 1 unit
+     last->next=NULL;            // 1 unit
+ }
+ else{
+    last=third=second;
+    second=second->next;
+    last->next=NULL;
+ }
+ while(first!=NULL&&second!=NULL)   //n+1 unit
+ {
+     if(first->data<second->data)   // n unit
+     {
+         last->next=first;        // n unit
+         last=first;               // n unit
+         first=first->next;       // n unit
+         last->next=NULL;        // n unit
+     }
+     else{
+        last->next=second;
+        last=second;
+        second=second->next;
+        last->next=NULL;
+     }
+ }
+ if(first!=NULL)       // 1 unit
+    last->next=first;   // 1 unit
+ if(second!=NULL)      // 1 unit
+    last->next=second;   // 1 unit
+ return third;     // 1 unit
+
+}
+
+
+
+
+
+
+
+int isLoop(struct Node *first)//f(n)=4n+4=O(n)
+                              // 2 unit=2*n^0=O(1)
+{
+    struct Node *p,*q;   // 2 unit
+    p=q=first;   // 1 unit
+    do
+    {
+
+        q=q->next;  // n unit
+        p=p->next;   //n unit
+        p=p!=NULL?p->next:NULL;  // n unit
+    }while(q!=NULL&&p!=NULL&&p!=q);  //n unit
+
+    return p==q?1:0;   // 1 unit
+}
+/*void con(struct Node *First,struct Node *second)
+{
+
+
+    while(First->next!=NULL)
+    {
+        First=First->next;
+    }
+    First->next=second;
+}
+struct Node* ReverseLink(struct Node *first) // O(n)  O(1)
+{
+    struct Node *p,*q,*r;
+    p=first;
+    q=r=NULL;
+    while(p!=NULL)
+    {
+        r=q;
+        q=p;
+        p=p->next;
+        q->next=r;
+    }
+    return q;
+}
+void Reverse(struct Node *first,int len)//-->O(n)  O(n)
+{
+    int arr[len],i=0;
+    struct Node *p=first;
+    while(p!=NULL)
+    {
+        arr[i]=p->data;
+        p=p->next;
+        i++;
+    }
+    p=first;
+    i--;
+    while(p!=NULL)
+    {
+        p->data=arr[i];
+        i--;
+        p=p->next;
+    }
+}
+void Rdublicate(struct Node *q,struct Node *p) {
+  if(p!=NULL)
+
+  {
+      if(q->data==p->data)  // 1 unit
+      {
+          q->next=p->next; // 1 unit
+          Rdublicate(q,q->next);  //T(n-1)
+      }
+      else{
+        Rdublicate(q->next,p->next); //T(n-1)
+      }
+  }
+
+}
+void Dublicate(struct Node *q,struct Node *p)
+{
+
+while(p!=NULL)
+{
+    if(q->data==p->data)
+    {
+        q->next=p->next;
+        free(p);
+        p=q->next;
+    }
+    else
+    {
+        q=q->next;
+        p=p->next;
+    }
+
+}
+}*/
+void display(struct Node *head) //f(n)=n+n+n=3n->O(n)
+{
+    while(head!=NULL) //n unit
+    {
+        printf("%d ",head->data); //n unit
+        head=head->next;  // n unit
+    }
+}
+struct Node* create()
+{
+    struct Node *first,*last;  // 2 unit
+    first=(struct Node*)malloc(sizeof(struct Node)); // 2 unit
+    int x;
+                    //1 unit
+    scanf("%d",&x);            // 1 unit
+    first->data=x;           // 1 unit
+    last=first;              // 1 unit
+    last->next=NULL;          // 1 unit
+    scanf("%d",&x);            // 1unit
+    while(x!=-1)               // n unit
+    {
+    struct Node *temp=(struct Node*)malloc(sizeof(struct Node));// n unit
+    temp->data=x;// n unit
+    last->next=temp;  // n unit
+    last=temp;         // n unit
+    last->next=NULL;   // n unit
+    scanf("%d",&x);   // n unit
+    }
+   return first;
+}
+int main()
+{
+
+    struct Node *First=create();
+    struct Node *second=create();
+struct Node *t=mergell(First,second);
+
+    display(t);
+}

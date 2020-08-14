@@ -1,0 +1,58 @@
+/* amstrong number
+i/p : 153
+o/p: yes*/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int power(int base,int exp)
+{
+    static int powe=1;
+    if(exp==0)
+        return 1;
+    powe=base*power(base,exp-1);
+
+
+return powe;
+}
+int sum(int n,int dig)
+{
+    int fact,ans;
+    if(n==0)
+        return 0;
+    fact=power(n%10,dig);
+   // printf("%d\n",fact);
+    ans= fact+sum(n/10,dig);
+    return ans;
+
+
+}
+int digit(int n)
+{
+    static int cnt=0;
+    if(n==0)
+    return cnt;
+    cnt++;
+    digit(n/10);
+
+}
+int isamstrong(int n)
+{
+    int dig=digit(n);
+
+    if(sum(n,dig)==n)
+        return 1;
+    else
+        return 0;
+}
+
+int main()
+{
+    int n=153;
+    if(isamstrong(n))
+    printf("yes");
+    else
+        printf("No");
+
+    return 0;
+}

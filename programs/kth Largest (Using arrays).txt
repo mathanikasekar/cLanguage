@@ -1,0 +1,45 @@
+#include<stdio.h>
+int main()
+{
+  long long int n,factors;
+  long long int setA[100],acount,index;
+  long long int setB[100],bcount;
+  int k,count,totalFactors;
+  //scanf("%llu,%d",&n,&k);
+  n=9999999999;//235 seconds=>naive solution
+  k=48;//1
+  acount=0;
+  bcount=0;
+  //for(factors=1;factors<=sqrt(n);factors++)//set A
+  for(factors=1;factors*factors<=n;factors++)
+  {
+    int b;
+    if(n%factors==0)//found a factor
+    {
+      setA[acount]=factors;
+      b=n/setA[acount];
+      if(setA[acount]!=b)
+      {
+        setB[bcount]=b;
+        bcount++;
+      }
+      acount++;
+    }
+  }
+  totalFactors=acount+bcount;
+  //find the k th largest factor
+  if(k>totalFactors)
+    printf("1");
+  else if(k<=bcount)
+  {
+    //element is in set B
+    printf("%d",setB[k-1]);
+  }
+  else
+  {
+    //element is in set A
+    k=k-bcount;
+    printf("%d",setA[acount-k]);
+  }
+  return 0;
+}

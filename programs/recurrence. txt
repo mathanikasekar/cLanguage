@@ -1,0 +1,257 @@
+Solving recurrence relation
+1.	 An = an-1 +2          a0 = 1
+2.	 An = an-1 + n          a0 = 4
+3.	  An = 3an-1 +2        a0  = 1
+
+1.	 An = an-1 +2          a0 = 1
+
+ An = an-1 +2      ------- (1)       n=1  
+An = an-k +2*k--------- (1.1)    k=1     
+An-1 = an-2 +2
+       An = an-2 +2+2= an-2 +4--------- (2)
+      An = an-k +2*k--------------- (2.1)     k=2,n=2
+      An-2 = an-3+2
+      An=an-3+2+4= an-3+6-----------(3)
+      An=an-k+2*k--------------- (3.1)        k=3,n=3
+     K=0,1,2,3,4,5,6,7,………..,n
+    An=an-k+2*k                    let take(n=k)
+A0=a0+2*0;
+A0=a0--1
+   An=an-n+2*n
+   A0=a0+2*n
+  A0 = 1+2n-------- Generalize equation
+ A0 = 1n^0+2n^1
+Time complexity ------ O(n)
+ 
+2.	an = an-1 + n          a0 = 4----(1)
+an = an-k +k n          
+  an-1=an-2+n-------- (2)
+an=an-2+n+n
+an=an-2+2n---------- (3)
+an=an-k+kn
+an-2 = an-3+n----------(4)
+
+an = an-3+n+2n
+an = an-3+3n--------------(5)
+an = an-k+kn
+
+k=0,1,2,3,4,5……,n
+
+an = an-k+kn                let assume (n=k)
+
+an = an-n+n*n  
+an = a0+n*n  
+an=4+n2      
+time complexity    O(n2)                      
+
+
+3.	An = 3an-1 +2        a0  = 1------ (1)
+An=3kan-k+3k-1           k=1
+An-1=3(an-2)+2
+
+An=3(3an-2+2)+2
+An=9an-2+6+2
+An=9an-2+8             ---------(2)
+An=3kan-k+3k-1                k=2
+An-2=3an-3+2
+An=9(3an-3+2)+8
+An=27an-3+18+8
+An=27an-3+26--------------(3)
+An=3kan-k+3k-1     k=3           
+K=0,1,2,3,4,5,6,7,………….,n
+
+Generalize
+An=3kan-k+3k-1                (n=k)        
+An=3nan-n+3n-1 
+An=3na0+3n-1       
+An=3n+3n-1     
+An=(2*3n)-1  
+
+
+Time complexity
+O(3n)              
+
+4.	An=7an-1-10an-2    a0=2 and a1=3  
+5.	 An=6n-1-9an-2        a0=1 and a1=4
+             
+
+
+
+An=7an-1-10an-2    a0=2 and a1=3  
+ The characteristic equation
+An-7an-1+10an-2 =0 -> (1)
+X2 – 7X+10=10
+
+Quadratic equation 
+( -b +-sqrt(b2-4ac))/ 2a
+
+A=1;
+B=-7;
+C=10
+7+-(sqrt(49-40)/2
+7+-(sqrt(9))/2
+(7+-3)/2
+10/2=5-----root 1
+4/2=2------- root 2
+An= 5a+2b
+An= a*5n+ b*2n
+
+N=0
+A0 =a*50+ b*20
+2=a+b  ---- 1)
+N=1
+A1= a*51+ b*21
+3=a*5+b*2----- 2)
+
+  2A+2b=4
+5a+2b=3
+-3a=1
+A=-1/3
+A+b=2
+-1/3+b=2
+B=2+1/3
+B=6+1/3
+B=7/3
+An= -1/3*5n+ 7/3*2n
+Time complexity---- O(2n)
+
+ An=6n-1-9an-2        a0=1 and a1=4
+Char eqn
+An-6n-1+9n-2=0
+X2- 6X+9=0
+A=1;
+B=-6
+C=9
+
+Quadratic equation 
+( -b +-sqrt(b2-4ac))/ 2a
+6+-sqrt(36-36)/2
+6/2=3
+3 ---- root 1
+An=a*3n+b*3n*n
+A1=a*31+b*31*1
+4=3a+3b;
+4=3+3b
+3b=1
+B=1/3;
+A0=a*30+b*30*0
+1=a
+An=1*3n+b*(1/3)n*n
+Time complexity
+O(3n)
+
+1.	T(n)=T(n/2)+1     T(1) =1
+2.	T(n)=T(n/2)+n   T(1)=1
+3.	T(n)=2T(n/2)+n   T(1)  =1
+
+
+T(n/1)=T(n/2^1)+1
+T(n/2)= T(n/2^2)+1
+T(n)=T(n/2^2)+2
+T(n/2^2)=T(n/2^3)+1
+T(n)= T(n/2^3)+3
+
+T(n)=T(n/2k) +k
+
+n/2k=1
+n=2k
+k=log2(n)
+T(n)=T(n/n)+ log2(n)
+
+T(n)=1+ log2(n)
+Time complexity -- log2(n)
+
+T(n)=T(n/2)+n   T(1)=1
+T(n/2) = T(n/22) +n/2
+T(n)= T(n/22) +n/2+n  
+T(n/22)= T(n/23)+n/22
+T(n)= T(n/23)+n/22+n/2+n  
+T(n)= T(n/23)+n(1/22+1/2+1)  
+
+T(n)= T(n/23)+n(1+1)
+T(n)= T(n/23) +2n
+T(n)= T(n/2k) +2n
+n/2k=1
+n=2k
+k=log2(n)
+
+T(n)= T(n/n) +2n
+T(n)=1+2n
+
+Time complexity is O(n) 
+1.	T(n)=2T(n/2)+n   T(1)  =1
+T(n/2)=2T(n/22) +n/2
+
+T(n)=2(2T(n/22) +n/2) +n   
+T(n)=4T(n/22) +n +n   
+T(n)= 4T(n/22) +2n
+T(n/22)=2t(n/23) +n/22
+
+T(n)= 8t(n/23) +n+2n
+T(n)= 8t(n/23) +3n
+T(n)= 2kT(n/2k) +kn
+n/2k=1
+n=2k
+k=log2(n)
+T(n)= nT(n/n)+n log2(n)
+T(n)= n+n log2(n)
+Time complexity - n log2(n)
+O(1) ; O(n); O(n2); O(2n); log2(n) ;   n log2(n)
+
+
+
+
+
+
+ 
+
+
+
+
+
+Void fun(int num)  
+T(n-1)+n+1--T(n-1)+n      T(1)=1
+{
+If(num==1)// 1 unit of time
+Break;
+Else
+Printf(“%d”,n);  n unit 
+Fun(num-1);  T(n-1)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

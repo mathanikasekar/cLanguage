@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main()
+{
+  int n,digit[10],index,nod;
+  scanf("%llu",&n);
+
+  for(index=0;n!=0;index++)
+  {
+    digit[index]=n%10;
+    n=n/10;
+  }
+  nod=index;
+
+  for(index=nod-1;index>0;index--)
+  {
+    //index=0
+    if(digit[index-1] < digit[index])//decreasing
+    {
+      int variationPoint;
+      variationPoint=index;
+      while(variationPoint<nod-1 && digit[variationPoint]==digit[variationPoint+1])
+        variationPoint++;
+      digit[variationPoint]--;
+      for(index=variationPoint-1;index>=0;index--)
+        digit[index]=9;
+      break;
+    }
+  }
+  //skip all leading zeros from the right end
+  for(index=nod-1;digit[index]==0;index--);
+  //start from a non-zero point
+  for(;index>=0;index--)
+    printf("%d",digit[index]);
+  return 0;
+}

@@ -1,0 +1,47 @@
+/* strong number
+i/p: 145
+o/p : yes*/
+
+#include <stdio.h>
+#include <stdlib.h>
+int factorial(int n)
+{
+    if(n<=1)
+    return 1;
+
+
+    return n*factorial(n-1);
+
+
+}
+int sum(int n)
+{
+    int fact,ans;
+    if(n==0)
+        return 0;
+    fact=factorial(n%10);
+   // printf("%d\n",fact);
+    ans= fact+sum(n/10);
+    return ans;
+
+
+}
+int isstrong(int n)
+{
+
+    if(sum(n)==n)
+        return 1;
+    else
+        return 0;
+}
+
+int main()
+{
+    int n=145;
+    if(isstrong(n))
+    printf("yes");
+    else
+        printf("No");
+
+    return 0;
+}

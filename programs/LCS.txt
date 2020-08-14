@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<string.h>
+int Max(int a, int b)
+{
+    return (a>b)?a:b;
+}
+void LCS(char *str1,char *str2, int m,int n)
+{
+    int L[m+1][n+1];
+    int i,j;
+    for(i=0;i<=m;i++)
+    {
+        for(j=0;j<=n;j++)
+        {
+            if(i==0||j==0)
+            L[i][j]=0;
+            else if(str1[i-1]==str2[j-1])
+            {
+                L[i][j]=1+L[i-1][j-1];
+            }
+            else
+            {
+                L[i][j]=Max(L[i-1][j],L[i][j-1]);
+            }
+
+        }
+    }
+    int index=L[m][n];  //4
+    char lcs[index+1];
+    lcs[index]='\0';
+    i=m,j=n;
+    while(i>0&&j>0)
+    {
+        if(str1[i-1]==str2[j-1])
+      {
+          lcs[index-1]=str1[i-1];
+          i--,j--,index--;
+      }
+      else if(L[i-1][j]>L[i][j-1])
+      {
+          i--;
+      }
+      else
+      {
+          j--;
+      }
+    }
+     printf("%s",lcs);
+   }
+int main()
+{
+    char str1[]="abcdggdgkefewfi";
+    char str2[]="bcdgdechgdvhkasvgj";
+    int m=strlen(str1); //6
+    int n=strlen(str2); //7
+    int i,j;
+  LCS(str1,str2,m,n);
+
+}
