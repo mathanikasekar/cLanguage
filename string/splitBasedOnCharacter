@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+    char s[7]="program";
+    int n=7,pos,i;
+    char x='g';
+
+    for(i=0;i<n;i++)
+    {
+        if(s[i]==x)
+        {
+            pos=i;  //get position of character
+            break;
+        }
+    }
+     // 2 arrays to store splitted string
+    char s1[pos];
+    char s2[n-pos];
+    for(i=0;i<=pos;i++) //here "i<=pos" our pos=3 but   p r o g r a m less than 3 means it stops at 2
+    {                                                   0 1 2 3 4 5 6
+        s1[i]=s[i];
+    }
+    s1[i++]='\0';    //store null character at end
+    int j=0;
+    for(i=pos+1;i<n;i++)
+    {
+        s2[j++]=s[i];
+    }
+    s2[j]='\0';      //store null character at end
+    
+    printf("%s\n",s1);
+    printf("%s",s2);
+}

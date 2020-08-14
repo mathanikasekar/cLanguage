@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+   char s1[20],s2[20];
+   int i,j,ans=0;
+    scanf("%s\n%s",s1,s2);
+    for(i=0;s2[i]!='\0';i++)  //s2
+    {
+        for(j=i+1;s1[j]!='\0';j++) //s1
+        {
+            if(s2[i]==s1[j])
+            {
+
+                ans=j;  //storing index
+                break;
+            }}}
+    printf("%d",ans);
+    return 0;
+}

@@ -1,0 +1,59 @@
+#include<stdio.h>
+int main()
+{
+   char s1[20]="myslate12345",s2[10]="12345",s3[10]="note";
+   int l1=strlen(s1),l2=strlen(s2),l3=strlen(s3),i,j,k,pos=-1,flag;
+   for(i=0;s1[i]!='\0';i++)
+   {
+       if(s1[i]==s2[0])
+       {
+        pos=i;     //1st letter of string to be replaced
+        break;
+       }
+       else
+        continue;
+   }
+   if(pos==-1)
+    printf("substring not found");  //1st letter not found then entire substring not present
+       flag=0;
+       for(j=pos,k=0;j<pos+l2;j++,k++)
+       {
+           if(s1[j]==s2[k])
+           {
+               flag=0;   //checking whether substring is present or not
+           }
+           else
+           {
+               flag++;
+           }
+       }
+       //we need answer array to store new replaced string
+       int len=l1-l2+l3;
+       char ans[len];
+       if(flag!=0)
+       {
+            printf("substring not found");
+       }
+       else
+       {
+       for(i=0;i<pos;i++) //b4 string2 we copy in ans array
+       {
+           ans[i]=s1[i];
+       }
+       for(i=pos,k=0;i<pos+l3;i++,k++) //we append s3 where s2 starts
+       {
+        ans[i]=s3[k];
+       }
+       if(pos+l3==l1) //word to be replaced is a last word
+         printf("%s",ans);
+       else
+       {
+       for(i=pos+l3,j=pos+l2;s1[j]!='\0';i++,j++) //word to be replaced is not last word
+       {
+           ans[i]=s1[j];
+       }
+       ans[i++]='\0';
+       printf("%s",ans);
+       }
+       }
+}

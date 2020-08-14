@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include<malloc.h>
+
+int main()
+{
+    int i,j,k=0,count=0;
+    char *s=(char *)malloc(sizeof(char));
+    char *ans=(char *)malloc(sizeof(char));
+    scanf("%[^\n]%*c",s);
+    for(i=0;*(s+i)!='\0';i=i+2)
+    {
+        count=*(s+i+1)-48;   //*(s+i+1) gives ASCII value of numbers to get count convert ASCII to integers by subtracting 48
+        for(j=0;j<count;j++)
+        {
+            *(ans+k)=*(s+i);
+            k++;
+        }
+    }
+    printf("%s",ans);
+    return 0;
+}

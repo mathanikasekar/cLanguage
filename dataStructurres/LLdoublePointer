@@ -1,0 +1,207 @@
+#include<Stdio.h>
+struct node
+{
+    int data;
+    int link;
+};
+
+void insert(struct node** p,int value) //**p is stores address of head **p value=1000
+{
+    struct node * new=NULL; //means new address=100 and a single box is created
+    new=(struct node*)malloc(sizeof(struct node)); //single box is divided to number of memebers in structure
+    new->data=value;
+    new->link=NULL;
+    if(*p==NULL)//*p=value inside head;p=1000,*p=NULL(value inside head),**p is not valid
+        *p=new; //head value becomes 100
+    else //some nodes are present
+    {
+     struct node*temp=*p; //100
+     while(temp->link!=NULL) // during looping if it is last node condition fails
+     {
+         temp=temp->link;
+     }
+     temp->link=new;
+    }
+}
+
+void beginning(struct node ** p,int beg_value)//store the present linked list(elements may or may not present) in temp and and append them at end of new node
+{
+    struct node *new=(struct node*)malloc(sizeof(struct node)); //single box is divided to number of memebers in structure
+    new->data=beg_value;
+    new->link=NULL;
+    struct node *temp=*p;
+    *p=new; // making newnode as headnode
+    new->link=temp;//appending LL after newnode
+}
+
+specificPosition(struct node ** p,int position,int specific_position_value)
+{
+    struct node *new=(struct node*)malloc(sizeof(struct node)); //single box is divided to number of memebers in structure
+    new->data=specific_position_value;
+    new->link=NULL;
+    struct node *temp=*p;
+    struct node *temp1=*p;
+    int i,length=0;
+    while(temp1!=NULL) //temp!=NULL means it goes to last node,temp->link!=NULL means it go to last before node
+    {
+       length++;
+       temp1=temp1->link;
+    }
+    //temp=*p;//we should reinitialize here because for finding length temp value goes to end so we get error while appending at any position
+    if(position==0)
+    {
+        *p=new;
+        new->link=temp;
+    }
+    else if(position<length)
+    {
+    for(i=0;i<position-1;i++)
+    {
+        temp=temp->link;
+    }
+    new->link=temp->link;
+    temp->link=new;
+    }
+    else if(position==length)
+    {
+        for(i=0;i<position-1;i++)
+    {
+        temp=temp->link;
+    }
+    new->link=temp->link;
+    temp->link=new;
+    }
+    else
+           printf("position not found");
+}
+
+/*void delete(struct node **p,int delete_value)
+{
+    int length=0,i,count=0;
+    struct node *temp=*p;
+    while(temp!=NULL)
+    {
+        length++;
+        temp=temp->link;
+    }
+    temp=*p;
+    printf("%d",count);
+    printf("%d",length);
+    for(count=0;count<length;count++)
+    {
+        if(temp->data=delete_value)
+        {
+            break;
+        }
+    }
+    temp=*p;
+    if(length-1==0)
+    {
+        *p=temp->link;
+    }
+    else if(i<length)
+    {
+        for(i=0;i<count;i++)
+            temp=temp->link;
+        printf("%d",temp->data);
+        temp
+
+    }
+    else
+    {
+        printf("position not found");
+    }
+}*/
+/*void deletion ( struct node **q, int num )
+{
+	    struct node *temp=*q;
+	    if(temp!=NULL&&temp->data==num)
+	    {
+	        *q=temp->link;
+	        return;
+	    }
+	    while(temp->link->data != num)
+	    {
+	       if(temp->link==NULL)
+	       {
+	        	printf ( "Element %d not found\n", num ) ;
+	        	break;
+
+	       }
+	       temp=temp->link;
+	    }
+	    if(temp->link->link==NULL)
+	    {
+	        temp=temp->link;
+	    }
+	    else
+	    temp->link=temp->link->link;
+}
+*/
+
+//replace(struct node ** p,int replace_position,int replace_value)
+int display(struct node *p)
+{
+    if(p==NULL)
+        printf("Empty list");
+    else
+    {
+       while(p!=NULL) //temp means it goes to last node
+        {
+            printf("%d",p->data);
+            p=p->link;
+        }
+    }
+}
+
+int main()
+{
+    int n,i,value;
+    struct node *head=NULL;  //head address=1000,head value=NULL
+   // printf("Enter no of nodes");
+    //scanf("%d",&n);
+    //if n is not specified
+   // int n;
+	char ch[10];
+	do {
+		printf("Enter the value\n");
+		scanf("%d",&n);
+		insert(&head,n);
+		printf("Do you want to add another node? Type Yes/No\n");
+		scanf("%s",ch);
+	}while(!strcmp(ch,"Yes"));
+/*
+    for(i=0;i<n;i++)
+    {
+        printf("enter elements to be added");
+        scanf("%d",&value);
+        insert(&head,value);//giving address of head
+    }*/
+    display(head);
+    /*int beg_value;
+    printf("Enter element to be added at beginning");
+    scanf("%d",&beg_value);
+    beginning(&head,beg_value);
+    display(head);
+    int position,specific_position_value;
+    printf("enter position");
+    scanf("%d",&position);
+    printf("enter value");
+    scanf("%d",&specific_position_value);
+    specificPosition(&head,position,specific_position_value);
+    display(head);
+
+    int replace_position,replace_value;
+    printf("enter replace_position");
+    scanf("%d",&replace_position);
+    printf("enter replace_value");
+    scanf("%d",&replace_value);
+    replace(&head,replace_position,replace_value);
+    int delete_value;
+    printf("Enter element to be deleted");
+    scanf("%d",&delete_value);
+    delete(&head,delete_value);
+    printf("elements after deletion");
+    display(head);
+    */
+}

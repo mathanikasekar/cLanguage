@@ -2,7 +2,8 @@
   scanf("%[a-zA-Z]c",str);
   scanf("%[a-zA-Z]s",str);
   i/p:abcABC123,o/p:abcABC
-
+-i/p sentence:
+scanf("%[^\n]%*c",s); **********************************************
 -only lowercase :
   scanf("%[a-z]c",str);
   i/p:abcABC123,o/p:abc

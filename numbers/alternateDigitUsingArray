@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+    int n=123456,t=n,sum=0;
+    int rem,i=0,j,a[20],last;
+    //when we split digit we contain 5 4 3 2 1 but we need array elements as 1 2 3 4 5
+    //so first we reverse and split
+    while(n)
+    {
+        rem=n%10;
+        sum=sum*10+rem;
+        n=n/10;
+    }
+    n=sum;  //sum=54321
+    while(n)
+    {
+        rem=n%10;
+        a[i++]=rem;  //1 2 3 4 5
+        n=n/10;
+    }
+     n=i;
+    if(n%2==1)   //if input have odd number of digit last digit have not to be processed
+    {
+        last=a[n-1];
+    }
+    for(i=0;i<n;i=i+2)  //alternate digit so increment i by 2
+    {
+        int temp=a[i];
+        a[i]=a[i+1];
+        a[i+1]=temp;
+    }
+    if(n%2==1)
+    {
+        a[n-1]=last;  //if input have odd number of digit, last digit can be added
+    }
+    for(i=0;i<n;i++)
+        printf("%d ",a[i]);
+}

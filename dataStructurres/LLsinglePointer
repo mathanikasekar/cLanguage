@@ -1,0 +1,143 @@
+create,insert,display,length,position,delete
+
+#include<stdio.h>
+#include<malloc.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+struct node *create()
+{
+    int data,d;
+    printf("Enter element");
+    scanf("%d",&data);
+    struct node *first=NULL,*last=NULL;
+    first=(struct node*)malloc(sizeof(struct node));
+    first->data=data;
+    first->next=NULL;
+    last=first;
+    last->next=NULL;
+    printf("Enter element");
+    scanf("%d",&data);
+    while(data)
+    {
+        if(data==-1)
+            break;
+        else
+        {
+        struct node *new=(struct node*)malloc(sizeof(struct node));
+        new->data=data;
+        new->next=NULL;
+        last->next=new;
+        last=new;
+        printf("Enter element");
+        scanf("%d",&data);
+        }
+    }
+    return first;
+}
+struct node *insert(struct node*first,int data,int position)
+{
+    struct node *new=(struct node *)malloc(sizeof(struct node));
+    new->data=data;
+    new->next=NULL;
+    if(position==0)
+    {
+        new->next=first;
+        first=new;
+    }
+    else
+    {
+    int i;
+    struct node*temp=first;
+    for(i=0;i<position-1;i++)
+    {
+
+        temp=temp->next;
+    }
+    new->next=temp->next;
+    temp->next=new;
+    }
+    return first;
+
+}
+int position(struct node *first,int data)
+{
+    int position=0;
+    struct node *temp=first;
+    while(temp!=NULL)
+    {
+        if(temp->data==data)
+        {
+            break;
+        }
+        else
+        {
+            temp=temp->next;
+            position++;
+        }
+    }
+    return position;
+}
+int length(struct node*first)
+{
+    int length=0;
+    while(first!=NULL)
+    {
+        length++;
+        first=first->next;
+    }
+    return length;
+}
+struct node * delete(struct node *first,int deleteValue)
+{
+    struct node * temp=first;
+    int pos=position(first,deleteValue);
+    if(pos==0)
+    {
+        first=temp->next;
+        free(temp);
+    }
+    else
+    {
+        int i;
+        for(i=0;i<pos-1;i++)
+        {
+            temp=temp->next;
+        }
+        struct node *t=temp->next;// node to be deleted
+        temp->next=t->next;
+        t->next=NULL; //releasing link of node to be deleted
+        free(t);
+    }
+    return first;
+
+}
+void display(struct node *first)
+{
+    while(first!=NULL)
+    {
+        printf("%d ",first->data);
+        first=first->next;
+    }
+}
+int main()
+{
+   struct node *first=create();
+   display(first);
+   int insertValue,position;
+   printf("enter elements to be inserted");
+   scanf("%d",&insertValue);
+   printf("enter position");
+   scanf("%d",&position);
+   first=insert(first,insertValue,position);
+   display(first);
+   int deleteValue;
+   printf("Enter element to be deleted");
+   scanf("%d",&deleteValue);
+   first=delete(first,deleteValue);
+   display(first);
+   return 0;
+}

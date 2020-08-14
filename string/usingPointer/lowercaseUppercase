@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <string.h>
+#include <malloc.h>
+int main()
+{
+   char *s=(char *)malloc(sizeof(char));
+    scanf("%[^\n]%*c",s);
+    int i;
+    for(i=0;*(s+i)!='\0';i++)
+    {
+        if(*(s+i)>=97 &&*(s+i)<=120 )
+            printf("%c",*(s+i));
+    }
+    for(i=0;*(s+i)!='\0';i++)
+    {
+        if(*(s+i)>=65 &&*(s+i)<=90 )
+            printf("%c",*(s+i));
+    }
+    return 0;
+}
+Sample Input
+mYsLaTe
+Sample Output
+msaeYLT
+
+// both upper to lower and lower to upper
+#include<stdio.h>
+int main()
+{
+char ch;
+scanf("%c",&ch);
+ch=ch^32;
+printf("%c",ch);
+}
+
+// upper to lower
+#incldue<stdio.h>
+int main()
+{
+char ch;
+scanf("%c",&ch);
+ch=ch|32;
+printf("%c",ch);
+}
+
+//lower to upper
+#incldue<stdio.h>
+int main()
+{
+char ch;
+scanf("%c",&ch);
+ch=ch&(~32);
+printf("%c",ch);
+}
+
+// write a program to convert word to either upper case or lower case
+#include<stdio.h>
+int main()
+{
+ char ch[100],i;
+ scanf("%s",ch);
+ for(i=0;ch[i]!='\0';i++)
+ ch[i]=ch[i]^(32);
+ printf("%s",ch);
+}

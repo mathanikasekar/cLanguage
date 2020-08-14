@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+#include<malloc.h>
+int main()
+{
+    // s original string,s1 copied string
+    char *s=(char *)malloc(sizeof(char)),*s1=(char *)malloc(sizeof(char));
+    scanf("%[^\n]%*c",s);
+    int i;
+    for(i=0;*(s+i)!='\0';i++)
+    {
+        *(s1+i)=*(s+i);
+    }
+    printf("%s",s1);
+    return 0;
+}
