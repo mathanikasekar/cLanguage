@@ -1,0 +1,142 @@
+create
+insert
+display
+length
+position
+
+
+#include<stdio.h>
+#include<malloc.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node * create()
+{
+    int data;
+    printf("Enter element");
+    scanf("%d",&data);
+    struct node *first=(struct node *)malloc(sizeof(struct node));
+    struct node *last;
+    first->data=data;
+    last=first;
+    last->next=NULL;
+    printf("Enter element");
+    scanf("%d",&data);
+    while(data!=-1)
+    {
+         struct node *new=(struct node *)malloc(sizeof(struct node));
+         new->data=data;
+         last->next=new;
+         last=new;
+         last->next=NULL;
+         printf("Enter element");
+         scanf("%d",&data);
+    }
+    last->next=first;
+    return first;
+}
+void display(struct node * first)
+{
+    struct node * temp=first;
+    do
+    {
+        printf("%d ",temp->data);
+        temp=temp->next;
+    }while(temp!=first);
+}
+
+struct node *insert(struct node *first,int data,int pos)
+{
+    struct node *temp=first;
+    struct node *new=(struct node *)malloc(sizeof(struct node));
+    new->data=data;
+    int len=length(first);
+    int i;
+    if(pos==0)
+    {
+        for(i=0;i<len-1;i++)
+        {
+        temp=temp->next;
+        }
+        temp->next=new;
+        new->next=first;
+        first=new;
+    }
+    else if(pos==len)
+    {
+    for(i=0;i<len-1;i++)
+    {
+        temp=temp->next;
+    }
+   // printf("%d ",temp->data);
+    temp->next=new;
+    new->next=first;
+    }
+    else
+    {
+    for(i=0;i<pos-1;i++)
+    {
+        temp=temp->next;
+    }
+    new->next=temp->next;
+    temp->next=new;
+    }
+    return first;
+}
+int position(struct node *first,int data)
+{
+    int pos=0;
+    struct node * temp=first;
+    if(first==NULL)
+        return 0;
+    else
+    {
+    do
+    {
+        if(temp->data==data)
+        {
+            break;
+        }
+        else
+        {
+        temp=temp->next;
+        pos++;
+        }
+
+    }while(first!=temp);
+    }
+    return pos;
+}
+int length(struct node *first)
+{
+    int len=0;
+    struct node * temp=first;
+    if(first==NULL)
+        return 0;
+    else
+    {
+    do
+    {
+        temp=temp->next;
+        len++;
+    }while(first!=temp);
+    }
+    return len;
+}
+int main()
+{
+    struct node *first=NULL;
+    first=create();
+    display(first);
+   // printf("%d ",length(first));
+    int insertValue,position;
+   printf("enter elements to be inserted");
+   scanf("%d",&insertValue);
+   printf("enter position");
+   scanf("%d",&position);
+   first=insert(first,insertValue,position);
+   printf("\n");
+   display(first);
+}

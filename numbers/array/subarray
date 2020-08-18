@@ -33,3 +33,6 @@ int main()
 	printallSubarrays(arr, n);
 	return 0;
 }
+
+
+       }
