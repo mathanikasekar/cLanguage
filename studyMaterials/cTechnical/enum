@@ -1,3 +1,14 @@
 enumeration/enum:
  user defined datatype
- 
+ assign names to the integral constants
+ syn:
+  enum enum name{constant 1,......};
+
+struct:
+ diff datatypes
+ syn:
+  struct structure name{members};
+label:
+label identifies a statement in the code.
+A single statement can have multiple labels. 
+Labels just indicate locations in the code and reaching a label has no effect on the actual execution.
