@@ -1,0 +1,13 @@
+c basics
+header file:
+ file with extension . h
+ <> shld be used(it search in current wrking directory)
+ " " used menas it search in directory if not found thn in file
+ which contains C function declarations and macro definitions shared between several source files.
+ two types:
+ -the files that the programmer writes
+ -the files that comes with your compiler
+preprocessor directives:
+ built-in predefined function or macro
+ that acts as a directive to the compiler
+ it gets executed before the actual C Program is executed.

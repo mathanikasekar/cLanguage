@@ -1,0 +1,42 @@
+TYPES:
+Personal Area Network (PAN)
+ -bluethooth
+ -made of wireless modem, a computer or two, phones, printers, tablets, etc.,
+ -revolves around one person in one building.
+
+Local Area Network (LAN)
+ -short distances
+ -school, laboratory, university campus or office building
+ -(within a building or between a group of two or three buildings in close proximity to each other)
+ -Wireless Local Area Network (WLAN)
+
+Metropolitan Area Network (MAN)
+ -city(kangayam,karur)
+ -large company
+ -larger than LANs but smaller than WANs
+ -entire geographic area (typically a town or city, but sometimes a campus).
+
+Wide Area Network (WAN)
+ -state/country
+ -longer physical distances
+ -connecting all computers together around the world
+Campus Area Network (CAN)
+
+Storage-Area Network (SAN)
+ -connects shared pools of storage devices to several servers,
+ -these types of networks don’t rely on a LAN or WAN
+
+System-Area Network (also known as SAN)
+ -new within the past two decades
+ -provide high-speed connection in server-to-server applications (cluster environments),
+ -storage area networks (called “SANs” as well) and processor-to-processor applications
+
+
+LAN:
+Ethernet:
+ -standard way to connect computers on a network over a wired connection.
+ -multiple devices, such computers, routers, and switches.
+Token ring:
+ -uses a special three-byte frame called a token
+ -Only a host that holds a token can send data,
+ -and tokens are released when receipt of the data is confirmed
