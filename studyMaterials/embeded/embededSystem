@@ -1,0 +1,40 @@
+• Tell us about Pass By Value and Pass By Reference.
+• What do you use the Volatile keyword for?
+• Tell us about the different types of Semaphore.
+• What do you understand by a segmentation fault?
+• What do you mean by Anti Aliasing Filter?
+• Define Mutex.
+• How would you explain what an Inode is?
+• How does virtual memory work?
+• Differentiate between Mutexes and Semaphores.
+• Point out a few disadvantages of embedded systems. 
+
+1. What is an Embedded System?
+Simply speaking, it is an element of the operating system that is a part of the complete device, inclusive of the hardware as well as mechanical parts.
+
+2. Which are the three parts that the Embedded Systems are divided into?
+The embedded system is divided into hardware, software, and real-time operating system.
+
+3. What is the use of Embedded Systems?
+Embedded systems help replace several input buffers, hardware logic gates, output drivers, etc. using a comparatively inexpensive microprocessor. .
+
+4. What do you understand by a microcontroller?
+A microcontroller is basically a self-sufficient system that contains memory, peripherals, as well as a processor, that can be used as an embedded system.
+
+5. What do you mean by interrupt latency?
+Interrupt latency is the duration or the time taken to return from a disrupted service to the regular functioning. It can be improved through writing ISR routines.
+
+6. Tell us something about Watchdog Timer.
+A watchdog timer is an electronic card or device that executes certain special operations after an interval in case something goes wrong with the electronic system.
+
+7. What is semaphore in your opinion?
+A semaphore is a kind of variable or abstract data type. It is usually used for two purposes, namely sharing access to various files, as well as sharing common memory space.
+
+8. What are recursive functions?
+Recursive functions are those functions that make calls to themselves before they render the final output or result. Recursive functions can also be made inline functions if required.
+
+9. What do you know about the memory leak?
+Memory leak is nothing but the accumulation of memory which is not cleared. It may stall the execution of the system in case it reaches a huge value for want of adequate space.
+
+10. What are the benefits of Embedded Systems?
+Embedded systems are inexpensive and are easy to manage. Not only are they smaller in size making them faster to load, but they also deliver quality performance by performing dedicated functions.

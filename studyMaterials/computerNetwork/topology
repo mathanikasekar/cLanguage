@@ -1,0 +1,76 @@
+topology
+Words:
+ in this arrangement
+ dedicated link
+ sender/receiver
+
+topology:
+ -Geometric representation of how the computers are connected to each other
+ -secure/best=star topology   ********************
+
+bus:
+ devices are connected to a single linear cable called trunk/backbone/segment.
+adv:
+ -Easy installation
+ -Less cables required
+d.adv:
+ -Difficultly in fault detection
+ -limited nodes connected to backbone
+
+star:
+ each device in the network is connected to a central device called hub/centre controller
+ no direct comm b/w nodes
+ one device wants to send data to other device,
+ it has to first send the data to hub
+ then the hub transmit that data to the designated device
+adv:
+ -Less expensive
+ -Easier to install
+ -Less amount of cables required
+ -Robust, if one link fails, other links will work just fine.
+ -Easy fault detection
+d.adv:
+ -failure of hub leads to failure of entire s/m
+ -Hub requires more resources and regular maintenance
+
+mesh:
+ each device is connected to every other device
+ dedicated point-to-point link
+ if there is n nodes
+  -each node is connected with (n-1) nodes
+  -total no of links=n(n-1)/2.
+adv:
+ -No data traffic issues
+ -reliable(consistently good in quality or performance)
+ -robust(well against attacks)
+ -secure(unauthorized access is not possible)
+ -easy fault detection
+d.adv:
+ high cable requirement
+ scalability issue(large size)
+
+ring:(repeater**************************)
+ each device is connected with the two devices on either side of it
+ each node has dedicated point to point links
+ If a device wants to send data to another device
+ it sends the data in one direction,
+ each device in ring topology has a repeater,
+ if the received data is intended for other device
+ then repeater forwards this data until the intended device receives it.
+adv:
+ -Easy to install.
+ -Managing/maintanence is easier
+ -can easily add or remove a device
+d.adv:
+ -A link failure can fail the entire network as the signal will not travel forward due to failure.
+ -Data traffic issues
+
+hybrid:
+ combination of 2 topology
+adv:
+ -scalability
+d.adv:
+ -Fault detection is difficult.
+ -Installation is difficult.
+ -Design is complex
+ -maintenance is expensive.
