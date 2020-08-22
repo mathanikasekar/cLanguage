@@ -1,0 +1,21 @@
+Piggybacking:
+ A-source
+ B-destination
+ if source need to send 50 Data
+  A sends 5 at one time say(from 1001 to 1005) to B
+  B sends ACK 1005 to A
+  A sends data 1006 to 1010 with ACK 1005
+  this is called piggybacking.
+STEPS:
+If station X has both data and acknowledgment to send,
+it sends a data frame with the ack field containing the sequence number of the frame to be acknowledged.
+
+If station X has only an acknowledgment to send,
+it waits for a finite period of time to see whether a data frame is available to be sent.
+If a data frame becomes available, then it piggybacks the acknowledgment with it.
+Otherwise, it sends an ACK frame.
+
+If station X has only a data frame to send,
+it adds the last acknowledgment with it.
+The station Y discards all duplicate acknowledgments.
+station X may send the data frame with the ack field containing a bit combination denoting no acknowledgment.

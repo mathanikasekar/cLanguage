@@ -1,0 +1,7 @@
+struct.union
+        structure                                      union
+-kywrd:struct                                      -kywrd:union
+-compiler allocates mem for all member             -compiler alloc mem for largest mem of union
+-altering value of member not affect othr members  -altering value of member AFFECT othr members
+-individual members can be accessed                -only one memeber can be accessed
+-several members can be initialized                -only 1st member can be initialized

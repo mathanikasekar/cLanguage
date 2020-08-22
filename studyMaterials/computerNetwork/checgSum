@@ -1,0 +1,5 @@
+Checksum:
+ value to verify integrity of a file/data transfer.
+ a sum that checks the validity of data.
+ compare two sets of data to make sure they are the same.
+ For example, a basic checksum may simply be the number of bytes in a file

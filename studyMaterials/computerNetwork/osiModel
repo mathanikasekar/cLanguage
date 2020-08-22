@@ -1,0 +1,63 @@
+osi *********"please do not touch steve's pet alligator"*********
+def:
+ -Open System Interconnection
+ -reference model that describes how information from a software application in one computer
+ moves through a physical medium
+ to the software application in another computer
+
+                                physical medium
+COMPUTER A - s/w app - info  --------------------> s/w app - COMPUTER B
+EX:watsap
+ mathu-watsap-hi---->watsap-muhi
+
+ -developed byInternational Organization for Standardization (ISO) in 1984,
+ -architectural model for the inter-computer communications.
+ -7 layers
+ -divides the whole task into seven smaller and manageable tasks.
+ -Each layer is assigned a particular task.
+ -Each layer is self-contained,so that task assigned to each layer can be performed independently.
+
+CHARACTERISTICS:
+ -upper layers and lower layers.
+ -U-responsibilty of host-SPA
+ -D-responsibilty of n/w-PDN
+
+physical layer:
+
+application layer:
+ The application layer is present at the top of the OSI model.
+ It is the layer through which users interact.
+ It provides services to the user.
+Protocols:
+ FTP,HTTP,SMTP,POP,telnet
+
+ ftp-file transfer Protocol
+ http-hypertext transfer Protocol
+ smtp-simple mail transfer Protocol
+ telnet-TELecomunications NETwork.
+ pop-
+
+telnet:
+ TELecomunications NETwork.
+ used for managing the files on the internet
+ Port number of telnet is 23.
+FTP:
+ file transfer protocol.
+ It is the protocol that actually lets us transfer files.
+ It can facilitate this between any two machines using it.
+ But FTP is not just a protocol but it is also a program.
+ promotes sharing of files via remote computers with reliable and efficient data transfer.
+ Port number for FTP is 20 for data and 21 for control.
+SMTP:
+ part of the TCP/IP protocol.
+ Using a process called “store and forward,” SMTP moves your email on and across networks
+ It works closely with Mail Transfer Agent (MTA) to send your communication to the right computer and email inbox.
+ Port number for SMTP is 25.
+SNMP:
+Simple Network Management Protocol.
+It gathers data by polling the devices on
+the network from a management station at fixed or random intervals, requiring
+them to disclose certain information.
+It is a way that servers can share information about their current state,
+and also a channel through which an administrate can modify pre-defined values.
+Port number of SNMP is 161(TCP) and 162(UDP).

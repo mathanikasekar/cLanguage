@@ -1,0 +1,14 @@
+CNbasics
+network:
+ -A network is a collection of devices
+ -connected to one another
+ -to allow the sharing of data/resources.
+ -EX:LAN,WAN
+
+CN def:
+ set of computers connected together capable of sharing resources.
+ -EX:internet
+
+internet:
+ The Internet is a global wide area network that connects computer systems across the world.
+ It includes several high-bandwidth data lines that comprise the Internet "backbone."
