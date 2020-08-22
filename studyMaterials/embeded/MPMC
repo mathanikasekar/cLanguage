@@ -3,7 +3,7 @@ MP/MC
  mc:single chip consist of all pheripherals
 
  processor:
-  process something
+  a machine that process something(do some process)
   four primary functions of a processor-fetch, decode, execute and write back.
   Fetch- receives instructions from program memory from a systems RAM.
   Decode-decide what instruction means
