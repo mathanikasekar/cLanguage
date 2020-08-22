@@ -1,0 +1,43 @@
+tcp/udp
+                   TCP                                            UDP
+ -email                                                    -Media streaming (lost frames are ok)
+                                                            Games,line broacasting
+ -reliable                                                 -unreliable
+ -transmission control protocol                            -User Datagram Protocol
+ -connection oriented                                      -conn less
+ -speed slow                                               -fast
+ -error check,makes error recovery                         -error check,DISCARD erroreneous packets
+ -have ack                                                 -no attacks
+ -heavy weight protocol(3packets for socket connection)    -less weight protocol
+ -3 way handshaking mechanism                              -no handshake mechanism
+
+ -header size=20 bytes                                     -header size=8 bytes
+
+TCP:
+ -connection establishement,maintainence(until application programs at each end have finished exchanging messages)
+ -break data into PACKETS
+ -sends/receive packets
+
+SYN-initiate and establish a connection.
+   helps to synchronize sequence numbers between devices.
+ACK-confirm that other side received the SYN.
+ACK/SYN-SYN message from local device and ACK of the earlier packet
+FIN-terminate conn
+
+STEPS:
+Step 1: In the first step, the client establishes a connection with a server.
+        It sends a segment with SYN and informs the server about the client should start communication,
+        and with what should be its sequence number.
+Step 2: In this step server responds to the client request with SYN-ACK signal set.
+        ACK helps you to signify the response of segment that is received and
+        SYN signifies what sequence number it should able to start with the segments.
+Step 3: In this final step, the client acknowledges the response of the Server,
+        and they both create a stable connection will begin the actual data transfer process.
+UDP:
+
+
+Checksum:
+ value to verify integrity of a file/data transfer.
+ a sum that checks the validity of data.
+ compare two sets of data to make sure they are the same.
+ For example, a basic checksum may simply be the number of bytes in a file
