@@ -1,0 +1,28 @@
+#include<stdio.h>
+int oddDivisors(int a,int b)
+{
+    int count=0,divisors=0;
+    int i,j;
+
+    for(i=a;i<=b;i++) //range of numbers
+    {
+        divisors=0;
+        for(j=2;j<i;j++) //factors
+        {
+        if(i%j==0)
+        {
+            divisors++;
+        }
+        }
+        if(divisors%2!=0) //to check factors are odd or even
+        {
+            count++;
+        }
+    }
+    return count;
+}
+int main()
+{
+    int a=10,b=20;
+   printf("%d",oddDivisors(a,b));
+}
