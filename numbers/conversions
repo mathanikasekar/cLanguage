@@ -1,0 +1,21 @@
+binaryToDecimal:
+
+#include<stdio.h>
+int toDecimal(int binary)
+{
+    int decimal=0,rem=0,mul=1;
+    while(binary)
+    {
+        rem=binary%10;
+        decimal=decimal+rem*mul;
+        binary=binary/10;
+        mul=mul*2;
+    }
+    return decimal;
+}
+int main()
+{
+    int binary=1111;
+    printf("%d",toDecimal(binary));
+    return 0;
+}
