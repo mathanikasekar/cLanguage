@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+   char s[10]="bacddacbe"; //both sorted and unsorted string can be given as ip
+   char alpha[100]={0};
+   int count[100]={0};
+   int i,l=10,j,k;
+   for(i=0;i<l;i++)
+   {
+       for(j=i+1;j<l;)
+       {
+       if(s[i]==s[j])
+       {
+           for(k=j;k<l;k++)
+           s[k]=s[k+1];
+           l--;
+       }
+       else
+        j++;
+       }
+   }
+    printf("withoutDuplication %s\n",s);
+    return 0;
+}

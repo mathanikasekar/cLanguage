@@ -1,4 +1,4 @@
-binaryToDecimal:
+binaryToDecimal:(bin to hex-same as dec while printing put %lx instead of %d)
 
 #include<stdio.h>
 int toDecimal(int binary)
@@ -15,7 +15,29 @@ int toDecimal(int binary)
 }
 int main()
 {
-    int binary=1111;
+    int binary=1111;  //op=15
     printf("%d",toDecimal(binary));
+    return 0;
+}
+
+decimal to octal:
+
+#include<stdio.h>
+int toOctal(int decimal)
+{
+    int octal=0,rem=0,pv=1;
+    while(decimal)
+    {
+        rem=decimal%8;
+        octal=octal+rem*pv;
+        decimal=decimal/8;
+        pv=pv*10;
+    }
+    return octal;
+}
+int main()
+{
+    int decimal=11;   //o/p=13
+    printf("%d",toOctal(decimal));
     return 0;
 }
