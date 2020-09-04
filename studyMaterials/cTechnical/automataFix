@@ -1,0 +1,9686 @@
+Automata Fix Original
+Test Summary
+No. of Sections: 1 No. of Questions: 74
+Total Duration: 100 min
+
+Section 1 - Automata Fix
+
+Section Summary No. of Questions: 74 Duration: 100 min
+
+
+
+Additional Instructions:
+None
+
+
+Q1.	1. Lisa always forgets her birthday which is on the 5 th July
+
+In order to help her, we have a class BirthDay having a method checkBirthDay(String month,it day) which takes day and month as inputs and return 1Yesif it is her birthday else return No
+
+The method compiles fine but fails to return the desired result for some cases Your task is to fix the code so that it passes all test cases.
+
+
+Test case 1:
+
+Input:
+July 13
+
+Expected return value:
+No
+
+
+Test case 2:
+
+Input:
+April 3
+
+Expcted return value:
+No
+
+
+PROGRAM
+Public class BirthDay
+{
+Public static int checkBirthdayDay(String month, int day)
+{
+if(!(month==”July”)||(day!=5)) return 1;
+else return 0;
+}
+}
+
+
+Sample Input	Sample Output
+
+
+july 5
+
+Yes
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q2.	1. The method removeElement(int arr[],int element) of class ShortArray takes an array arr as an input.It is supposed to return an array removing the integer if it is present in the input array arr. If the given integer is not in the array, then this function should return the input array arr.
+
+The function compiles successfully but fails to return the desired result due to logical erros Your task is to debug the program to pass all the test cases
+Assumptions
+The input index is always a non negative integer.
+Zero based indexing is followed to access array elements.
+Test case 1: Input:
+[1,2,3,4,5,6,7,8,9],3
+
+Expected return value:
+[1,2,3,5,6,7,8,9]
+
+Test case 2:
+
+Input:
+[11,23,12,34,54,32],6
+
+Expcted return value:
+[11,23,12,34,54,32]
+
+
+PROGRAM:
+
+public class ShortArray{
+public static int[] removeElement(int arr[],int n,int x){ if (arr[n-1] == x)
+return (n-1);
+int prev = arr[n-1], i;
+for (i=n-2; i>=0 && arr[i]!=x; i--)
+{
+int curr = arr[i]; arr[i] = prev; prev = curr;
+}
+if (i < 0) return 0; arr[i] = prev;
+
+return (n-1); }
+}
+
+
+
+Sample Input	Sample Output
+
+
+5
+1 2 3 4 5
+3
+
+1 2 4 5
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q3.	1. You are given a predefined class Point containing a collection of methods to perform some basic operations.
+
+You will have to implement the function isTriangle(Point p1,Point p2,Point p3) which accepts 3 points as input and checks whether the given 3 points form the vertices of a triangle
+
+If they form a triangle the function returns 1 else it returns 0
+
+You are supposed to use Point structure and associated methods for the task.
+
+
+
+PROGRAM:
+
+public class Triangle
+{
+public static int isTriangle(point p1,point p2,point p3)
+{
+//write your code here return 0;
+}
+}
+
+
+
+Sample Input	Sample Output
+
+4 5 6	Valid
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+
+Q4.
+
+
+Convert Binary to Decimal by using the existing function. Find the logical error given in the code.
+void binarytodecimal(number)
+{
+
+int dval=0, base=1, rem; while(number > 1)
+{
+rem = number % 10;
+dval = dval + rem * base; number = number / 10; base = base * 2;
+}
+return dval;
+}
+void main()
+{
+int num; scanf(“%d”, &num);
+printf(“%d”, binarytodecimal(num);
+}
+
+Sample Input	Sample Output
+
+1011	11
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q5.	You are required to fix all logical errors in the given code. You can click on the Compile & Run anytime to check the compilation/execution status of the program. You can use System.out.println to debug your code. The submitted code should be logically/syntactically correct and pass all testcases. Do not write the main() function as it is not required.
+
+The function binarySearch(int* arr, int n, int x) performs the binary search algorithm to look for an element target in the input array arr of length len . If the element if found, the function returns the index of target in arr if it is not found the function returns -1.
+The function seems to work well but goes into an infinite loop for some test cases. Your task is to fix the program so that it passes all the test cases.
+Note: If there is a Time Limit Exceeded error , it can be due to an infinite loop.
+
+
+#include <stdio.h>
+int binarySearch(int arr[], int l, int r, int x)
+{
+while (i!= r) {
+int m = l + (r - l) / 2; if (arr[m] == x)
+return m;
+if (arr[m] < x) l = m + 1;
+else
+r = m - 1;
+}
+return -1;
+
+}
+int main(void)
+{
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++){ scanf("%d",&arr[i]);
+}
+int x; scanf("%d",&x);
+int result = binarySearch(arr, 0, n - 1, x); (result == -1) ? printf("Element is not present"
+" in array")
+: printf("Element is present at " "index %d",
+result);
+return 0;
+}
+
+
+Sample Input	Sample Output
+
+
+5
+1 2 3 4 5
+5
+
+Element is present at index 4
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q6.	You are required to fix all logical errors in the given code. You can click on the Compile & Run anytime to check the compilation/execution status of the program. You can use System.out.println to debug your code. The submitted code should be logically/syntactically correct and pass all testcases. Do not write the main() function as it is not required.
+
+The function/method detectAndRemoveLoop accepts an argument – list, a singly linked list of integers. It is supposed to check whether the list contains a loop or not . If a loop is present then it removes the loop by calling another function removeLoop.
+The function/method detectAndRemoveLoop compiles successfully but fails to return the desired result for the test cases. Your task is to fix the code so that it passes all the test cases.
+Note
+The function/method detectAndRemoveLoop uses other function/method removeLoop that accepts two arguments – loop_node, representing the loop node in the linked list and head, representing the head of the linked list. If a loop exists then there will be only one loop node.
+
+HelperCode :
+
+#include<stdio.h> #include<stdlib.h> struct Node {
+int data;
+struct Node* next;
+};
+void removeLoop(struct Node*, struct Node*); int detectAndRemoveLoop(struct Node* list)
+{
+struct Node *slow_p = list, *fast_p = list; while (slow_p && fast_p && fast_p->next) {
+slow_p = slow_p->next; fast_p = fast_p->next->next; if (slow_p == fast_p) {
+removeLoop(slow_p, list); return 1;
+}
+}
+return 0;
+
+}
+void removeLoop(struct Node* loop_node, struct Node* head)
+{
+struct Node* ptr1; struct Node* ptr2; ptr1 = head;
+while (1) {
+ptr2 = loop_node;
+while (ptr2->next != loop_node || ptr2->next != ptr1) ptr2 = ptr2->next;
+if (ptr2->next == ptr1) break;
+ptr1 = ptr1->next;
+}
+ptr2->next = NULL;
+}
+void printList(struct Node* node)
+{
+while (node != NULL) { printf("%d ",node->data); node = node->next;
+}
+}
+
+struct Node* newNode(int key)
+{
+struct Node* temp;
+temp = (struct Node*)malloc(sizeof(struct Node)); temp->data = key;
+temp->next = NULL; return temp;
+}
+int main()
+{
+struct Node* head = newNode(50); int n;
+head->next = newNode(20);
+head->next->next = newNode(15);
+head->next->next->next = newNode(4);
+head->next->next->next->next = newNode(10);
+head->next->next->next->next->next = head->next->next; detectAndRemoveLoop(head);
+printList(head); return 0;
+}
+
+
+Sample Input	Sample Output
+
+50 20 15 4 10
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q7.	A war is happening. The enemy battalion has planted a bomb in your bunker. Your spy has intercepted a message from the enemy. It contains a list with N numbers and a key (K). The numbers are used to construct a sequence that will defuse the bomb. According to your spy, the logic to extract the sequence from the message is to replace each number with the sum of the next K numbers, if the value of K is positive. If the value of K is negative, the number is replaced by the sum of the previous K numbers. The series of numbers is considered in a cyclic fashion for the last K numbers.
+
+Write an algorithm to find the sequence that will defuse the bomb
+Input
+The input to the function/method consists of three arguments; size, an integer representing the size of the list (N);
+key, an integer representing the key (K); message, representing the list of integers.
+
+Output
+Return a list of integers representing the sequence that will defuse the bomb
+
+Constraints
+0 < size <= 10^5
+-10^6 <= message[i] <= 10^6 0 <= i < size
+
+Example Input:
+size = 4
+key= 3
+message = [4, 2, -5, 11]
+
+Output:
+[8, 10, 17, 1]
+
+Explanation:
+Stepl: [2, -5, 11] => 8
+Step2: [-5, 11, 4] => 10
+Step3: [11, 4, 2] => 17
+Step4: [4, 2, -5] => 1 \
+So, he output is [8, 10, 17, 1]
+
+
+
+
+
+Sample Input	Sample Output
+
+4
+3
+4 2 -5 11
+
+8 10 17 1
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q8.	An increment matrix is one whose elements are the incremented values of an initial value s
+For example, if the initial value is "s = 1" and the dimensions are "m = 3" and "n = 3," then the increment matrix will be: 1 2 3
+4 5 6
+7 8 9
+Write an algorithm to multiply the original increment matrix with its transpose . Complete the function/method generateMatrix(int m, int n, it s) Input
+The input to the function/method consists of three arguments:
+firstValue, a positive integer representing the initial value (s);
+rows, a positive integer representing the number of rows in the increment matrix (m); columns, a positive integer representing the number of columns in the increment matrix(n);
+
+Output
+Return a two-dimensional matrix of integers obtained from the multiplication of the increment matrix and its transpose.
+
+Example
+Input:
+firstValue = 1 rows=3 columns=3
+
+Output:
+14 32 50
+32 77 122
+50 122 194
+
+Explanation
+For firstValue =1, rows=3 and columns=3, the increment matrix will bw 1 2 3
+4 5 6
+7 8 9
+And the transpose matrix will be 1 4 7
+2 5 8
+3 6 9
+
+Thus, the resultant multiplication matrix will be 14 32 50
+32 77 122
+50 122 194
+
+
+
+
+Sample Input	Sample Output
+
+
+1 3 3
+
+14 32 50
+32 77 122
+50 122 194
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q9.	Design a way to sort a list of positive integers in descending order according to the frequency of the elements. The elements with higher frequency come before those with lower frequency. Elements with the same frequency come the order in which they appear in the given list.
+Input
+The input to the function/method consists of two arguments:
+size, the number of elements in the list; arr, a list of positive integers.
+
+Output
+Return a list of positive integers sorted according to the frequency of elements present in arr.
+
+Example Input Size=19
+Arr=[1,2,2,3,3,3,4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 8, 9,10]
+
+Output
+[5, 5, 5, 5, 3, 3, 3, 6, 6, 6, 2, 2, 4, 4, 1, 7, 8, 9, 10]
+
+Program :
+
+#include<stdio.h> int main()
+{
+int n,index,uniqIndex=0,compare,itr; scanf("%d",&n);
+int arr[n],uniq[n],count[n],flag[n]; for(index=0;index<n;index++)
+{
+scanf("%d",&arr[index]); flag[index]=0;
+}
+for(index=0;index<n;index++)
+{
+if(flag[index]==0)
+{
+
+int c=1; for(compare=index+1;compare<n;compare++)
+{
+if(arr[index]!=arr[compare])
+{
+flag[compare]=1; c++;
+}
+}
+uniq[uniqIndex]=arr[index]; count[uniqIndex]=c; uniqIndex++;
+}
+}
+for(itr=1;itr<=uniqIndex-1;itr++)
+{
+for(index=1;index<uniqIndex;index++)
+{
+if(count[index-1] < count[index])
+{
+int temp=uniq[index]; uniq[index]=uniq[index-1]; uniq[index-1]=temp; temp=count[index]; count[index]=count[index-1]; count[index-1]=temp;
+}
+}
+}
+for(index=0;index<uniqIndex;index++)
+{
+for(itr=1;itr<=count[index];itr++) printf("%d ",uniq[index]);
+}
+return 0;
+}
+
+
+
+Sample Input	Sample Output
+
+
+19
+1 2 2 3 3 3 4 4 5 5 5 5 6 6 6 7 8 9 10
+
+5 5 5 5 3 3 3 6 6 6 2 2 4 4 1 7 8 9 10
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q10.	Mr. Jason has captured your friend and has a collar around his neck. He has locked the collar with a given “locking key". Now it can only be opened with an “unlocking key”. Your friend sees the locking key but he does not know how to find the unlocking key. You can calculate the unlocking key if you have the locking key, because the unlocking key will be the smallest (in magnitude) permutation of the digits of the locking key and will never start with zero.
+
+Help your friend write an algorithm that outputs the unlocking key by taking key as an input
+Input
+The input to the function/method consists of an argument lockingkey, an integer representing the locking key.
+
+Output
+Return an integer representing the unlocking key
+
+Constraints
+-10^7 <= lockingkeys <= 10^7
+
+Note
+A possible answer exists for each input.
+
+TestCase 1:
+Input:
+310
+Expected Output:
+103
+
+TestCase 2:
+Input:
+918
+Expected Output:
+189
+
+
+
+
+Sample Input	Sample Output
+
+62154	12456
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q11.	The function/method mergeLists accepts two arguments - listl and list2, representing two singly linked lists whose elements are sorted in ascending order of their values. This function is supposed to return a linked list formed by merging list] and list2 such that the linked list remains sorted.
+Complete the function mergeLists
+
+Sample Input	Sample Output
+
+6	5			1 2 3 4 5 6 7 8 9 10 11
+1	3	5 7 9 11
+2	4	6 8 10
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q12.	The function/method rotateList accepts three arguments as inputs - an integer size, an integer k and a node list_head representing size of the list, the rotation index value and the head node of the linked list, respectively.
+It is supposed to rotate the linked list in the counterclockwise direction from the kth node
+The function/method compiles successfully but fails to return the desired result for some test cases. Your task is to fix the code so that it passes all the test cases
+Note
+0<= k <= size
+
+
+
+Sample Input	Sample Output
+
+
+6 2
+1 2 3 4 5 6
+
+1 6 5 4 3 2
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q13.	You have to encrypt a non-empty string phrase. The encryption adds a "cyclic shift" to each letter. The value of this "cyclic shift" is determined by the position of the letter from the end of its word. The shift value for each letter of a word is its index value (starting from 0) from the right-most character of the word.
+
+For example, the shift values in "yum feed" are:
+yum: m->0, u->1, y->2;
+feed. d->0, e->1, e->2, f->3
+which gives the encryption: avm igfd.
+Here, adding the shift with value 0 to letter ‘m’ gives ‘m’ + 0 = m; value 1 to ‘u’ gives ‘u’ + 1 = v, value 2 to 'y’ gives ‘y’ + 2 = a and so on. Note that upon reaching the end of the alphabet, the shift wraps around to the beginning (i.e., the shift value for ‘y’ as shown above is ‘a’) Input
+The input to the function/method consists of a string
+
+Output
+Return the encrypted string
+
+
+Note
+Assume that the input string contains a single space separating a set of words and that a word consists only of lower case letters.
+
+Complete the function/method char* cyclicEncrypt(char *str) to get the desired output
+
+
+
+Sample Input	Sample Output
+
+yum	avm
+
+
+
+Sample Input	Sample Output
+
+feed	igfd
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q14.	The function matrixsum(int **matrix,int m,int n) is supposed to return the sum of elements of the input array matrix having m rows and n columns. The logic is provided. But it is not giving the desired output due to a logical error. Find the logical error and fix it.
+
+Program :
+
+#include<stdio.h> #define SIZE 100
+int matrixsum(int row,int col)
+{
+int sum=0;
+int arr[row][col]; for(int i=0;i<row;i++){ for(int j=0;j<col;j++)
+{
+scanf("%d",&arr[i][j]);
+}
+}
+for(int i=0;i<col;i++){ for(int j=0;j<i;j++){
+sum=sum+arr[i][j];
+}
+}
+return sum;
+}
+int main()
+{
+
+int m,n;
+scanf("%d %d",&m,&n);
+
+
+printf("%d",matrixsum(m,n));
+}
+
+
+Sample Input	Sample Output
+
+3 3	45
+1 2 3
+4 5 6
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q15.	The Function arrayReverse(int *arr,int len) accepts an array arr of length len(len >=0) as an argument.The function is expected to reverse the elements of the input array in-place.
+For example, if the input array arr is {20,30,10,40,50} the function is expected to return{50,40,10,30,20}
+The function compiles successfully but fails to return the desired result due to logical errors
+
+int arrayReverse(int *arr,int len){ int i,temp,originallen=len; for(i=0;i<originallen;i++){ temp=arr[len-1];
+arr[len-1]=arr[i]; arr[i]=temp;
+len-=1;
+}
+Return arr;
+}
+
+
+Input Format
+
+First Line of input contains the integer n - size of the array Second line contains n - space seperated integers
+Sample Input	Sample Output
+
+
+8
+1 2 3 4 5 6 7 8
+
+8 7 6 5 4 3 2 1
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q16.	The function findMinElement(int *arr1,int len1,int *arr2,int len2) accepts two integer arrays arr1,arr2 of length len1,len2 respectively.
+It is supposed to return the smallest element in both the input arrays.
+Another function sortArray(int *arr,int len) sorts the input array arr of length len in ascending order and returns the sorted array.
+Your task is to use sortArray(int *arr,int len) function and complete the code in findMinElement(int *arr1,int len1,int *arr2,int len2) so that it passes all test cases.
+
+
+Sample Input	Sample Output
+
+5	2
+4 6 2 3 9
+8 4 3 6 2
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q17.	The function patternPrint(int n) supposed to print n numberof lines in the following pattern For n=4 the pattern should be:
+1
+1 1
+1 1 1
+1 1 1 1
+
+Complete the function patternPrint(int n) to get the desired output
+
+PROGRAM
+
+#include<stdio.h>
+void patternPrint(int num)
+{
+// write here
+}
+int main()
+{
+int n; scanf("%d",&n); patternPrint(n);
+}
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+1
+11
+111
+
+Q18.	The method countElement(int arr[],int n) of class ElementCount is supposed to return the number of elements in the input array arr which are greater than twice the input number n . find the logical error in the function countElement(int arr[], int n) and fix it
+
+#include<stdio.h>
+int countElement(int arr[],int ele,int len)
+{
+int count=0;
+for(int i=0;i<len;i++)
+{
+if(arr[i]>ele)
+{
+count++;
+}
+}
+return count;
+
+}
+int main()
+{
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++)
+{
+scanf("%d ",&arr[i]);
+}
+int val; scanf("%d",&val);
+printf("%d",countElement(arr,val,n));
+}
+
+
+Sample Input	Sample Output
+
+5	1
+1 2 3 4 5
+2
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q19.	This method countOccurance (int arr[], int val, int n) is supposed to return the count of occurrences of a number value in the input array arr. The function compiles successfully but fails to return the desired result due to logical errors.
+
+Note :
+val - the value for which we require frequency
+n - refers to the size of the array
+
+Your task is to debug the program to pass all test cases.
+
+#include<stdio.h>
+int countOccurences(int arr[],int val,int n)
+{
+int count=0;
+for(int i=0;i<n;i++)
+{
+if(arr[n]==val){ count++;
+}
+}
+return count;
+}
+int main(){ int n;
+scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++)
+{
+scanf("%d ",&arr[i]);
+}
+int val; scanf("%d",&val);
+printf("%d",countOccurences(arr,val,n));
+}
+
+
+Sample Input	Sample Output
+
+5	3
+1 2 2 2 3
+2
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q20.	Below is a snippet to check whether a given array is a Palindrome or Not Palindrome. Complete palindrome(int arr[], int n) function to get the desired output.
+
+#include <stdio.h>
+void palindrome(int arr[], int n)
+{
+
+}
+int main()
+{
+int n;
+
+scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++){ scanf("%d",&arr[i]);
+}
+palindrome(arr, n); return 0;
+}
+
+
+Sample Input	Sample Output
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q21.	calculate the nth amstrong number.
+Fill the logic in the provided function isAmstrong(int x) with the help of power(int x,unsigned int y) and power(int x,unsigned int y)
+
+#include <stdio.h>
+int power(int x, unsigned int y)
+{
+if (y == 0) return 1;
+if (y % 2 == 0)
+return power(x, y / 2) * power(x, y / 2); return x * power(x, y / 2) * power(x, y / 2);
+}
+int order(int x)
+{
+int n = 0; while (x) { n++;
+x = x / 10;
+}
+return n;
+}
+int isArmstrong(int x)
+{
+// write code here
+}
+int main()
+{
+int x; scanf("%d",&x);
+if (isArmstrong(x) == 1) printf("True\n");
+else printf("False\n");
+
+return 0;
+}
+
+
+Sample Input	Sample Output
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q22.	Check whether the below program print the below pattern. If not rectify the program in the editor below.
+
+Input: 3 Output:
+1111
+222
+33
+
+void main()
+{
+int i, j, n; scanf(“%d”, &n); for(i = 1; i<n; i++)
+{
+for(j = 1; j<n; j++)
+{
+printf(“%d”, i);
+}
+printf(“\n”);
+}
+}
+
+
+Sample Input	Sample Output
+
+3	1111
+222
+33
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q23.	complete the main function to get the desired output
+
+#include<stdio.h> int main(void)
+{
+// code here
+}
+
+
+
+Sample Input	Sample Output
+
+This is a "buggy" program
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q24.	Find the gcd of two numbers. The entire code is given below with logical errors.
+Correct it.
+
+
+#include <stdio.h> int gcd(int a, int b)
+{
+if (b == 0) return a;
+return gcd(a % b,b%a);
+}
+int main()
+{
+int a,b;
+scanf("%d %d",&a,&b);
+printf("GCD of %d and %d is %d ", a, b, gcd(a, b)); return 0;
+}
+
+
+Sample Input	Sample Output
+
+10 5	GCD of 10 and 5 is 5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q25.	Find the sum of first n natural numbers. Find the logical error in findSum(int n) and fix it
+
+#include<stdio.h> int findSum(int n)
+{
+int sum = 0;
+for (int x=1; x<=n; x++) sum = sum + n;
+return sum;
+}
+int main()
+{
+int n; scanf("%d",&n);
+printf("%d",findSum(n)); return 0;
+}
+
+
+Sample Input	Sample Output
+
+5	15
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q26.	Find the syntax error in the below code without modifying the logic.
+
+#include<stdio.h> int main()
+{
+float x = 1.1; switch (x)
+{
+case 1: printf("Choice is 1"); break;
+default: printf("Invalid choice"); break;
+}
+return 0;
+}
+
+Sample Input	Sample Output
+
+Choice is 1
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q27.	Given two integers A and B. The task is to count how many numbers in the interval [ A, B ] have an odd number of divisors. Complete logic is provided in the function OddDivCount(int a,int b) , find the logical error and fix it
+
+Examples:
+
+Input : A = 1, B = 10
+Output : 3
+
+Input : A = 5, B = 15
+Output : 1
+
+
+#include<stdio.h>
+int OddDivCount(int a, int b)
+{
+int res = 0;
+for (int i = a; i <= b; ++i) { int divCount = 0;
+for (int j = 1; j <= b; ++j) { if (i % j == 0) {
+++divCount;
+}
+}
+if (divCount % 2) {
+++res;
+}
+}
+return res;
+}
+int main()
+{
+int a, b; printf("%d",OddDivCount(a,b));
+return 0;
+}
+
+
+Sample Input	Sample Output
+
+10 20	1
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q28.	Print "yes" if the given number is a prime number else "No". Complete logic is provided in the function isprime(int num) , Find the logical error and fix it
+
+int isprime(int num)
+{
+int i;
+int isprime = 1;
+for(i = 1; i <= num; i++)
+{
+if(num % i == 0)
+{
+isprime = 0; break;
+}
+}
+return isprime;
+}
+int main() int n;
+scanf("%d",&n);
+if(isprime(n)){
+printf("Yes");
+}
+else{ printf("No");
+}
+
+}
+
+
+Sample Input	Sample Output
+
+13	Yes
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q29.	swap all the odd bits into even bits and vice versa. swapBits(unsigned int x){} function has a logical error , find and fix it
+
+#include <stdio.h>
+unsigned int swapBits(unsigned int x)
+{
+unsigned int even_bits = x & 0xAAAAAAAA; unsigned int odd_bits = x & 0x55555555; even_bits <<= 1;
+odd_bits <<= 1;
+return (even_bits | odd_bits);
+}
+int main()
+{
+unsigned int x; scanf("%u",&x);
+printf("%u ", swapBits(x)); return 0;
+}
+
+
+Sample Input	Sample Output
+
+23	43
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q30.	The following snippet has some compilation error. Rectify it.
+
+#include<stdio.h> int main(void)
+{
+printf("This is a \"buggy\" program\n"); return 0;
+}
+
+
+
+Sample Input	Sample Output
+
+This is a "buggy" program
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q31.	The function getarraysum(int * arr,int len)is supported to calculation
+and return the sum of elements of the input array arr of length len(len>0) complete the function getarraysum(int *arr, int len) to get the desired output
+
+
+int getarraysum(int *arr,int len)
+{
+
+}
+
+
+Sample Input	Sample Output
+
+5	15
+1 2 3 4 5
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q32.	The snippet below is supposed to find the maximum of three integers and return maximum of the three integers.
+The function compiles successfully but fails to return the desired result due to logical errors.
+
+
+#include<stdio.h> int main()
+{
+int num1, num2, num3;
+scanf("%d %d %d", &num1,&num2,&num3); if ((num1 > num2) && (num1 > num3))
+{
+printf("%d", num1);
+}
+else if(num2>num3)
+{
+printf("%d", num2);
+}
+else
+{
+printf("%d", num3);
+}
+return 0;
+}
+
+
+Sample Input	Sample Output
+
+3 8 5	8
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q33.	Write the remaining piece of code to find the nth fibinocci series . Find the logical error in the function fib(int n) and fix it
+
+#include <stdio.h> int fib(int n)
+{
+if (n <= 1) return n;
+return fib(n - 2) + fib(n - 2);
+}
+int main()
+{
+int n ; scanf("%d",&n);
+printf("%d", fib(n)); getchar();
+return 0;
+}
+
+
+Sample Input	Sample Output
+
+6	8
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q34.	Sort By Frequency
+Design a way to sort of list of positive integers in the descending order according to frequency of elements. The elements with integers with higher frequency come before with lower frequency elements with same frequency come in the same order as they appear the values. Complete int * frequencySortArray( int
+*arr,int size) to get the desired output. For example Input1,2,2,3,3,3,4,4,5,5,5,5,6,6,6,7,8,9,10)
+Output: (5,5,5,5,3,3,3,6,6,6,2,2,4,4,1,7,8,9,10)
+Useful Commands:
+The length method can help in returning the length of the array arr. Usage- int len - arr.length;
+The following command can be used to declare an array of length len. int resultnew int[len];
+
+
+Input Format
+
+Input contains the array size and the values
+
+Output Format
+
+Print the altered array
+
+Constraints
+
+1 <= size <= 1000
+
+Sample Input	Sample Output
+
+
+13
+1 1 2 2 2 3 4 4 5 5 5 5 5
+
+5 5 5 5 5 2 2 2 1 1 4 4 3
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q35.	A integer Array is given . You need to find the maximum sum contiguous subset.
+
+
+Sample Input	Sample Output
+
+6	11
+5 6 0 -6 5 -8
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q36.	A ternary search tree is defined as a ternary tree in which a search, proceed character by character, compares the current character in the search string with the character at the current node if the search character is lexicographically larger , the search goes to the right child. When the search character is equal, the search goes to the middle child and proceeds to the next character in the search string. For example, ternary search tree for strings cat, cats, up, bug.
+The function/method insertIntoTernaryTree accepts three arguments – tree representing a ternary tree, inputStr, a String representing the index of the current character in inputStr. The function/method is supposed to return the ternary tree node after inserting the word into the tree. Complete the function insertIntoTernaryTree.
+
+PROGRAM :
+
+#include <stdio.h> #include <stdlib.h> #define MAX 50 struct Node
+{
+
+char data;
+unsigned isEndOfString: 1; struct Node *left, *eq, *right;
+};
+struct Node* newNode(char data)
+{
+struct Node* temp = (struct Node*) malloc(sizeof( struct Node )); temp->data = data;
+temp->isEndOfString = 0;
+temp->left = temp->eq = temp->right = NULL; return temp;
+}
+void insert(struct Node** root, char *word)
+{
+// code here
+}
+void traverseTSTUtil(struct Node* root, char* buffer, int depth)
+{
+if (root)
+{
+traverseTSTUtil(root->left, buffer, depth); buffer[depth] = root->data;
+if (root->isEndOfString)
+{
+buffer[depth+1] = '\0'; printf( "%s\n", buffer);
+}
+traverseTSTUtil(root->eq, buffer, depth + 1); traverseTSTUtil(root->right, buffer, depth);
+}
+}
+void traverseTST(struct Node* root)
+{
+char buffer[MAX]; traverseTSTUtil(root, buffer, 0);
+}
+int searchTST(struct Node *root, char *word)
+{
+if (!root)
+return 0;
+
+if (*word < (root)->data)
+return searchTST(root->left, word);
+
+else if (*word > (root)->data)
+return searchTST(root->right, word);
+
+else
+{
+if (*(word+1) == '\0')
+return root->isEndOfString;
+
+return searchTST(root->eq, word+1);
+}
+}
+int main()
+{
+struct Node *root = NULL;
+
+insert(&root, "cat"); insert(&root, "cats"); insert(&root, "up"); insert(&root, "bug");
+
+printf("Following is traversal of ternary search tree\n"); traverseTST(root);
+
+printf("\nFollowing are search results for cats, bu and cat respectively\n"); searchTST(root, "cats")? printf("Found\n"): printf("Not Found\n"); searchTST(root, "bu")? printf("Found\n"): printf("Not Found\n"); searchTST(root, "cat")? printf("Found\n"): printf("Not Found\n");
+
+return 0;
+}
+
+
+Sample Input	Sample Output
+
+Following is traversal of ternary search tree bug
+cat
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q37.	Below is the pattern . In the editor, partial code has been given . Find the logical error and fix it in the function PrintPattern() in order to display the following pattern.
+
+input : 4
+output :
+
+1
+2*2
+3*3*3
+4*4*4*4
+
+4*4*4*4
+3*3*3
+2*2
+1
+
+#include<stdio.h>
+int PrintPattern(int num)
+{
+int i,j;
+for (i=1;i<=num;i++) { for (j=1;j<=num;j++) { if(j<i)
+printf("%d*",i); else printf("%d",i);
+}
+printf(" \n");
+}
+for (i=num;i>=1;i--) { for (j=1;j<=num;j++) { if(j<i)
+printf("%d*",i); else printf("%d",i);
+}
+printf(" \n");
+}
+}
+int main() { int num;
+scanf("%d",&num); PrintPattern(num); return 0;
+}
+
+
+Sample Input	Sample Output
+
+
+3
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+1
+2*2
+3*3*3
+
+
+Q38.	Below is the Pyramid pattern . Entire snippet is provided and there exist one logical error in a single line . Find the line and rectify it.
+Take the below snippet as a reference input :
+5
+
+output :
+
+*
+* * *
+* * * * *
+* * * * * * *
+* * * * * * * * *
+
+#include<stdio.h>
+int PatternPyramid(int rows)
+{
+int i,space,k=0;
+for(i=1; i<=rows; ++i, k=0)
+{
+for(space=1; space<=rows; ++space)
+{
+printf(" ");
+}
+while(k != 2*i-1)
+{
+printf("* "); k++;
+}
+printf("\n");
+}
+}
+int main()
+{
+int rows; scanf("%d",&rows); PatternPyramid(rows); return 0;
+}
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: 50 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q39.	Complete function/method printPattern(int r) to get the desired output .
+
+#include <stdio.h>
+
+*
+* * *
+* * * * *
+
+void printPattern(int r)
+{
+/ code here
+}
+int main()
+{
+int n; scanf("%d",&n); printPattern(n); return 0;
+}
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+2*2
+1
+1
+
+
+Q40.	complete the function int evenmultiplication(int size,int* list) to find the product of all the even numbers in a array.
+
+
+Sample Input	Sample Output
+
+5	8
+1 2 3 4 5
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q41.	Complete the function int oddmultiplication(int size,int* list) and fix it to find the product of all theodd numbers in a array.
+
+#include<stdio.h> #include<stdlib.h>
+int oddmultiplication(int size, int* list){
+// code here
+}
+int main(){ int size;
+scanf("%d",&size);
+int* list= (int*)malloc(sizeof(int)*size); for(int i=0;i<size;i++){
+scanf("%d",&list[i]);
+}
+printf("%d",evenmultiplication(size,list));
+}
+
+
+Sample Input	Sample Output
+
+5	15
+1 2 3 4 5
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q42.	Complete the function pattern(int n) and fix it to print following pattern:
+
+
+Input : 5 Output:
+* * * * *	* * * * *
+* * * *	* * * *
+* * *	* * *
+* *	* *
+*	*
+*	*
+* *	* *
+* * *	* * *
+* * * *	* * * *
+* * * * *	* * * * *
+
+
+#include<stdio.h> void pattern(int n)
+{
+
+//code here
+}
+int main()
+{
+int n; scanf("%d",&n);
+pattern(n); return 0;
+}
+
+
+Sample Input	Sample Output
+
+5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q43.	complete the function pattern(n) to get the desired output .
+Examples :
+Input : 5 Output:
+*	*
+* *	* *
+* * *	* * *
+* * * *	* * * *
+* * * * *	* * * * *
+* * * * *	* * * * *
+* * * *	* * * *
+* * *	* * *
+* *	* *
+*	*
+
+* * * * *	* * * * *
+* * * *	* * * *
+* * *	* * *
+
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+*	*
+* *	* *
+* * *	* * *
+
+
+Q44.	Complete the function/method postOrder(struct Node* root) to insert the element key in the Binary Search Tree and print the elements in the inorder traversal .
+You can take the help of the function called newNode(int key) and insertBST (struct Node* root, int key) PROGRAM:
+#include<stdio.h> #include<stdlib.h> struct Node {
+int val;
+struct Node* left; struct Node* right;
+};
+void postOrder(struct Node* root){
+// code here
+}
+
+struct Node* newNode(int key){
+struct Node* temp = (struct Node*)malloc(sizeof(struct Node)); temp->val = key;
+temp->left = NULL; temp->right = NULL; return temp;
+}
+struct Node* insert(struct Node* root,int key){ if(root==NULL){
+return newNode(key);
+}
+else if(key < root->val){ insert(root->left,key);
+}
+else{
+insert(root->right,key);
+}
+return root;
+}
+int main()
+{
+int n; scanf("%d",&n);
+struct Node* root=NULL; int ele; scanf("%d",&ele);
+root = insert(root,ele); for(int i=0;i<n-1;i++){
+scanf("%d",&ele); insert(root,ele);
+}
+inorder(root);
+}
+
+
+Sample Input	Sample Output
+
+
+6
+4 8 6 2 1 3
+
+1 2 3 4 6 8
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q45.	complete the function/method insertBST (struct Node* root, int key) to insert the element key in the Binary Search Tree and print the elements in the inorder traversal . You can take the help of the function called newNode(int key) and inorder(struct Node* root) .
+
+Sample Input	Sample Output
+
+
+6
+4 8 6 2 1 3
+
+1 2 3 4 6 8
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q46.	complete the function/method preorder (struct Node* root) to print the Binary Search Tree in the preorder traversal . You can take the help of the function called newNode(int key) and insertBST(struct Node* root,int key)
+
+
+Sample Input	Sample Output
+
+
+6
+8 3 4 5 6 1
+
+8 3 1 4 5 6
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q47.	complete the function/method find_index(int size, int* list, int key) to return the index of the key element in the given array.
+
+
+Sample Input	Sample Output
+
+5	3
+1 4 7 12 45
+12
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q48.	Complete the given snippet to print the transpose of a matrix.
+Matrix Transposition
+
+Input:
+1 2 3
+4 5 6
+7 8 9
+
+Output:
+1 4 7
+2 5 8
+3 6 9
+
+
+Input Format
+
+Input contains rowCount,colCount and the array values
+
+Output Format
+
+Print the array
+
+Constraints
+
+1 ≤ array_size ≤ 1000
+
+Sample Input	Sample Output
+
+
+3 3
+1 2 3
+4 5 6
+
+1 4 7
+2 5 8
+3 6 9
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q49.	Encode the given string. Find the logical error and fix it in the function/method encodeString(char arr[],char alpha[],int num[]) to get the desired output For Example:
+Input:
+
+aaaabbbccdefaa
+
+Output:
+a4b3c2d1e1f1a2 Program:
+#include<stdio.h> #include<string.h> #include<math.h>
+void encodeString(char arr[],char alpha[],int num[]){ int front=-1,rear=-1;
+int len=strlen(arr); alpha[++rear]=arr[0]; num[rear]=1;
+for(int i=1;i<len;i++){ if(arr[i]==alpha[rear]){
+num[rear]++;
+}
+else{
+alpha[++front]=arr[i];
+
+num[rear]=1;
+}
+}
+while(front!=rear){
+++front; printf("%c%d",alpha[front],num[front]);
+}
+}
+int main(){
+char arr[1000]; scanf("%s",arr); char alpha[1000]; int num[1000];
+encodeString(arr,alpha,num);
+}
+
+
+Sample Input	Sample Output
+
+aaaabbbccdefaa	a4b3c2d1e1f1a2
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+Q50.	Find the logical error in the function/method find_index(int size, int* list, int key) and fix it to return the index of the key element in the given array. #include<stdio.h>
+#include<stdlib.h>
+int findIndex(int len,int* list,int key){
+
+for(int i=0;i<len;i++){ if(list[i]!=key){
+printf("%d", i);
+}
+}
+}
+int main(){ int len;
+scanf("%d",&len);
+int* list = (int*)malloc(sizeof(int)*len); for(int i=0;i<len;i++){ scanf("%d",&list[i]);
+}
+int key; scanf("%d",&key);
+printf("%d",findIndex(len,list,key));
+}
+
+
+
+Sample Input	Sample Output
+
+5	3
+1 4 7 12 45
+12
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q51.	Find the logical error in the function pattern(int n) and fix it to print following pattern:
+
+
+Input : 5 Output:
+* * * * *	* * * * *
+* * * *	* * * *
+* * *	* * *
+* *	* *
+*	*
+*	*
+* *	* *
+* * *	* * *
+* * * *	* * * *
+* * * * *	* * * * *
+
+
+#include<stdio.h> void pattern(int n)
+{
+
+int i,j;
+for (i=1; i<=n; i++)
+{
+for (j=1; j<=(2*n); j++)
+{
+if (i>(n-j+1))
+printf(" "); else printf("*");
+if ((i+n)>j)
+printf(" "); else printf("*");
+}
+printf("\n");
+
+}
+for (i=1; i<=n; i++)
+{
+for (j=1; j<=n; j++)
+{
+if (i<j) printf(" "); else printf("*");
+if (i<=((2*n)-j))
+printf(" "); else printf("*");
+}
+printf("\n");
+}
+}
+int main()
+{
+int n; scanf("%d",&n);
+pattern(n); return 0;
+}
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+* * * * *	* * * * *
+* * * *	* * * *
+* * *	* * *
+
+
+Q52.	Find the logical error in the function pattern(n) and fix it to get the desired output .
+Examples :
+Input : 5 Output:
+*	*
+* *	* *
+* * *	* * *
+* * * *	* * * *
+* * * * *	* * * * *
+* * * * *	* * * * *
+* * * *	* * * *
+* * *	* * *
+* *	* *
+*	*
+
+#include<stdio.h> void pattern(int n)
+{
+
+int i,j;
+for (i=1; i<=n; i++)
+{
+for (j=1; j<=(2*n); j++)
+{
+
+if (i<j) else
+
+
+printf(" ");
+
+printf("*");
+
+
+if (i<=(n-j))
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+
+for (i=1; i<=n; i++)
+{
+for (j=1;j<=(2*n);j++)
+{
+if (i>(n-j+1))
+printf(" ");
+else
+printf("*");
+if ((i+n)>j)
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+}
+int main()
+{
+int n; scanf("%d",&n);
+pattern(n); return 0;
+}
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+*	*
+* *	* *
+* * *	* * *
+
+
+Q53.	Find the logical error in the function/method insertBST (struct Node* root, int key) to insert the element key in the Binary  Search  Tree and print the elements in the inorder traversal . You can take the help of the function called newNode(int key) and inorder(struct Node* root) .
+
+PROGRAM:
+
+#include<stdio.h> #include<stdlib.h> struct Node {
+int val;
+struct Node* left; struct Node* right;
+};
+void inorder(struct Node* root){ if(root!=NULL){
+inorder(root->left); printf("%d ",root->val); inorder(root->right);
+}
+}
+
+struct Node* newNode(int key){
+struct Node* temp = (struct Node*)malloc(sizeof(struct Node)); temp->val = key;
+temp->left = NULL; temp->right = NULL; return temp;
+}
+struct Node* insert(struct Node* root,int key){ if(root==NULL){
+return newNode(key);
+}
+else if(key < root->val){ insert(root->left,key);
+}
+else{
+insert(root->right,key);
+}
+return root;
+}
+int main()
+{
+int n; scanf("%d",&n);
+struct Node* root=NULL; int ele; scanf("%d",&ele);
+root = insert(root,ele); for(int i=0;i<n-1;i++){
+scanf("%d",&ele); insert(root,ele);
+}
+inorder(root);
+}
+
+
+Sample Input	Sample Output
+
+
+6
+4 8 6 2 1 3
+
+1 2 3 4 6 8
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q54.	Find the logical error in the function/method preorder (struct Node* root) to print the Binary Search Tree in the preorder traversal . You can take the help of the function called newNode(int key) and insertBST(struct Node* root,int key)
+
+#include<stdio.h> #include<stdlib.h> struct Node {
+int val;
+struct Node* left; struct Node* right;
+};
+void preorder(struct Node* root){ if(root!=NULL){
+preorder(root->left);
+printf("%d ",root->val); preorder(root->right);
+}
+}
+struct Node* newNode(int key){
+struct Node* temp = (struct Node*)malloc(sizeof(struct Node)); temp->val = key;
+temp->left = NULL;
+
+temp->right = NULL; return temp;
+}
+
+struct Node* insert(struct Node* root,int key){
+
+if(root==NULL){
+return newNode(key);
+}
+else if(key < root->val){
+root-> left = insert(root->left,key);
+}
+else{
+root->right = insert(root->right,key);
+}
+return root;
+
+
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+struct Node* root=NULL; int ele; scanf("%d",&ele);
+root = insert(root,ele); for(int i=0;i<n-1;i++){
+scanf("%d",&ele); insert(root,ele);
+}
+preorder(root);
+}
+
+
+Sample Input	Sample Output
+
+
+6
+8 3 4 5 6 1
+
+8 3 1 4 5 6
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q55.	In this challenge , You need to complete the provided function printChars(int n) to print the following pattern. Find the logical error.
+
+For Example:
+
+Input : 5 Output :
+a ab abc
+abcd abcde
+
+Program:
+
+#include<stdio.h>
+void printcharacterpattern( int num)
+{
+int i,j; char s;
+for(i=0;i<num;i++,s++)
+{
+s='a'; for(j=0;j<=num;j++)
+{
+printf("%c", s++);
+
+}
+printf("\n");
+}
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+printcharacterpattern(n); return 0;
+}
+
+
+Input Format
+
+A Single integer 'N' Output Format
+Print the above matrix in 'N' Lines
+
+Constraints
+
+1 <= N <=26
+
+Sample Input	Sample Output
+
+
+6
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+a ab abc
+
+
+Q56.	Print the following pattern using the given snippet . Below is the fibinocci pattern. All the logic to print the pattern has been given . You just complete the int fib() function to generate the fibinocci series.
+
+input :
+
+5
+
+output :
+
+1
+1 2
+3 5 8
+13 21 34 55
+89 144 233 377 610
+
+
+#include<stdio.h> int fib()
+{
+}
+int main() {
+int i,j,k=1,rows; scanf("%d,&rows);
+for (i=1;i<=rows;i++) { for (j=1;j<=i;j++) { printf("%d ",fib(k++));
+}
+printf("\n");
+}
+return 0;
+}
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: 50 ms Memory Limit: 256 kb Code Size: 256 kb
+
+1
+1 2
+3 5 8
+
+
+Q57.	Print the spiral of the matrix. Find the logical error in the function/method printSpiral(int n) to get the desired output.
+
+#include<stdio.h> #include<string.h> #include<math.h>
+void spiralPattern(int n){ int arr[n][n];
+int u=0,l=0,b=n,r=n,val=1; while(l<r && u<b){
+for(int i=l;i<r;i++){ arr[u][i]=val;
+} u++;
+for(int i=u;i<b;i++){ arr[i][r-1]=val;
+}
+r--;
+for(int i=r-1;i>=l;i--){
+arr[b-1][i]=val;
+}
+b--;
+for(int i=b-1;i>=u;i--){ arr[i][l]=val;
+} l++;
+val++;
+}
+for(int i=0;i<n;i++){ for(int j=0;j<n;j++){
+printf("%d ",arr[i][j]);
+}
+printf("\n");
+}
+
+
+Sample Input	Sample Output
+
+5
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q58.	Print the spiral of the matrix. Find the logical error in the function/method printSpiral(int n) to get the desired output.
+
+#include<stdio.h> #include<string.h> #include<math.h>
+void spiralPattern(int n){ int size=2*n-1;
+int arr[size][size];
+int u=0,l=0,b=size,r=size,val=n; while(l<r && u<b){
+for(int i=l;i<r;i++){ arr[u][i]=val;
+} u++;
+for(int i=u;i<b;i++){ arr[i][r-1]=val;
+} r++;
+for(int i=r-1;i>=l;i--){
+arr[b-1][i]=val;
+} b++;
+for(int i=b-1;i>=u;i--){ arr[i][l]=val;
+} l++;
+val--;
+}
+for(int i=0;i<size;i++){ for(int j=0;j<size;j++){
+printf("%d ",arr[i][j]);
+}
+printf("\n");
+}
+
+
+Sample Input	Sample Output
+
+4
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q59.	The function calculateGeneralLCM(int arr[]) of class GeneralizedLCM accepts an integer array arr. It is supposed to calculate and reurn the LCM of elements in the input array
+Another function calculateLCM(int a,int b) returns the LCM of two numbers a and b.
+Your task is to use the calculateLCM(int a, int b) function and find the logical error in the calculateGeneralLCM(int arr[]) so that it passes all test cases.
+
+#include <stdio.h> int gcd(int a, int b)
+{
+if (a == 0)
+return b;
+return gcd(b % a, a);
+}
+int calculateLCM(int a, int b)
+{
+return (a+b)/gcd(a, b);
+}
+int calculateGeneralLCM( int arr[],int n){ int x = calculateLCM(arr[0],arr[1]); for(int i=2;i<n;i++){
+x = calculateLCM(x,arr[i]);
+}
+return x;
+}
+int main()
+{
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++){ scanf("%d",&arr[i]);
+}
+printf("%d",calculateGeneralLCM(arr,n)); return 0;
+}
+
+
+Sample Input	Sample Output
+
+
+5
+5 10 15 20 25
+
+300
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q60.	The function checkGrade(int marks) is supposed to return a student’s grade when the student’s test marks is passed to it as an argument (0 <= marks <= 100) Given a particular marks, a grade is calculated as per the following table:
+Score	Grade
+1.	marks>=91	A
+2.	76<=marks<=90	B
+3.	61<=marks<=75	C
+4.	marks<=60	D
+
+Sample Input	Sample Output
+
+91	A
+
+
+
+Time Limit: 2 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q61.	The function deleteDuplicate(int* arr,int len) takes an array arr of length len ( len>0 ) as an input. It is supposed to remove duplicate integers from the input array arr such that for each distinct integer , the first occurence is retained and all duplicate elements following it are removed . For example given the input array arr (2, 3, 2, 2, 5, 6, 6, 7}, the expected output is { 2, 3, 5, 6, 7 }
+
+The function compiles successfully but fails to return the desired result due to logical errors
+void deleteDuplicate() int c,d;
+for (c = 0; c < n; c++)
+{
+for (d = 0; d < n; d++)
+{
+if(a[c] == b[d]) break;
+}
+if (d == count)
+{
+b[count] = a[c]; count++;
+}
+}
+}
+
+
+Sample Input	Sample Output
+
+
+6
+2 2 3 3 4 4
+
+2 3 4
+
+
+
+Sample Input	Sample Output
+
+5	21
+21 21 21 21 21
+
+
+Time Limit: 50 ms Memory Limit: 256 kb Code Size: 256 kb
+
+Q62.	The function getDay(int date, int month, int year) of class Day accepts the date , month and year input and is supposed to return the day to which it corresponds. The days are mapped to the number num in the following way.
+Monday is assigned 1, Tuesday 2, …. And Sunday is 7.
+Find the logical error in the function getDay(int date, int month, int year) to get the desired output
+
+#include<stdio.h>
+int getDay(int d, int m, int y)
+{
+static int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 }; y -= m < 3;
+return ( y + y/4 - y/100 + y/400 + t[m-1] + d) % 12;
+
+}
+int main()
+{
+int date,month,year;
+scanf("%d %d %d",&date,&month,&year); int day = getDay(date, month, year); printf ("%d", day);
+return 0;
+}
+
+
+Sample Input	Sample Output
+
+29 3 1998	0
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q63.	The function pyramid(int n) is a function that will print a reverse character pyramid pattern like the below one. Find the logical error to get the desired output
+
+Input:
+
+5
+
+Output:
+
+ABCDEFGHIJ ABCDEFGH ABCDEF ABCD
+AB
+
+#include<stdio.h>
+
+void pyramid(int n)
+{
+int i, j, num, gap;
+for (i = n; i >= 1; i--) {
+for (gap = n - 1; gap >= 1; gap--) { printf(" ");
+printf(" ");
+}
+num = 'A';
+for (j = 1; j <= i; j++) { printf("%c",num++);
+}
+for (j = i - 1; j >= 0; j--) {
+printf("%c",num++);
+}
+printf("\n");
+}
+}
+int main()
+{
+int n; scanf("%d",&n);
+pyramid(n); return 0;
+}
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+ABCDEFGHIJ ABCDEFGH ABCDEF
+
+
+Q64.	The function descendingSort Array(int *arr,int len)accepts an integer array arr of length len(len≥0)as an input and performs an inplace sort operation on it.The functions is expected to return the input array sorted in descending order ,but instead ,it returns the array sorted in ascending order due to a bug in the code.
+Int* descendingSortArray(int *arr, int len)
+
+{
+Int small,pos,i,j,temp; for(i=0;i&lt;=len-1;i++)
+{
+for(j=i;j&lt;=len;j++)
+{
+temp=0; if(arr[i]&lt;arr[j])
+{
+temp=arr[i]; arr[i]=arr[j]; arr[j]=temp;
+}
+}
+}
+return arr;
+}
+Testcasse 1:
+Input :
+[3,6,4,1,7,9,1,3,12,15],10
+Expected return value:
+[15,12,9,7,6,4,3,2,1,1]
+Testcase 2:
+Input:
+[3,3,3,3,3,3,3,3,3],9
+Expected return value:
+[3,3,3,3,3,3,3,3,3]
+
+
+Sample Input	Sample Output
+
+
+5
+1 5 7 4 6
+
+7 6 5 4 1
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q65.	The function/method reverseLinkedList accepts one argument – list, representing the head of a singly linked list and is supposed to reverse the second half of the linked list.
+For example, if the list is 2 -> 3 -> 6 -> 1 -> 4 -> 8 -> 9 -> 7
+Then the resulting list would be 2 -> 3 -> 6 -> 1 -> 7 -> 9 -> 8 -> 4
+The function/method compiles successfully but fails to return the desired output due to incorrect implementation of the linked lists. Your task is to fix the code so that it passes all the test cases.
+Note:
+If the number of elements in the list (N) is odd, then the second half of the list begins at position (N+1)/2. If the number of elements in the list(N) is even, then the second half of the list begins at position
+
+#include <stdio.h> #include <stdlib.h> struct Node {
+int data;
+struct Node* next;
+};
+
+static void reverse(struct Node** head_ref)
+{
+struct Node* prev = NULL;
+struct Node* current = *head_ref; struct Node* next = NULL;
+while (current != NULL) { next = current->next; prev = current; current = next;
+}
+*head_ref = prev;
+}
+void push(struct Node** head_ref, int new_data)
+{
+struct Node* new_node = (struct Node*)malloc(sizeof(struct Node)); new_node->data = new_data;
+new_node->next = (*head_ref); (*head_ref) = new_node;
+}
+void printList(struct Node* head)
+{
+struct Node* temp = head; while (temp != NULL) {
+printf("%d ", temp->data); temp = temp->next;
+}
+}
+int main()
+{
+struct Node* head = NULL; int n;
+scanf("%d",&n); int x;
+for(int i=0;i<n;i++){ scanf("%d",&x); push(&head, x);
+}
+
+printf("Given linked list\n"); printList(head); reverse(&head);
+printf("\nReversed Linked list \n"); printList(head);
+getchar();
+}
+
+
+Sample Input	Sample Output
+
+
+5
+1 2 3 4 5
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Given linked list 5 4 3 2 1
+Reversed Linked list
+
+
+Q66.	The function maxReplace (int *arr,int len) is supposed to replace every element of the
+input array arr of length len,with the maximum element of arr. Complete the function maxReplace(int* arr,int len) to get the desired output
+
+#include<stdio.h>
+int* maxReplace(int *arr, int len)
+{
+// write code here
+}
+int main()
+{
+int size, ind; scanf("%d",&size); int arr[size];
+for(int i=0;i<size;i++){ scanf("%d",&arr[i]);
+}
+maxReplace(arr, size);
+for(ind = 0; ind < size; ind++) printf("%d ", arr[ind]);
+
+}
+
+
+Test case 1:
+Input :
+
+[2,5,8,11,3],5
+
+Expected return value:
+
+[11,11,11,11,11]
+
+Test case 2:
+Input :
+
+[3,2,5,8,9,11,23,45,63],9
+
+Expected return value:
+
+[63,63,63,63,63,63,63,63,63]
+
+Sample Input	Sample Output
+
+
+5
+1 4 5 3 2
+
+5 5 5 5 5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q67.	The function printcolor(int num) is supposed to point names of accordind to the given input number num
+When the values of num equal 1,2,3,4 the function points “red”,”black”,”white”,”green” respectively.for any other values num it should print “No Color” . Complete the function printcolor(int num)
+
+
+Sample Input	Sample Output
+
+5	No color
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q68.	We have to print a pattern where in middle column contains only 1, right side columns contains constant digit which is greater than 1 and left side columns contains constant digit which is greater than 1. Every row should look like a Palindrome. Find the logical error in the function/method display(int n) to get the desired output
+Examples : Input : 3 Output :
+1
+2	1	2
+1
+
+Input : 5 Output :
+1
+2	1	2
+3 2	1	2 3
+2	1	2
+	1
+Program:
+
+#include <stdio.h> void display(int n)
+{
+int space = n / 2, num = 1; for (int i = 1; i <= n; i++)
+{
+for (int j = 1; j <= space; j++) printf(" ");
+int count = num / 2 + 1;
+for (int k = 1; k <= num; k++)
+{
+printf("%d",count);
+
+printf("\n");
+if (i <= n / 2)
+{
+space = space - 1; num = num + 2;
+}
+else
+{
+space = space + 1; num = num - 2;
+}
+}
+}
+int main()
+{
+int n; scanf("%d",&n);
+display(n); return 0;
+}
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+1
+212
+32123
+
+
+Q69.	We have to print the pattern as given in the below example. Find the logical error in the function/method display(int n) to get the desired output.
+Examples : Input : 5 Output :
+1
+1*2
+1*2*3
+1*2
+1
+
+Input : 9 Output :
+1
+1*2
+1*2*3
+1*2*3*4
+1*2*3*4*5
+1*2*3*4
+1*2*3
+1*2
+1
+
+#include<stdio.h> void display(int n)
+{
+int sp = n , st = 1;
+for (int i = 1; i <= n; i++) {
+for (int j = 1; j <= sp; j++) { printf(" ");
+}
+
+int count = 1;
+for (int k = 1; k <= st; k++) { if (k % 2 == 0)
+printf("*");
+else printf("%d",count++);
+}
+printf("\n");
+if (i <= n / 2) { sp = sp - 1; st = st + 2;
+}
+else {
+sp = sp + 1; st = st - 2;
+}
+}
+}
+
+
+int main()
+{
+int n; scanf("%d",&n); display(n); return 0;
+}
+
+
+
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+1
+1*2
+1*2*3
+
+
+Q70.	write an algorithm to find the number of occurences of needle in a given positive number haystack
+
+
+Input Format
+
+The first line of input consists of an integer needle, representing a digit
+The second line consists of an integer haystack, representing the positive positive number.
+
+Output Format
+
+print an integer representing the number of occurences of needle in haystack
+
+Constraints
+
+0 <= needle <= 9
+0 <= haystack <= 99999999
+
+Sample Input	Sample Output
+
+
+2
+124522532
+
+Needle 2 occurs 4 times in the hash
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q71.	You are given a predefined class PalindromeCollection and also a collection of functions that can be used to perform some basic operations on the structure. You must implement the function printPalindrome(int num, int n) to accepts initial number num and number of digits n as inputs and print all the palindrome numbers of n digits starting from the initial number num.
+Use the PalindromeCollection class and the associated functions for this task.
+
+#include<stdio.h>
+int isPalindrome(int n)
+{
+int rev = 0;
+for (int i = n; i > 0; i /= 10)
+
+rev = rev*10 + i%10; return (n==rev);
+}
+void PalindromeCollection(int min, int max)
+{
+for (int i = min; i <= max; i++) if (isPalindrome(i)) printf("%d ",i);
+}
+void printPalindrome(int num,int n){
+/ code here
+
+}
+int main()
+{
+int num,n;
+scanf("%d %d",&num,&n); printPalindrome(num,n);
+}
+
+
+Sample Input	Sample Output
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q72.	You are required to fix all logical errors in the given code. You can click on Compile & Run anytime to check the compilation/execution status of the program. You can use printf to debug your code. The submitted code should be logically/syntactically correct and pass all test cases. Do not write main() function as it is not required.
+Code Approach: For this question. You will need to correct the given implementation. We do not except, you to modify the approach or incorporate any library methods.
+The function printTable(int num) is supposed to print the first ten multiples of the multiplication table of the input number num. The function compiles fine but fails to return the desired result for some test cases.
+Your task is to debug the code so that it passes all the test cases. Program:
+#include<stdio.h>
+void printTable(int n){ for(int i=0;i<10;i++){ printf("%d ",n*i);
+}
+}
+int main(){ int n;
+scanf("%d",&n); printTable(n);
+}
+
+Test Case 1:
+Input:
+6
+Expected Return Value;
+6 12 18 24 30 36 42 48 54 60
+
+Test Case 2:
+Input:
+0
+Expected Return Value:
+0 0 0 0 0 0 0 0 0 0
+
+
+Sample Input	Sample Output
+
+6	6 12 18 24 30 36 42 48 54 60
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+Q73.	We have to print the pattern as given in the below example. complete the function/method display(int n) to get the desired outp Examples :
+Input : 5 Output :
+1
+1*2
+1*2*3
+1*2
+1
+
+Input : 9 Output :
+1
+1*2
+1*2*3
+1*2*3*4
+1*2*3*4*5
+1*2*3*4
+1*2*3
+1*2
+
+1
+
+#include<stdio.h> void display(int n)
+{
+// code here
+}
+
+
+int main()
+{
+int n; scanf("%d",&n); display(n); return 0;
+}
+
+
+
+
+Sample Input	Sample Output
+
+
+5
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+1
+1*2
+1*2*3
+
+
+Q74.	REVERSE THE ORDER OF WORDS
+PROGRAM TO REVERSE THE ORDER OF WORDS IN A GIVEN STRING. Complete the function/method reverseWord(char string[],int len) to get the desired output.
+
+
+Input Format
+
+Input contains a string
+
+Output Format
+
+Print the reversed string
+
+Sample Input	Sample Output
+
+This is a test sentence	sentence test a is This
+
+
+
+Time Limit: - ms Memory Limit: - kb Code Size: - kb
+
+
+Section 1 - Automata Fix
+Q1	Test Case
+
+Answer Key & Solution
+
+
+
+Input	Output
+
+
+january	No
+26
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+july	No
+16
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+march	No
+5
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+july 5
+
+Yes
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<string.h>
+int checkBirthday(char* month,int day)
+{
+
+
+
+
+
+//if(strcmp(month,"july")		||	(day =5)) if(strcmp(month,"july")	== 0 &&		(day -5) == 0)
+return 1;
+else
+return 0;
+
+
+
+Footer
+
+
+}
+
+int main()
+{
+char inp[10]; scanf("%s",inp); int day; scanf("%d",&day);
+if(checkBirthday(inp,day)==1) printf("Yes");
+else
+printf("No");
+return 0 ;
+}
+
+Q2	Test Case
+
+Input	Output
+
+
+
+6
+2 6 8 9 3 7
+3
+
+2 6 8 9 7
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+5
+1 8 7 6 9
+9
+
+1 8 7 6
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+5
+1 2 3 4 5
+3
+
+1 2 4 5
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int deleteElement(int arr[], int n, int x)
+{
+
+
+
+
+
+if (arr[n-1] == x)
+return (n-1);
+int prev = arr[n-1], i;
+for (i=n-2; i>=0 && arr[i]!=x; i--)
+{
+int curr = arr[i]; arr[i] = prev; prev = curr;
+}
+if (i < 0)
+return 0; arr[i] = prev;
+
+return (n-1);
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+int arr[n];
+for(int i=0;i<n;i++){
+scanf("%d ",&arr[i]);
+}
+int x;
+scanf("%d",&x);
+n = deleteElement(arr, n, x); for (int i=0; i<n; i++) printf("%d ",arr[i] );
+
+return 0;
+}
+
+
+Q3	Test Case
+
+Input	Output
+
+
+1 9 26	Invalid
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+4 8 12	Invalid
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+6 7 8	Valid
+
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+4 5 6	Valid
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int checkValidity(int a, int b, int c)
+{
+
+
+
+
+
+if (a + b <= c || a + c <= b || b + c <= a) return 0;
+else
+return 1;
+
+
+
+Footer
+
+
+}
+
+int main()
+{
+int a, b, c;
+scanf("%d %d %d",&a,&b,&c); if (checkValidity(a, b, c))
+printf("Valid");
+
+else
+
+}
+
+
+printf("Invalid");
+
+
+
+Q4	Test Case
+
+Input	Output
+
+
+1111	15
+
+
+
+Weightage - 25
+
+Input	Output
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int binarytodecimal(int number)
+{
+
+
+
+#include<stdio.h>
+int binarytodecimal(int number)
+{
+int dval=0, base=1, rem; while(number > 0)
+{
+
+
+
+
+
+
+}
+return dval;
+}
+
+rem = number % 10;
+dval = dval + rem * base; number = number / 10; base = base * 2;
+
+int main(){
+int n; scanf("%d",&n);
+int ans = binarytodecimal(n); printf("%d",ans);
+return 0;
+}
+
+
+
+Footer
+
+
+}
+int main(){
+int n; scanf("%d",&n);
+int ans = binarytodecimal(n); printf("%d",ans);
+return 0;
+}
+
+
+
+Q5	Test Case
+
+Input	Output
+
+
+
+10
+1 2 3 4 5 6 7 8 9 10
+8
+
+Element is present at index 7
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+5
+23 34 45 56 67
+45
+
+Element is present at index 2
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+5
+1 2 3 4 5
+5
+
+Element is present at index 4
+
+
+Solution
+
+
+Header
+
+
+#include <stdio.h>
+int binarySearch(int arr[], int l, int r, int x)
+{
+
+
+
+
+
+while (l <= r) {
+int m = l + (r - l) / 2; if (arr[m] == x)
+return m; if (arr[m] < x)
+l = m + 1;
+
+else
+
+}
+
+
+r = m - 1;
+
+return -1;
+
+
+
+Footer
+
+
+}
+int main(void)
+{
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++){ scanf("%d",&arr[i]);
+}
+int x; scanf("%d",&x);
+int result = binarySearch(arr, 0, n - 1, x); (result == -1) ? printf("Element is not present"
+" in array")
+: printf("Element is present at "
+"index %d", result);
+return 0;
+}
+
+
+Q6	Test Case
+
+Input	Output
+
+
+50 20 15 4  10
+
+
+
+Weightage - 100
+
+Sample Input	Sample Output
+
+
+		50	20	15	4	10
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h> struct Node {
+int data;
+struct Node* next;
+};
+void removeLoop(struct Node*, struct Node*); int detectAndRemoveLoop(struct Node* list)
+{
+struct Node *slow_p = list, *fast_p = list; while (slow_p && fast_p && fast_p->next) {
+slow_p = slow_p->next; fast_p = fast_p->next->next; if (slow_p == fast_p) {
+removeLoop(slow_p, list); return 1;
+}
+}
+return 0;
+}
+void removeLoop(struct Node* loop_node, struct Node* head)
+{
+
+
+
+
+
+struct Node* ptr1; struct Node* ptr2; ptr1 = head;
+while (1) {
+ptr2 = loop_node;
+while (ptr2->next != loop_node && ptr2->next != ptr1) ptr2 = ptr2->next;
+if (ptr2->next == ptr1) break;
+ptr1 = ptr1->next;
+}
+ptr2->next = NULL;
+
+
+
+Footer
+
+
+}
+void printList(struct Node* node)
+{
+while (node != NULL) { printf("%d ",node->data); node = node->next;
+}
+}
+
+struct Node* newNode(int key)
+{
+struct Node* temp;
+temp = (struct Node*)malloc(sizeof(struct Node)); temp->data = key;
+temp->next = NULL; return temp;
+}
+int main()
+{
+struct Node* head = newNode(50); int n;
+head->next = newNode(20);
+head->next->next = newNode(15);
+head->next->next->next = newNode(4);
+
+head->next->next->next->next = newNode(10);
+
+head->next->next->next->next->next = head->next->next; detectAndRemoveLoop(head);
+printList(head); return 0;
+}
+
+
+Q7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+3
+1 3 5 7
+
+15 13 11 9
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+10
+14
+1 4 7 9 12 24 65 78 76 34 23
+
+342 362 420 489 553 563 499 425 356 331
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+
+4
+3
+4 2 -5 11
+
+8 10 17 1
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h>
+int* defuseBomb(int *arr,int n,int k)
+{
+
+
+
+
+
+int index,flag,count,sum,pos,*result; result=(int *)malloc(sizeof(int)*n); for(index=0;index<n;index++)
+{
+if(arr[index]<0) flag=-1;
+else
+flag=1; sum=0;
+pos=(index+flag+n)%n;
+
+for(count=0;count<k;count++)
+{
+
+{
+sum=sum+arr[pos]; pos=(pos+flag+n)%n;
+}
+result[index]=sum;
+}
+return result;
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n,*arr,index,*res,k; scanf("%d",&n);
+arr=(int *)malloc(sizeof(int)*n); scanf("%d",&k); for(index=0;index<n;index++)
+scanf("%d",&arr[index]); res=defuseBomb(arr,n,k); for(index=0;index<n;index++)
+printf("%d ",res[index]); return 0;
+}
+
+
+Q8	Test Case
+
+Input	Output
+
+
+
+2 3 5
+
+90 190 290
+190  415 640
+290  640 990
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+1 2 3
+
+14 32
+32 77
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+5 5 2
+
+
+
+
+Weightage - 25
+
+61 83 105 127 149
+83 113 143 173 203
+105 143 181 219 257
+
+
+
+Input	Output
+
+
+
+4 6 5
+
+
+
+
+Weightage - 25
+
+190 340 490 640 790 940
+340 615 890 1165 1440 1715
+490 890 1290 1690 2090 2490
+
+
+
+Sample Input	Sample Output
+
+
+
+1 3 3
+
+14 32 50
+32 77 122
+50 122 194
+
+
+Solution
+
+
+Header
+
+#include<stdio.h> int res[100][100];
+void generateMatrix(int m,int n,int s)
+{
+
+
+
+
+
+int row,col,k,sum=0;
+int arr[m][n],trans[n][m]; for(row=0;row<m;row++)
+{
+for(col=0;col<n;col++) arr[row][col]=s++;
+}
+for(row=0;row<m;row++)
+{
+for(col=0;col<n;col++)
+{
+trans[col][row]=arr[row][col];
+}
+}
+for(row=0;row<m;row++)
+{
+for(k=0;k<m;k++,sum=0)
+{
+for(col=0;col<n;col++)
+{
+sum=sum+arr[row][col]*trans[col][k];
+}
+res[row][k]=sum;
+}
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int s,n,m,**arr; int row,col;
+scanf("%d %d %d",&s,&m,&n); generateMatrix(m,n,s); for(row=0;row<m;row++)
+{
+for(col=0;col<m;col++)
+{
+printf("%d ",res[row][col]);
+}
+printf("\n");
+}
+return 0;
+}
+
+
+Q9	Test Case
+
+Input	Output
+
+
+
+5
+1 2 2 3 4
+
+2 2 1 3 4
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+10
+1 3 5 3 2 5 4 5 6 7
+
+5 5 5 3 3 1 2 4 6 7
+
+
+
+Weightage - 25
+
+Input							Output
+3							2 2 1
+1 2 2
+
+Weightage - 25
+
+Input
+Output
+8							9 9 8 5	2	3	6	4
+9 9 8 5 2	3	6	4
+
+Weightage - 25
+
+Sample Input
+Sample Output
+19							5 5 5 5	3	3	3	6	6	6	2	2	4	4	1	7	8	9	10
+1 2 2 3 3	3	4	4	5 5 5 5 6 6 6 7 8	9	10
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> int main()
+{
+int n,index,uniqIndex=0,compare,itr; scanf("%d",&n);
+int arr[n],uniq[n],count[n],flag[n]; for(index=0;index<n;index++)
+{
+scanf("%d",&arr[index]); flag[index]=0;
+}
+
+
+
+
+
+for(index=0;index<n;index++)
+{
+if(flag[index]==0)
+{
+int c=1; for(compare=index+1;compare<n;compare++)
+{
+if(arr[index]==arr[compare])
+{
+flag[compare]=1; c++;
+}
+}
+uniq[uniqIndex]=arr[index]; count[uniqIndex]=c; uniqIndex++;
+}
+}
+for(itr=1;itr<=uniqIndex-1;itr++)
+{
+for(index=1;index<uniqIndex;index++)
+{
+if(count[index-1] < count[index])
+{
+int temp=uniq[index]; uniq[index]=uniq[index-1]; uniq[index-1]=temp; temp=count[index]; count[index]=count[index-1]; count[index-1]=temp;
+}
+}
+}
+
+Footer
+
+
+for(index=0;index<uniqIndex;index++)
+{
+for(itr=1;itr<=count[index];itr++) printf("%d ",uniq[index]);
+}
+return 0;
+}
+
+
+Q10	Test Case
+
+Input	Output
+
+
+4856	4568
+
+
+
+Weightage - 20
+
+
+Input	Output
+
+
+6489	4689
+
+
+
+Weightage - 20
+
+
+Input	Output
+
+
+3216	1236
+
+
+
+Weightage - 30
+
+
+Input	Output
+
+
+31246	12346
+
+
+
+Weightage - 30
+
+
+Sample Input	Sample Output
+
+
+62154	12456
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> int unlock(int num)
+{
+
+
+
+
+
+int arr[10],index=0,n,result=0,temp; int itr;
+while(num)
+{
+arr[index]=num%10; index++; num=num/10;
+}
+
+n=index;
+for(itr=1;itr<=n-1;itr++)
+{
+for(index=1;index<n;index++)
+{
+if(arr[index-1] > arr[index])
+{
+int temp=arr[index]; arr[index]=arr[index-1]; arr[index-1]=temp;
+}
+}
+}
+index=0; while(arr[index]==0)
+index++; temp=arr[index]; arr[index]=arr[0]; arr[0]=temp;
+for(index=0;index<n;index++)
+{
+result=result*10+arr[index];
+}
+return result;
+
+
+
+Footer
+
+
+}
+int main()
+{
+
+
+
+
+
+
+
+
+
+
+Q11
+
+int num,res; scanf("%d",&num); res=unlock(num); printf("%d",res);
+
+return 0;
+}
+
+Test Case
+
+Input
+Output
+3 4		1 5 8	22 34 46 78
+1 8 34
+5 22 46 78
+
+Weightage - 25
+
+Input
+Output
+5 5		11 13	56 57 58 62	64 67 68 78
+11 13 78 56	57
+58 62 64 67	68
+
+Weightage - 50
+
+Input
+Output
+4 3		2 3 4	5 6 8 13
+2 5 8 13
+3 4 6
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+
+
+6 5
+1 3 5 7 9 11
+2 4 6 8 10
+
+1 2 3 4 5 6 7 8 9 10 11
+
+
+Solution
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h> typedef struct node{
+int data;
+struct node *next;
+}NODE;
+NODE *start1=NULL,*start2=NULL,*tptr,*prev; NODE* createNode(int givenData)
+{
+NODE* newnode; newnode=(NODE*)malloc(sizeof(NODE)); newnode->data=givenData;
+newnode->next=NULL; return newnode;
+}
+NODE* mergeLists(NODE *start1,NODE *start2)
+{
+
+
+
+
+
+NODE *start=NULL,*newnode,*tptr1,*tptr2; tptr1=start1;
+tptr2=start2;
+while(tptr1!=NULL && tptr2!=NULL)
+{
+if(tptr1->data<tptr2->data)
+{
+newnode=createNode(tptr1->data); tptr1=tptr1->next;
+}
+else
+{
+newnode=createNode(tptr2->data); tptr2=tptr2->next;
+}
+if(start==NULL)
+{
+start=newnode; prev=start;
+}
+else
+{
+prev->next=newnode; prev=newnode;
+}
+}
+if(tptr1==NULL) prev->next=tptr2;
+else
+prev->next=tptr1; return start;
+
+
+Footer
+
+
+}
+void displaySLL(NODE *start){ for(tptr=start;tptr!=NULL;tptr=tptr->next)
+printf("%d ",tptr->data);
+}
+void insertNode(NODE *start,int givenData,int list){ NODE *newnode;
+newnode=createNode(givenData); if(start==NULL)
+{
+if(list==1)
+start1=newnode;
+
+else
+
+}
+
+
+start2=newnode;
+
+else{ for(tptr=start,prev=NULL;
+tptr!=NULL &&tptr->data<givenData; prev=tptr,tptr=tptr->next);
+
+if(tptr==start)
+{
+newnode->next=tptr; if(list=1)
+start1=newnode;
+
+
+
+
+}
+else
+{
+
+else
+
+
+start2=newnode;
+
+newnode->next=tptr; prev->next=newnode;
+}
+}
+}
+int main(){ NODE *result;
+int num,n1,n2,count; scanf("%d %d",&n1,&n2);
+for(count=1;count<=n1;count++)
+{
+scanf("%d",&num); insertNode(start1,num,1);
+}
+for(count=1;count<=n2;count++)
+{
+scanf("%d",&num); insertNode(start2,num,2);
+}
+
+
+
+
+
+
+
+
+Q12
+
+result=mergeLists(start1,start2); displaySLL(result);
+
+return 0;
+}
+
+Test Case
+
+Input
+Output
+7 4					17 649 393 7 7 2 9
+17 649 393	9 2	7
+
+Weightage - 25
+
+Input
+Output
+6 5					1 7 9 45 45 5
+1 7 9 45 5	45
+
+Weightage - 25
+
+Input
+Output
+10 2					1 4 8 32 6 8 9 5 4	5
+1 5 4 5 9	8 6	32	8	4
+
+Weightage - 50
+
+Sample Input
+Sample Output
+6 2					1 6 5 4 3 2
+1 2 3 4 5	6
+
+Solution
+
+
+
+Header
+
+
+
+#include<stdio.h>
+
+#include<stdlib.h> typedef struct node
+{
+int data;
+struct node *next;
+}NODE;
+NODE *start;
+void displaySLL()
+{
+NODE *tptr; for(tptr=start;tptr!=NULL;tptr=tptr->next)
+printf("%d ",tptr->data); printf("\n");
+}
+void insertData(int givenData)
+{
+struct node *newnode; NODE *tptr,*prev;
+newnode=(struct node *)malloc(sizeof(struct node)); newnode->data=givenData;
+newnode->next=NULL; if(start==NULL)
+{
+start=newnode;
+}
+else
+{
+for(tptr=start;tptr!=NULL;prev=tptr,tptr=tptr->next); prev->next=newnode;
+}
+}
+void rotate(int n,int k,NODE *head)
+{
+
+
+
+
+
+NODE *tptr,*prev,*safeNext,*safePrev; int count;
+tptr=head; for(count=1;count<k;count++)
+{
+prev=tptr; tptr=tptr->next;
+}
+safePrev=NULL; while(tptr!=NULL)
+{
+safeNext=tptr->next; tptr->next=safePrev; safePrev=tptr; tptr=safeNext;
+}
+prev->next=safePrev;
+
+
+
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n,k,index,num; scanf("%d %d",&n,&k);
+for(index=0;index<n;index++)
+{
+scanf("%d",&num); insertData(num);
+}
+rotate(n,k,start); displaySLL(); return 0;
+}
+
+
+Q13
+
+Test Case
+
+
+Input	Output
+
+
+bcjasgha hsvjhdvjh,zd	iioeviia scerojankHad
+
+
+
+Weightage - 20
+
+
+Input	Output
+
+
+kjvkjsbnm zc hkjdbjx m is nmv kj; mmnb	sqbpnvdom ac npngdkx m js pnv mkU poob
+
+
+
+Weightage - 20
+
+
+Input	Output
+
+
+bkgkkjbkbkh	ltorqofndlh
+
+
+
+Weightage - 20
+
+
+Input	Output
+
+
+,mkjhkucggk	Pvsqnpyfihk
+
+
+
+Weightage - 20
+
+
+Input	Output
+
+
+nmbgjxgnc	vthlnaioc
+
+
+
+Weightage - 20
+
+
+Sample Input	Sample Output
+
+
+yum	avm
+
+
+
+Sample Input	Sample Output
+
+
+feed	igfd
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+char* cyclicEncrypt(char *str)
+{
+
+
+
+
+
+int index,count=0,n; n=0;
+while(str[n]!=NULL) n++;
+for(index=n-1;index>=0;index--)
+{
+
+if(str[index]==' ')
+{
+count=0; continue;
+}
+str[index]=(((str[index]-'a')+count)%26)+'a'; count++;
+}
+return str;
+
+
+
+Footer
+
+
+}
+int main()
+{
+char str[100],*res; scanf("%[^\n]s",str); res=cyclicEncrypt(str); printf("%s",res); return 0;
+}
+
+
+Q14	Test Case
+
+Input	Output
+
+
+2	10
+1 4
+6 8
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+5 5
+1 2 3 67 67
+90 87 65 43 21
+
+511
+
+
+Weightage - 75
+
+
+Sample Input	Sample Output
+
+
+3 3	45
+1  2 3
+4  5 6
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #define SIZE 100
+int matrixsum(int row,int col)
+{
+
+
+
+
+
+
+int sum=0;
+int arr[row][col]; for(int i=0;i<row;i++){ for(int j=0;j<col;j++)
+{
+scanf("%d",&arr[i][j]);
+}
+}
+for(int i=0;i<row;i++){ for(int j=0;j<col;j++){
+sum=sum+arr[i][j];
+}
+
+}
+return sum;
+
+
+
+Footer
+
+
+}
+int main()
+{
+int m,n;
+scanf("%d %d",&m,&n);
+
+
+
+printf("%d",matrixsum(m,n));
+}
+
+
+
+Q15
+
+
+Test Case
+
+
+Input
+
+
+Output
+10									8 0 6	3 9 5 7	4	9	4
+4 9 4 7 5	9	3	6	0	8
+
+Weightage - 25
+
+Input
+Output
+3									1 1 1
+1 1 1
+
+Weightage - 25
+
+Input
+Output
+5									45 89	76 56 10
+10 56 76 89		45
+
+Weightage - 25
+
+Input
+Output
+10									27 25	23 19 18	17		16	14	13	12
+12 13 14 16		17	18		19	23	25	27
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+
+
+8
+1 2 3 4 5 6 7 8
+
+8 7 6 5 4 3 2 1
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int* arrayReverse(int *arr,int len){
+
+
+
+
+
+int i,temp,originallen=len; for(i=0;i<originallen/2;i++){ temp=arr[len-1];
+
+arr[len-1]=arr[i];
+
+arr[i]=temp; len-=1;
+}
+return arr;
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++){ scanf("%d",&arr[i]);
+}
+arrayReverse(arr, n); for(int i=0;i<n;i++){
+printf("%d ",arr[i]);
+}
+}
+
+
+
+Q16	Test Case
+
+Input	Output
+
+
+5	1
+1 2 3 4  5
+9 8 7 6  5
+
+Weightage - 50
+
+
+Input	Output
+
+
+5	3
+8 9 8 9  8
+8 7 6 9  3
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+5				2
+4	6 2 3	9
+8	4 3 6	2
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int * sortArray(int *arr, int length)
+{
+int x=0,y=0,n=length; for(x=0;x<n;x++)
+{
+int index_of_min = x; for(y=x;y<n;y++)
+{
+if(arr[index_of_min]>arr[y])
+{
+index_of_min=y;
+}
+}
+int temp=arr[x]; arr[x]=arr[index_of_min]; arr[index_of_min]=temp;
+}
+return	arr;
+}
+void minElement(int arr1[],int arr2[],int size){
+
+int index; sortArray(arr1, size); sortArray(arr2, size); int min=0; if(arr1[0]>arr2[0]){
+min=arr2[0];
+}
+else{
+min=arr1[0];
+}
+printf("%d",min);
+
+
+
+
+Footer
+
+
+
+}
+int main()
+{
+int size; scanf("%d",&size);
+int arr1[size],arr2[size]; for(int i=0;i<size;i++){
+scanf("%d",&arr1[i]);
+}
+for(int i=0;i<size;i++){ scanf("%d",&arr2[i]);
+}
+minElement(arr1,arr2,size); return 0;
+}
+
+
+
+Q17	Test Case
+
+Input	Output
+
+
+
+6
+
+
+
+
+Weightage - 50
+
+1
+11
+111
+
+
+
+Input	Output
+
+
+
+20
+
+
+
+
+Weightage - 50
+
+1
+11
+111
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+1
+11
+111
+
+
+
+Header
+
+
+#include<stdio.h>
+void patternPrint(int num)
+{
+
+for(int i=0;i<num;i++){ for(int j=0;j<=i;j++){
+printf("1");
+}
+printf("\n");
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); patternPrint(n);
+}
+
+
+Q18	Test Case
+
+Input	Output
+
+
+10	4
+11 12 13 14 15 16 17 18 19 20
+8
+
+Weightage - 50
+
+
+Input	Output
+
+
+6	6
+12 12 13 14 23
+6
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+5	1
+1 2 3 4 5
+2
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int countElement(int arr[],int ele,int len)
+{
+
+
+
+
+
+int count=0;
+for(int i=0;i<len;i++)
+{
+if(arr[i]>2*ele)
+{
+count++;
+}
+}
+return count;
+
+
+
+Footer
+
+
+}
+int main()
+
+{
+int n;
+
+scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++)
+{
+scanf("%d ",&arr[i]);
+}
+int val; scanf("%d",&val);
+printf("%d",countElement(arr,val,n));
+}
+
+
+Q19	Test Case
+
+Input	Output
+
+
+10	2
+1 2 9 0 87 87 56 5 78 23
+87
+
+Weightage - 25
+
+
+Input	Output
+
+
+5	0
+1 1 1 1 1
+9
+
+Weightage - 50
+
+
+Input	Output
+
+
+1	1
+1
+1
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+5	3
+1 2 2 2 3
+2
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int countOccurences(int arr[],int val,int n)
+{
+
+
+
+
+
+int count=0;
+for(int i=0;i<n;i++)
+{
+if(arr[i]==val){ count++;
+}
+}
+return count;
+
+
+
+Footer
+
+
+}
+int main(){
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++)
+
+{
+scanf("%d ",&arr[i]);
+}
+int val; scanf("%d",&val);
+printf("%d",countOccurences(arr,val,n));
+}
+
+
+Q20	Test Case
+
+Input	Output
+
+
+
+10
+1 2 3 4 5 4 3 2 2
+
+Not Palindrome
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+8
+1  2 3 4	4 3 2 1
+
+Palindrome
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+5
+1 2 3 2 1
+
+Palindrome
+
+
+
+Solution
+
+
+Header
+
+
+#include <stdio.h>
+void palindrome(int arr[], int n)
+{
+
+
+
+int flag = 0;
+for (int i = 0; i <= n / 2 && n != 0; i++) { if (arr[i] != arr[n - i - 1]) {
+flag = 1; break;
+}
+}
+if (flag == 1)
+printf("Not Palindrome");
+else
+printf("Palindrome");
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++){ scanf("%d",&arr[i]);
+}
+palindrome(arr, n); return 0;
+}
+
+
+Q21	Test Case
+
+Input	Output
+
+
+156	False
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+121	False
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+153	True
+
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+153	True
+
+
+
+Solution
+
+
+Header
+
+
+#include <stdio.h>
+
+int power(int x, unsigned int y)
+{
+if (y == 0)
+return 1;
+if (y % 2 == 0)
+return power(x, y / 2) * power(x, y / 2); return x * power(x, y / 2) * power(x, y / 2);
+}
+
+int order(int x)
+{
+int n = 0; while (x) {
+n++;
+x = x / 10;
+}
+return n;
+}
+int isArmstrong(int x)
+{
+
+
+
+
+
+
+int n = order(x);
+int temp = x, sum = 0; while (temp) {
+int r = temp % 10; sum += power(r, n); temp = temp / 10;
+}
+if (sum == x)
+return 1;
+else
+return 0;
+
+Footer
+
+
+}
+
+int main()
+{
+int x; scanf("%d",&x);
+if (isArmstrong(x) == 1) printf("True\n");
+else
+printf("False\n");
+
+return 0;
+}
+
+
+Q22	Test Case
+
+Input	Output
+
+
+
+5
+
+
+
+
+Weightage - 25
+
+111111
+22222
+3333
+
+
+
+Input	Output
+
+
+
+9
+
+
+
+
+Weightage - 25
+
+1111111111
+222222222
+33333333
+
+
+
+Input	Output
+
+
+
+8
+
+
+
+
+Weightage - 25
+
+111111111
+22222222
+3333333
+
+
+
+Input	Output
+
+
+
+20
+
+
+
+
+Weightage - 25
+
+111111111111111111111
+22222222222222222222
+3333333333333333333
+
+
+
+Sample Input	Sample Output
+
+
+3	1111
+222
+33
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> int main()
+{
+int i, j, n; scanf("%d", &n);
+
+
+
+#include<stdio.h> int main()
+
+{
+int i, j, n; scanf("%d", &n); for(i = 1; i<=n; i++)
+{
+for(j = i-1; j<=n; j++)
+{
+printf("%d",	i);
+}
+printf("\n");
+}
+}
+
+
+
+Footer
+
+
+}
+
+
+
+Q23	Test Case
+
+Input	Output
+
+
+
+Weightage - 100
+
+
+Sample Input	Sample Output
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> int main(void)
+{
+
+
+
+#include<stdio.h> int main(void)
+{
+printf("This is a \"buggy\" program\n"); return 0;
+}
+
+
+
+Footer
+
+
+}
+
+
+
+Q24	Test Case
+
+Input	Output
+
+
+20 4	GCD of 20 and 4 is 4
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+45 9	GCD of 45 and 9 is 9
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+10 5	GCD of 10 and 5 is 5
+
+
+
+Solution
+
+
+Header
+
+
+#include <stdio.h>
+// Recursive function to return gcd of a and b int gcd(int a, int b)
+{
+
+
+
+
+
+
+#include <stdio.h>
+// Recursive function to return gcd of a and b int gcd(int a, int b)
+{
+if (b == 0)
+return a;
+return gcd(b, a % b);
+}
+// Driver program to test above function int main()
+{
+int a,b;
+scanf("%d %d",&a,&b);
+printf("GCD of %d and %d is %d ", a, b, gcd(a, b)); return 0;
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int a,b;
+scanf("%d %d",&a,&b);
+printf("GCD of %d and %d is %d ", a, b, gcd(a, b)); return 0;
+}
+
+
+Q25	Test Case
+
+Input	Output
+
+
+20	210
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+14	105
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+5	15
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> int findSum(int n)
+{
+
+
+
+#include<stdio.h> int findSum(int n)
+{
+int sum = 0;
+for (int x=1; x<=n; x++) sum = sum + x;
+return sum;
+}
+int main()
+{
+int n; scanf("%d",&n);
+printf("%d",findSum(n)); return 0;
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+printf("%d",findSum(n)); return 0;
+}
+
+
+
+Q26	Test Case
+
+Input	Output
+
+
+Choice  is 1
+
+
+
+Weightage - 100
+
+
+Sample Input	Sample Output
+
+
+Choice  is 1
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> int main()
+{
+
+
+
+#include<stdio.h> int main()
+{
+int x = 1;
+
+switch (x)
+{
+case 1: printf("Choice is 1");
+break;
+default: printf("Invalid choice"); break;
+}
+return 0;
+}
+
+
+
+Footer
+
+
+}
+
+
+
+Q27	Test Case
+
+Input	Output
+
+
+20 50	3
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+33 77	3
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+10 20	1
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int OddDivCount(int a, int b)
+{
+
+
+
+int OddDivCount(int a, int b)
+{
+int res = 0;
+for (int i = a; i <= b; ++i) { int divCount = 0;
+for (int j = 1; j <= i; ++j) { if (i % j == 0) {
+++divCount;
+}
+}
+if (divCount % 2) {
+++res;
+}
+}
+return res;
+}
+int main()
+{
+int a, b; scanf("%d%d",&a,&b);
+printf("%d",OddDivCount(a,b)); return 0;
+}
+
+Footer
+
+
+}
+int main()
+{
+int a, b; printf("%d",OddDivCount(a,b)); return 0;
+}
+
+
+Q28	Test Case
+
+Input	Output
+
+
+22	No
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+11	Yes
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+123	No
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+131	Yes
+
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+13	Yes
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> int isprime(int num)
+{
+
+
+
+int i;
+int isprime = 1;
+for(i = 2;	i <= num / 2; i++)
+{
+if(num % i == 0)
+{
+isprime = 0;
+break;
+}
+}
+
+return isprime;
+
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+if(isprime(n)){
+printf("Yes");
+}
+else{
+printf("No");
+}
+}
+
+
+Q29	Test Case
+
+Input	Output
+
+
+46	29
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+15648	15888
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+23	43
+
+
+
+Solution
+
+
+Header
+
+
+#include <stdio.h>
+unsigned int swapBits(unsigned int x)
+{
+
+
+
+unsigned int even_bits = x & 0xAAAAAAAA; unsigned int odd_bits = x & 0x55555555; even_bits >>= 1;
+odd_bits <<= 1;
+return (even_bits | odd_bits);
+
+
+
+Footer
+
+
+}
+int main()
+{
+unsigned int x; scanf("%u",&x);
+printf("%u ", swapBits(x)); return 0;
+}
+
+Q30	Test Case
+
+Input	Output
+
+
+This is a "buggy" program
+
+
+
+Weightage - 100
+
+
+Sample Input	Sample Output
+
+
+This is a "buggy" program
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> int main(void)
+{
+
+
+
+#include<stdio.h> int main(void)
+{
+printf("This is a \"buggy\" program\n"); return 0;
+}
+
+
+
+Footer
+
+
+}
+
+
+
+Q31	Test Case
+
+Input	Output
+
+
+
+10
+14 1 5 8 7 8 9 74 5 65
+
+196
+
+
+
+Weightage - 100
+
+
+Sample Input	Sample Output
+
+
+5	15
+1 2 3 4 5
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int getarraysum(int *arr,int len)
+{
+
+
+
+#include<stdio.h>
+int getarraysum(int *arr,int len)
+{
+int sum = 0, i;
+for( i=0;i<len;i=i+1)
+{
+sum += arr[i];
+
+}
+return sum;
+}
+
+// Driver Program
+
+int main()
+{
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++){ scanf("%d",&arr[i]);
+}
+printf("%d", getarraysum(arr, n)); return 0;
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++){ scanf("%d",&arr[i]);
+}
+printf("%d", getarraysum(arr, n)); return 0;
+}
+
+
+
+Q32	Test Case
+
+Input	Output
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+3 8 5	8
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> int main()
+{
+int num1, num2, num3;
+scanf("%d %d %d", &num1,&num2,&num3);
+
+
+
+#include<stdio.h> int main()
+{
+int num1, num2, num3;
+scanf("%d %d %d", &num1,&num2,&num3); if ((num1 > num2) && (num1 > num3))
+{
+printf("%d", num1);
+}
+else if((num2>num3) && (num2>num1))
+{
+
+
+}
+else
+{
+
+}
+return 0;
+}
+
+printf("%d", num2);
+
+
+
+
+printf("%d", num3);
+
+
+
+
+Footer
+
+
+}
+
+
+
+Q33	Test Case
+
+Input	Output
+
+
+10	55
+
+
+
+Weightage - 40
+
+
+Input	Output
+
+
+18	2584
+
+
+
+Weightage - 60
+
+
+Sample Input	Sample Output
+
+
+6	8
+
+
+
+Solution
+
+
+Header
+
+
+#include <stdio.h> int fib(int n)
+{
+
+if (n <= 1)
+return n;
+return fib(n - 1) + fib(n - 2);
+
+
+
+Footer
+
+
+}
+
+int main()
+{
+int n; scanf("%d",&n);
+printf("%d", fib(n)); getchar();
+return 0;
+}
+
+
+Q34	Test Case
+
+Input	Output
+
+
+
+Weightage - 5
+
+
+Input	Output
+
+
+38
+20
+96
+85
+29
+78
+25
+54
+89
+73
+51
+54
+43
+69
+61
+4
+73
+74
+78
+49		96	96	29	29	78	78	54	54	73	73	61	61	83	83	55	55	20	85	2
+
+Weightage - 5
+
+
+Input	Output
+
+
+100
+44
+64
+15
+45
+99
+69
+7
+16
+43
+26
+83
+6
+66
+4
+33
+48
+47
+87
+57
+9		14	14	14	14	14	83	83	83	83	44	44	44	87	87	87	77	77	77	9
+
+Weightage - 10
+
+
+Input	Output
+
+
+138
+5 3
+50
+42
+1
+5
+2
+71
+83
+75
+77
+81
+65
+15
+14
+30
+20
+96
+85
+29		83	83	83	83	83	83	14	14	14	14	14	95	95	95	95	77	77	77	9
+
+Weightage - 10
+
+
+Input	Output
+
+
+173
+20
+96
+85
+29
+78
+25
+54
+89
+73
+51
+54
+43
+69
+61
+4
+73
+74
+78
+49		83	83	83	83	83	95	95	95	95	95	59	59	59	59	59	10	10	10	1
+
+Weightage - 10
+
+
+Input	Output
+
+
+273
+44
+64
+15
+45
+99
+69
+7
+16
+43
+26
+83
+6
+66
+4
+33
+48
+47
+87
+57
+9		83	83	83	83	83	83	83	83	83	95	95	95	95	95	95	95	95	87	8
+
+Weightage - 10
+
+Input	Output
+
+
+679
+620
+279
+243
+273
+641
+894
+413
+143
+753
+521
+163
+784
+69
+36
+330		71	71	71	71	71	71	71	655	655	655	655	655	829	829	829	829
+
+Weightage - 10
+
+
+Input	Output
+
+
+839
+724
+119
+712
+975
+779
+956
+329
+29
+503
+262
+296
+612
+737
+75
+105		332	332	332	332	332	883	883	883	883	699	699	699	699	616	6
+
+Weightage - 10
+
+
+Input	Output
+
+
+814
+673
+825
+533
+98
+611
+743
+439
+703
+155
+96
+830
+210
+620
+20
+563		769	769	769	769	769	769	20	20	20	20	362	362	362	362	326
+
+Weightage - 10
+
+
+Input	Output
+
+
+868
+361
+892
+777
+736
+882
+700
+643
+883
+180
+495
+293
+50
+421
+405
+62		736	736	736	736	736	866	866	866	866	866	253	253	253	253	7
+
+Weightage - 10
+
+
+Input	Output
+
+
+752
+476
+773
+547
+90
+405
+367
+933
+117
+609
+244
+354
+92
+942
+169
+727		405	405	405	405	253	253	253	253	475	475	475	475	452	452	4
+
+Weightage - 10
+
+
+Sample Input	Sample Output
+
+
+
+13
+1 1 2 2 2 3 4 4 5 5 5 5 5
+
+5 5 5 5 5 2 2 2 1 1 4 4 3
+
+
+
+Solution
+
+
+Header
+
+
+#include <stdio.h> #include<limits.h> #include<malloc.h>
+int * frequencySortArray( int *arr,int size)
+{
+
+
+
+
+
+int** occurence = NULL;
+int maxpos, count = 0, count_flag, o_row, index,max; int newindex = 0, num, ctr;
+
+
+occurence = (int**)calloc(1,sizeof(int*)); occurence[0] = (int*)calloc(2,sizeof(int)); occurence[0][0] = arr[0]; occurence[0][1]++;
+count++;
+for(index = 1 ; index < size ; index++)
+{
+//search in occurence array
+
+for(o_row = 0, count_flag = 0 ;	o_row < count ; o_row++)
+{
+if(occurence[o_row][0]	== arr[index])
+{
+occurence[o_row][1]++; count_flag = 1;
+}
+} //search completed if(count_flag	== 0)
+{
+occurence = (int**)realloc(occurence,(count+1)*sizeof(int*)); occurence[count] = (int*)calloc(2,sizeof(int)); occurence[count][0] = arr[index];
+occurence[count][1]++; count++;
+}
+}
+for(index = 0 ; index < count ; index++)
+{
+//find maximum in occurence
+for(o_row = 0, max = INT_MIN ; o_row < count ; o_row++)
+{
+if(occurence[o_row][1]	>	max)
+{
+max = occurence[o_row][1]; maxpos = o_row;
+}
+}
+num = occurence[maxpos][0];
+
+for(ctr = 1 ; ctr <= max ; ctr++) arr[newindex++] = num;
+occurence[maxpos][1] =	-1;
+}
+
+// for(index=0 ; index < count ; index++)
+//	free(occurence[index]);
+// free(occurence); return arr;
+
+
+
+
+
+Footer
+
+
+}
+int main()
+{
+int arr[1000]; int size,index;
+
+scanf("%d",&size);
+for(index =0	;index < size; index++) scanf("%d",&arr[index]);
+frequencySortArray(arr,size);
+for(index = 0 ; index < size ; index++) printf("%d ",arr[index]);
+return 0;
+}
+}
+
+
+
+Header
+
+
+#include <stdio.h> #include<limits.h> #include<malloc.h>
+
+
+
+int * frequencySortArray( int *arr,int size)
+{
+int** occurence = NULL;
+int maxpos, count = 0, count_flag, o_row, index,max; int newindex = 0, num, ctr;
+
+occurence = (int**)calloc(1,sizeof(int*)); occurence[0] = (int*)calloc(2,sizeof(int)); occurence[0][0] = arr[0]; occurence[0][1]++;
+count++;
+for(index = 1 ; index < size ; index++)
+{
+//search in occurence array
+for(o_row = 0, count_flag = 0 ;	o_row < count ; o_row++)
+{
+if(occurence[o_row][0]	== arr[index])
+{
+occurence[o_row][1]++; count_flag = 1;
+}
+} //search completed if(count_flag	== 0)
+{
+occurence = (int**)realloc(occurence,(count+1)*sizeof(int*)); occurence[count] = (int*)calloc(2,sizeof(int)); occurence[count][0] = arr[index];
+occurence[count][1]++; count++;
+}
+}
+for(index = 0 ; index < count ; index++)
+{
+//find maximum in occurence
+for(o_row = 0, max = INT_MIN ; o_row < count ; o_row++)
+{
+if(occurence[o_row][1]	>	max)
+{
+max = occurence[o_row][1]; maxpos = o_row;
+}
+}
+num = occurence[maxpos][0];
+
+for(ctr = 1 ; ctr <= max ; ctr++) arr[newindex++] = num;
+occurence[maxpos][1] =	-1;
+}
+
+// for(index=0 ; index < count ; index++)
+//	free(occurence[index]);
+// free(occurence); return arr;
+}
+
+
+
+
+Footer
+
+
+int main()
+{
+int arr[1000]; int size,index;
+
+scanf("%d",&size);
+for(index =0	;index < size; index++) scanf("%d",&arr[index]);
+frequencySortArray(arr,size);
+for(index = 0 ; index < size ; index++) printf("%d ",arr[index]);
+return 0;
+}
+
+
+Q35	Test Case
+
+Input	Output
+
+
+5
+1
+9
+-6
+-7
+8
+9		10
+
+Weightage - 50
+
+
+Input	Output
+
+
+10	22
+-7 -6 -4 4 8 9 -4 5 -9
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+6	11
+5 6 0 -6 5 -8
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int maxi(int arr[],int n){
+
+
+
+#include<stdio.h> int flag=-1;
+int max(int a,int b){ if(a>=b){
+flag=1; return a;
+}
+else{
+flag=0; return b;
+}
+}
+int main()
+{
+int n,k; scanf("%d",&n);
+int arr[n],dummy[n],m=0; for(int i=0;i<n;i++){
+scanf("%d",&arr[i]);
+}
+int g=0,l=0;
+for(int i=0;i<n;i++){ l=max(arr[i]+l,arr[i]); if(flag==1){
+dummy[m++]=arr[i];
+}
+else if(flag==0 && l>g){ m=0;
+dummy[m++]=arr[i];
+}
+if(l>g){
+g=l;
+}
+}
+printf("%d",g);
+
+
+
+}
+
+
+
+Footer
+
+
+
+}
+int main()
+{
+int n,k; scanf("%d",&n);
+int arr[n],dummy[n],m=0; for(int i=0;i<n;i++){
+
+scanf("%d",&arr[i]);
+}
+
+int ans = maxi(arr,n); printf("%d",ans);
+
+}
+
+
+
+Q36	Test Case
+
+Input	Output
+
+
+Following is traversal of ternary search tree bug
+cat
+
+Weightage - 100
+
+
+Sample Input	Sample Output
+
+
+Following is traversal of ternary search tree bug
+cat
+
+Solution
+
+
+Header
+
+
+#include <stdio.h> #include <stdlib.h> #define MAX 50 struct Node
+{
+char data;
+unsigned isEndOfString: 1; struct Node *left, *eq, *right;
+};
+struct Node* newNode(char data)
+{
+struct Node* temp = (struct Node*) malloc(sizeof( struct Node )); temp->data = data;
+temp->isEndOfString = 0;
+temp->left = temp->eq = temp->right = NULL; return temp;
+}
+void insert(struct Node** root, char *word)
+{
+
+
+
+
+
+if (!(*root))
+*root = newNode(*word); if ((*word) < (*root)->data)
+insert(&( (*root)->left ), word); else if ((*word) > (*root)->data)
+insert(&( (*root)->right ), word);
+
+else
+{
+
+
+
+
+if (*(word+1))
+insert(&( (*root)->eq ), word+1);
+
+else
+
+}
+
+
+(*root)->isEndOfString = 1;
+
+
+
+
+
+Footer
+
+
+}
+void traverseTSTUtil(struct Node* root, char* buffer, int depth)
+{
+
+if (root)
+{
+traverseTSTUtil(root->left, buffer, depth); buffer[depth] = root->data;
+if (root->isEndOfString)
+{
+buffer[depth+1] = '\0'; printf( "%s\n", buffer);
+}
+traverseTSTUtil(root->eq, buffer, depth + 1); traverseTSTUtil(root->right, buffer, depth);
+}
+}
+void traverseTST(struct Node* root)
+{
+char buffer[MAX]; traverseTSTUtil(root, buffer, 0);
+}
+int searchTST(struct Node *root, char *word)
+{
+if (!root)
+return 0;
+
+if (*word < (root)->data)
+return searchTST(root->left, word);
+
+else if (*word > (root)->data)
+return searchTST(root->right, word);
+
+else
+{
+if (*(word+1) == '\0')
+return root->isEndOfString;
+
+return searchTST(root->eq, word+1);
+}
+}
+int main()
+{
+struct Node *root = NULL;
+
+insert(&root, "cat"); insert(&root, "cats"); insert(&root, "up"); insert(&root, "bug");
+
+printf("Following is traversal of ternary search tree\n"); traverseTST(root);
+
+printf("\nFollowing are search results for cats, bu and cat respectively\n"); searchTST(root, "cats")? printf("Found\n"): printf("Not Found\n"); searchTST(root, "bu")? printf("Found\n"): printf("Not Found\n"); searchTST(root, "cat")? printf("Found\n"): printf("Not Found\n");
+
+return 0;
+}
+
+
+Q37	Test Case
+
+Input	Output
+
+
+
+5
+
+
+
+
+Weightage - 50
+
+1
+2*2
+3*3*3
+
+
+
+Input	Output
+
+
+
+8
+
+
+
+
+Weightage - 50
+
+1
+2*2
+3*3*3
+
+Sample Input	Sample Output
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int PrintPattern(int num)
+{
+
+
+
+
+
+#include<stdio.h>
+int PrintPattern(int num)
+{
+int i,j;
+for (i=1;i<=num;i++) { for (j=1;j<=i;j++) {
+if(j<i)
+printf("%d*",i); else printf("%d",i);
+}
+printf(" \n");
+}
+for (i=num;i>=1;i--) { for (j=1;j<=i;j++) {
+if(j<i)
+printf("%d*",i); else printf("%d",i);
+}
+printf(" \n");
+}
+}
+int main() {
+int num; scanf("%d",&num); PrintPattern(num); return 0;
+}
+
+
+
+
+Footer
+
+
+}
+int main() {
+int num; scanf("%d",&num); PrintPattern(num); return 0;
+}
+
+
+
+
+Q38	Test Case
+
+Input	Output
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+7	*
+*  * *
+* * * *  *
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int PatternPyramid(int rows)
+{
+
+
+
+
+
+#include<stdio.h>
+int PatternPyramid(int rows)
+{
+int i,space,k=0;
+for(i=1; i<=rows; ++i, k=0)
+{
+for(space=1; space<=rows-i; ++space)
+{
+printf("	");
+}
+while(k != 2*i-1)
+{
+printf("* ");
+++k;
+}
+printf("\n");
+}
+}
+int main()
+{
+int rows; scanf("%d",&rows); PatternPyramid(rows); return 0;
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int rows; scanf("%d",&rows); PatternPyramid(rows); return 0;
+}
+
+
+Q39	Test Case
+
+Input	Output
+
+
+10	5*5*5*5*5
+4*4*4*4
+3*3*3
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+8
+
+
+
+
+Weightage - 50
+
+4*4*4*4
+3*3*3
+2*2
+
+
+
+Input	Output
+
+
+
+13
+
+
+
+
+Weightage - 25
+
+6*6*6*6*6*6
+5*5*5*5*5
+4*4*4*4
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+2*2
+1
+1
+
+
+
+Header
+
+
+#include <stdio.h>
+void printPattern(int r)
+{
+
+
+
+
+
+r = r / 2;
+int count = r;
+for (int i = 0; i < r; i++) {
+for (int j = r; j > i; j--) { if (j != r) {
+printf("*%d",count);
+}
+else {
+printf("%d",count);
+}
+}
+count--; printf("\n");
+}
+count++;
+for (int i = 0; i < r; i++) {
+for (int j = 0; j <= i; j++) { if (j != 0) {
+printf("*%d",count);
+}
+else {
+printf("%d",count);
+}
+}
+count++; printf("\n");
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); printPattern(n);
+
+return 0;
+}
+
+
+Q40	Test Case
+
+Input	Output
+
+
+6	48
+1 2 3 4 5 6
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+10
+1 3 5 7 9 10 12 14 1 4
+
+6720
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+5	8
+1 2 3 4 5
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h>
+int evenmultiplication(int size, int* list){
+
+
+
+
+
+int mul=1;
+for(int i=0;i<size;i++){ if(list[i]%2==0){
+mul=mul*list[i];
+}
+}
+return mul;
+
+
+
+Footer
+
+
+}
+int main(){
+int size; scanf("%d",&size);
+int* list= (int*)malloc(sizeof(int)*size); for(int i=0;i<size;i++){
+scanf("%d",&list[i]);
+}
+printf("%d",evenmultiplication(size,list));
+}
+
+
+Q41	Test Case
+
+Input	Output
+
+
+6	15
+1 2 3 4 5 6
+
+
+Weightage - 50
+
+Input	Output
+
+
+
+10
+1 3 5 7 9 10 12 14 1 4
+
+945
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+5	15
+1 2 3 4 5
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h>
+int oddmultiplication(int size, int* list){
+
+
+
+
+
+int mul=1;
+for(int i=0;i<size;i++){ if(list[i]%2==1){
+mul=mul*list[i];
+}
+}
+return mul;
+
+
+
+Footer
+
+
+}
+int main(){
+int size; scanf("%d",&size);
+int* list= (int*)malloc(sizeof(int)*size); for(int i=0;i<size;i++){
+scanf("%d",&list[i]);
+}
+printf("%d",oddmultiplication(size,list));
+}
+
+
+Q42	Test Case
+
+Input	Output
+
+
+
+6
+
+
+
+
+Weightage - 50
+
+* * * *  * *	* * * * * *
+* * *  * *	* * * * *
+*  * * *	* * * *
+
+
+
+Input	Output
+
+
+
+9
+
+
+
+
+Weightage - 50
+
+* * * * * * * * *	* * * * * * * * *
+* * * * * * * *	* * * * * * * *
+* * * * * * *	* * * * * * *
+
+
+
+Sample Input	Sample Output
+
+
+5	* * *  * *	* * * * *
+*  * * *	* * * *
+* * *	* * *
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> void pattern(int n)
+{
+
+
+
+
+
+int i,j;
+for (i=1; i<=n; i++)
+{
+for (j=1; j<=(2*n); j++)
+{
+if (i>(n-j+1))
+printf(" ");
+else
+printf("*");
+if ((i+n)>j)
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+for (i=1; i<=n; i++)
+{
+for (j=1; j<=(2*n); j++)
+{
+if (i<j)
+printf(" ");
+else
+printf("*");
+if (i<=((2*n)-j))
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); pattern(n); return 0;
+}
+
+
+Q43	Test Case
+
+Input	Output
+
+
+
+7
+
+
+
+
+Weightage - 50
+
+*	*
+* *	* *
+* * *	* * *
+
+
+
+Input	Output
+
+
+
+10
+
+
+
+
+Weightage - 50
+
+*	*
+* *	* *
+* * *	* * *
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+*	*
+* *	* *
+* * *	* * *
+
+
+
+Header
+
+
+#include<stdio.h> void pattern(int n)
+{
+
+
+
+
+
+int i,j;
+for (i=1; i<=n; i++)
+{
+for (j=1; j<=(2*n); j++)
+{
+if (i<j)
+printf(" ");
+else
+printf("*");
+
+if (i<=((2*n)-j))
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+
+for (i=1; i<=n; i++)
+{
+for (j=1;j<=(2*n);j++)
+{
+if (i>(n-j+1))
+printf(" ");
+else
+printf("*");
+if ((i+n)>j)
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); pattern(n); return 0;
+}
+
+
+Q44	Test Case
+
+Input	Output
+
+
+
+10
+9 8 2 1 19 5 3 23 11 13
+
+1 2 3 5 8 9 11 13 19 23
+
+
+
+Weightage - 50
+
+Input	Output
+
+
+
+5
+9 3 10 4 12
+
+3 4 9 10 12
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+6
+4 8 6 2 1 3
+
+1 2 3 4 6 8
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h> struct Node {
+int val;
+struct Node* left; struct Node* right;
+};
+void inorder(struct Node* root){ if(root!=NULL){
+inorder(root->left); printf("%d ",root->val); inorder(root->right);
+}
+}
+
+struct Node* newNode(int key){
+struct Node* temp = (struct Node*)malloc(sizeof(struct Node)); temp->val = key;
+temp->left = NULL; temp->right = NULL; return temp;
+}
+
+struct Node* insert(struct Node* root,int key){
+
+
+
+
+
+if(root==NULL){
+return newNode(key);
+}
+else if(key < root->val){
+root-> left = insert(root->left,key);
+}
+else{
+root->right = insert(root->right,key);
+}
+return root;
+
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+struct Node* root=NULL; int ele; scanf("%d",&ele);
+root = insert(root,ele); for(int i=0;i<n-1;i++){
+scanf("%d",&ele); insert(root,ele);
+}
+inorder(root);
+
+}
+
+
+
+Q45	Test Case
+
+Input	Output
+
+
+
+10
+9 8 2 1 19 5 3 23 11 13
+
+1 2 3 5 8 9 11 13 19 23
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+5
+9 3 10 4 12
+
+3 4 9 10 12
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+6
+4 8 6 2 1 3
+
+1 2 3 4 6 8
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h> struct Node {
+int val;
+struct Node* left; struct Node* right;
+};
+void inorder(struct Node* root){ if(root!=NULL){
+inorder(root->left); printf("%d ",root->val); inorder(root->right);
+}
+}
+
+struct Node* newNode(int key){
+struct Node* temp = (struct Node*)malloc(sizeof(struct Node)); temp->val = key;
+temp->left = NULL; temp->right = NULL; return temp;
+}
+
+struct Node* insert(struct Node* root,int key){
+
+
+
+
+
+if(root==NULL){
+return newNode(key);
+}
+else if(key < root->val){
+root-> left = insert(root->left,key);
+}
+else{
+root->right = insert(root->right,key);
+}
+return root;
+
+
+
+
+Footer
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+struct Node* root=NULL; int ele; scanf("%d",&ele);
+root = insert(root,ele); for(int i=0;i<n-1;i++){
+scanf("%d",&ele); insert(root,ele);
+}
+inorder(root);
+}
+
+
+Q46	Test Case
+
+Input	Output
+
+
+
+10
+7 2 5 9 13 45 21 20 10 8
+
+7 2 5 9 8 13 10 45 21 20
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+5
+1 2 3 4 5
+
+1 2 3 4 5
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+6
+8 3 4 5 6 1
+
+8 3 1 4 5 6
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h> struct Node {
+int val;
+struct Node* left; struct Node* right;
+};
+void preorder(struct Node* root){
+
+
+
+
+
+
+if(root!=NULL){
+printf("%d ",root->val); preorder(root->left); preorder(root->right);
+}
+
+
+
+Footer
+
+
+}
+struct Node* newNode(int key){
+struct Node* temp = (struct Node*)malloc(sizeof(struct Node)); temp->val = key;
+temp->left = NULL; temp->right = NULL;
+
+return temp;
+}
+
+struct Node* insert(struct Node* root,int key){
+
+if(root==NULL){
+return newNode(key);
+}
+else if(key < root->val){
+root-> left = insert(root->left,key);
+}
+else{
+root->right = insert(root->right,key);
+}
+return root;
+
+
+
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+struct Node* root=NULL; int ele; scanf("%d",&ele);
+root = insert(root,ele); for(int i=0;i<n-1;i++){
+scanf("%d",&ele); insert(root,ele);
+}
+preorder(root);
+}
+
+
+Q47	Test Case
+
+Input	Output
+
+
+7	6
+1 3 5 7 9 11 13
+13
+
+Weightage - 25
+
+
+Input	Output
+
+
+6	0
+89 76 54 32 12 45
+89
+
+Weightage - 25
+
+
+Input	Output
+
+
+4	0
+12 13 14 15
+12
+
+Weightage - 25
+
+
+Input	Output
+
+
+2	1
+1 2
+2
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+5	3
+1 4 7 12 45
+12
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h>
+int findIndex(int len,int* list,int key){
+
+
+
+
+
+for(int i=0;i<len;i++){ if(list[i]==key){
+return i;
+}
+}
+
+
+
+Footer
+
+
+}
+int main(){
+int len; scanf("%d",&len);
+int* list = (int*)malloc(sizeof(int)*len); for(int i=0;i<len;i++){
+scanf("%d",&list[i]);
+}
+int key; scanf("%d",&key);
+printf("%d",findIndex(len,list,key));
+}
+
+
+Q48	Test Case
+
+Input	Output
+
+
+2 3	2 5
+2 3 4	3 6
+5 6 4	4 4
+
+Weightage - 10
+
+
+Input	Output
+
+
+4 4	1	2	3	4
+1 1 1 1	1	2	3	4
+2 2 2 2	1	2	3	4
+
+Weightage - 5
+
+Input
+Output
+1 5	1
+1 2 3 4 5	2
+	3
+
+Weightage - 10
+
+Input
+Output
+
+
+5	5			1	6	11	16	21
+1	2	3 4 5		2	7	12	17	22
+6	7	8 9 10		3	8	13	18	23
+
+Weightage - 10
+
+
+Input	Output
+
+4	4			1	5	9 13
+1	2	3 4		2	6	10 14
+5	6	7 8		3	7	11 15
+
+Weightage - 10
+
+
+Input	Output
+
+
+2 2	2 3
+2 1	1 4
+3 4
+
+Weightage - 5
+
+
+Input	Output
+
+
+
+3 3
+2  3 1
+4  6 3
+
+2  4 5
+3  6 4
+1  3 2
+
+
+Weightage - 10
+
+
+Input	Output
+
+
+
+10 5
+21 16 11 6  1
+22 17 12 7  2
+
+21 22 23 24 25 1  6  11 16  21
+16 17 18 19 20 2  7  12 17  22
+11 12 13 14 15 3  8  13 18  23
+
+
+Weightage - 10
+
+
+Input	Output
+
+
+5 10								21	16	11	6	1
+21 22	23 24	25	1	6	11	16	21	22	17	12	7	2
+16 17	18 19	20	2	7	12	17	22	23	18	13	8	3
+
+Weightage
+
+
+Input
+- 10
+
+
+
+Output
+
+
+8	4			4	3 2	1 1 5 9 13
+4	8	12 16		8	7 6	5 2 6 10 14
+3	7	11 15		12	11	10 9 3 7 11 15
+
+Weightage - 10
+
+
+Input	Output
+
+
+20 3		2	4	5	5	4	2	3	1	4	7	3	2	1	8	9	11 3 1 4	8
+2 3 1		3	6	4	4	6	3	3	2	5	8	6	5	4	4	6	7 8 2 6	9
+4 6 3		1	3	2	2	3	1	5	3	6	9	9	8	7	1	2	3 3 3 7	11
+
+Weightage - 10
+
+
+Sample Input	Sample Output
+
+
+
+3 3
+1  2 3
+4  5 6
+
+1  4 7
+2  5 8
+3  6 9
+
+
+Solution
+
+
+
+Header
+
+
+#include <stdio.h> int main()
+{
+int a[1000][1000], transpose[1000][1000], r, c, i, j;
+//printf("Enter rows and columns of matrix: "); scanf("%d %d", &r, &c);
+
+
+#include <stdio.h>
+
+int main()
+{
+int a[1000][1000], transpose[1000][1000], r, c, i, j;
+//printf("Enter rows and columns of matrix: "); scanf("%d %d", &r, &c);
+
+
+// Storing elements of the matrix
+// printf("\nEnter elements of matrix:\n"); for(i=0; i<r; ++i)
+for(j=0; j<c; ++j)
+{
+//printf("Enter element a%d%d: ",i+1, j+1); scanf("%d", &a[i][j]);
+
+// Storing elements of the matrix
+// printf("\nEnter elements of matrix:\n"); for(i=0; i<r; ++i)
+for(j=0; j<c; ++j)
+{
+//printf("Enter element a%d%d: ",i+1, j+1); scanf("%d", &a[i][j]);
+}
+
+}
+
+
+
+
+
+
+for(i=0; i<r; ++i) for(j=0; j<c; ++j)
+{
+transpose[j][i] = a[i][j];
+}
+
+
+
+Footer
+
+
+
+// Displaying the transpose of matrix a
+//printf("\nTranspose of Matrix:\n"); for(i=0; i<c; ++i)
+for(j=0; j<r; ++j)
+{
+printf("%d ",transpose[i][j]); if(j==r-1)
+printf("\n");
+}
+
+return 0;
+}
+
+
+// Displaying the matrix a[][] */
+/* printf("\nEntered Matrix: \n"); for(i=0; i<r; ++i)
+for(j=0; j<c; ++j)
+{
+printf("%d	", a[i][j]); if (j == c-1)
+printf("\n\n");
+}*/
+
+// Finding the transpose of matrix a for(i=0; i<r; ++i)
+for(j=0; j<c; ++j)
+{
+transpose[j][i] = a[i][j];
+}
+
+// Displaying the transpose of matrix a
+//printf("\nTranspose of Matrix:\n"); for(i=0; i<c; ++i)
+for(j=0; j<r; ++j)
+{
+printf("%d ",transpose[i][j]); if(j==r-1)
+printf("\n");
+}
+
+return 0;
+}
+
+
+
+Q49	Test Case
+
+Input	Output
+
+
+kjkfhskgkbvkjsduivgsd	k1j1k1f1h1s1k1g1k1b1v1k1j1s1d1u1i1v1g1s1d1
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+jcjcjcjjcjcjcjcjjcj	j1c1j1c1j1c1j2c1j1c1j1c1j1c1j2c1j1
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+hjhhjhhhhhhhhhhhh	h1j1h2j1h12
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+aaaabbbccdefaa	a4b3c2d1e1f1a2
+
+
+
+Solution
+
+Header
+
+
+#include<stdio.h> #include<string.h> #include<math.h>
+void encodeString(char arr[],char alpha[],int num[]){
+
+
+
+
+
+int front=-1,rear=-1; int len=strlen(arr); alpha[++rear]=arr[0]; num[rear]=1;
+for(int i=1;i<len;i++){ if(arr[i]==alpha[rear]){
+num[rear]++;
+}
+else{
+alpha[++rear]=arr[i]; num[rear]=1;
+}
+}
+while(front!=rear){
+++front; printf("%c%d",alpha[front],num[front]);
+}
+
+
+
+Footer
+
+
+}
+int main(){
+char arr[1000]; scanf("%s",arr); char alpha[1000]; int num[1000];
+encodeString(arr,alpha,num);
+}
+
+
+
+Q50	Test Case
+
+Input	Output
+
+
+7	6
+1 3 5 7 9 11 13
+13
+
+Weightage - 25
+
+
+Input	Output
+
+
+6	0
+89 76 54 32 12 45
+89
+
+Weightage - 25
+
+
+Input	Output
+
+
+4	0
+12 13 14 15
+12
+
+Weightage - 25
+
+
+Input	Output
+
+
+2	1
+1 2
+2
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+5	3
+1 4 7 12 45
+12
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h>
+int findIndex(int len,int* list,int key){
+
+
+
+
+
+for(int i=0;i<len;i++){ if(list[i]==key){
+return i;
+}
+}
+
+
+
+Footer
+
+
+}
+int main(){
+int len; scanf("%d",&len);
+int* list = (int*)malloc(sizeof(int)*len); for(int i=0;i<len;i++){
+scanf("%d",&list[i]);
+}
+int key; scanf("%d",&key);
+printf("%d",findIndex(len,list,key));
+}
+
+
+Q51	Test Case
+
+Input	Output
+
+
+
+6
+
+
+
+
+Weightage - 50
+
+* * * *  * *	* * * * * *
+* * *  * *	* * * * *
+*  * * *	* * * *
+
+
+
+Input	Output
+
+
+
+9
+
+
+
+
+Weightage - 50
+
+* * * * * * * * *	* * * * * * * * *
+* * * * * * * *	* * * * * * * *
+* * * * * * *	* * * * * * *
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+
+Header
+
+* * *  * *	* * * * *
+*  * * *	* * * *
+* * *	* * *
+
+#include<stdio.h> void pattern(int n)
+{
+
+
+
+
+
+int i,j;
+for (i=1; i<=n; i++)
+{
+for (j=1; j<=(2*n); j++)
+{
+if (i>(n-j+1))
+printf(" ");
+else
+printf("*");
+if ((i+n)>j)
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+for (i=1; i<=n; i++)
+{
+for (j=1; j<=(2*n); j++)
+{
+if (i<j)
+printf(" ");
+else
+printf("*");
+if (i<=((2*n)-j))
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); pattern(n); return 0;
+}
+
+
+Q52	Test Case
+
+Input	Output
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+5	*	*
+* *	* *
+
+* * *	* * *
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> void pattern(int n)
+{
+
+
+
+
+
+int i,j;
+for (i=1; i<=n; i++)
+{
+for (j=1; j<=(2*n); j++)
+{
+if (i<j)
+printf(" ");
+else
+printf("*");
+
+if (i<=((2*n)-j))
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+
+for (i=1; i<=n; i++)
+{
+for (j=1;j<=(2*n);j++)
+{
+if (i>(n-j+1))
+printf(" ");
+else
+printf("*");
+if ((i+n)>j)
+printf(" ");
+
+else
+
+}
+
+
+printf("*");
+
+printf("\n");
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); pattern(n); return 0;
+}
+
+
+Q53	Test Case
+
+Input	Output
+
+
+
+10
+9 8 2 1 19 5 3 23 11 13
+
+1 2 3 5 8 9 11 13 19 23
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+5
+9 3 10 4 12
+
+3 4 9 10 12
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+6
+4
+8
+6
+2
+1
+3		1	2	3	4	6	8
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h> struct Node {
+int val;
+struct Node* left; struct Node* right;
+};
+void inorder(struct Node* root){ if(root!=NULL){
+inorder(root->left); printf("%d ",root->val); inorder(root->right);
+}
+}
+
+struct Node* newNode(int key){
+struct Node* temp = (struct Node*)malloc(sizeof(struct Node)); temp->val = key;
+temp->left = NULL; temp->right = NULL; return temp;
+}
+
+struct Node* insert(struct Node* root,int key){
+
+
+
+
+
+if(root==NULL){
+return newNode(key);
+}
+else if(key < root->val){
+root-> left = insert(root->left,key);
+}
+else{
+root->right = insert(root->right,key);
+}
+return root;
+
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+struct Node* root=NULL; int ele; scanf("%d",&ele);
+root = insert(root,ele); for(int i=0;i<n-1;i++){
+scanf("%d",&ele); insert(root,ele);
+}
+inorder(root);
+}
+
+
+Q54	Test Case
+
+Input	Output
+
+
+
+10
+7 2 5 9 13 45 21 20 10 8
+
+7 2 5 9 8 13 10 45 21 20
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+5
+1 2 3 4 5
+
+1 2 3 4 5
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+6
+8 3 4 5 6 1
+
+8 3 1 4 5 6
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h> #include<stdlib.h> struct Node {
+int val;
+struct Node* left; struct Node* right;
+};
+void preorder(struct Node* root){
+
+
+
+
+
+
+if(root!=NULL){
+printf("%d ",root->val); preorder(root->left); preorder(root->right);
+}
+
+
+
+Footer
+
+
+}
+struct Node* newNode(int key){
+struct Node* temp = (struct Node*)malloc(sizeof(struct Node)); temp->val = key;
+temp->left = NULL; temp->right = NULL; return temp;
+}
+struct Node* insert(struct Node* root,int key){ if(root==NULL){
+return newNode(key);
+}
+else if(key < root->val){
+root-> left = insert(root->left,key);
+}
+else{
+root->right = insert(root->right,key);
+}
+return root;
+
+
+
+
+}
+int main()
+
+{
+
+int n; scanf("%d",&n);
+struct Node* root=NULL; int ele; scanf("%d",&ele);
+root = insert(root,ele); for(int i=0;i<n-1;i++){
+scanf("%d",&ele); insert(root,ele);
+}
+preorder(root);
+}
+
+
+Q55	Test Case
+
+Input	Output
+
+
+
+26
+
+
+
+
+Weightage - 50
+
+a ab abc
+
+
+
+Input	Output
+
+
+
+18
+
+
+
+
+Weightage - 25
+
+a ab abc
+
+
+
+Input	Output
+
+
+
+14
+
+
+
+
+Weightage - 25
+
+a ab abc
+
+
+
+Sample Input	Sample Output
+
+
+
+6
+
+
+
+
+Solution
+
+a ab abc
+
+
+
+
+Header
+
+
+import java.io.*;
+import java.util.Scanner; class Main
+{
+
+Header
+
+
+#include<stdio.h>
+void printcharacterpattern( int num)
+{
+
+public static void printChars(int n)
+{
+
+
+
+
+import java.io.*;
+import java.util.Scanner; class Main
+{
+public static void printChars(int n)
+{
+
+int i, j; char num='a';
+for(i=0; i<n; i++)
+{
+num='a';
+for(j=0; j<=i; j++)
+
+#include<stdio.h>
+void printcharacterpattern( int num)
+{
+int i,j; char s;
+for(i=0;i<num;i++)
+{
+s='a'; for(j=0;j<=i;j++)
+{
+printf("%c", s++);
+
+}
+
+{
+System.out.print(num); num++;
+}
+
+printf("\n");
+}
+
+}
+
+System.out.println();
+}
+}
+
+int main()
+{
+int n;
+
+public static void main(String args[])
+{
+int n;
+Scanner myObj = new Scanner(System.in); n = myObj.nextInt();
+printChars(n);
+}
+}
+
+
+
+
+
+}
+
+
+
+Footer
+
+scanf("%d",&n); printcharacterpattern(n); return 0;
+
+
+
+
+
+Footer
+
+
+
+
+
+
+}
+public static void main(String args[])
+{
+int n;
+Scanner myObj = new Scanner(System.in); n = myObj.nextInt();
+printChars(n);
+
+}
+int main()
+{
+int n; scanf("%d",&n);
+printcharacterpattern(n); return 0;
+}
+
+}
+}
+
+
+Q56	Test Case
+
+Input	Output
+
+
+
+6
+
+
+
+
+Weightage - 25
+
+1
+1 2
+3 5 8
+
+
+
+Input	Output
+
+
+
+9
+
+
+
+
+Weightage - 50
+
+1
+1 2
+3 5 8
+
+
+
+Input	Output
+
+
+
+7
+
+
+
+
+Weightage - 25
+
+1
+1 2
+3 5 8
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+1
+1 2
+3 5 8
+
+
+
+Header
+
+
+#include<stdio.h> int fib(int n) {
+
+
+
+#include<stdio.h> int fib(int n) {
+
+if(n<=1)
+return n;
+return(fib(n-1)+fib(n-2));
+}
+int main() {
+int i,j,k=1,rows; scanf("%d",&rows);
+for (i=1;i<=rows;i++) { for (j=1;j<=i;j++) {
+printf("%d ",fib(k++));
+}
+printf("\n");
+}
+return 0;
+}
+
+
+
+Footer
+
+
+
+}
+int main() {
+int i,j,k=1,rows; scanf("%d",&rows);
+for (i=1;i<=rows;i++) { for (j=1;j<=i;j++) {
+printf("%d ",fib(k++));
+}
+printf("\n");
+}
+return 0;
+}
+
+
+Q57
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+1 2 3 4 5
+16 17 18 19  6
+15 24 25 20  7
+
+
+
+Header
+
+
+#include<stdio.h> #include<string.h> #include<math.h>
+void spiralPattern(int n){
+
+
+
+int arr[n][n];
+int u=0,l=0,b=n,r=n,val=1; while(l<r && u<b){
+for(int i=l;i<r;i++){
+
+arr[u][i]=val++;
+} u++;
+for(int i=u;i<b;i++){ arr[i][r-1]=val++;
+}
+r--;
+for(int i=r-1;i>=l;i--){
+arr[b-1][i]=val++;
+}
+b--;
+for(int i=b-1;i>=u;i--){ arr[i][l]=val++;
+} l++;
+}
+for(int i=0;i<n;i++){ for(int j=0;j<n;j++){
+printf("%d ",arr[i][j]);
+}
+printf("\n");
+}
+
+
+
+Footer
+
+
+
+}
+int main()
+{
+
+int n; scanf("%d",&n); spiralPattern(n);
+}
+
+
+Q58	Test Case
+
+Input	Output
+
+
+5
+
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+7
+
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+4			4	4	4	4	4	4	4
+			4	3	3	3	3	3	4
+			4	3	2	2	2	3	4
+
+Solution
+
+Header
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+void spiralPattern(int	n){
+
+
+
+int size=2*n-1;
+int arr[size][size];
+
+int u=0,l=0,b=size,r=size,val=n; while(l<r && u<b){
+for(int i=l;i<r;i++){ arr[u][i]=val;
+} u++;
+for(int i=u;i<b;i++){ arr[i][r-1]=val;
+}
+r--;
+for(int i=r-1;i>=l;i--){
+arr[b-1][i]=val;
+}
+b--;
+for(int i=b-1;i>=u;i--){ arr[i][l]=val;
+} l++;
+val--;
+}
+for(int i=0;i<size;i++){ for(int j=0;j<size;j++){
+printf("%d ",arr[i][j]);
+}
+printf("\n");
+}
+
+
+
+Footer
+
+
+
+}
+int main()
+{
+
+int n; scanf("%d",&n); spiralPattern(n);
+}
+
+
+Q59	Test Case
+
+Input	Output
+
+
+
+6
+1 4 7 9 3 7
+
+252
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+5
+98 34 78 15 78
+
+324870
+
+
+
+Weightage - 75
+
+
+Sample Input	Sample Output
+
+
+
+5
+5 10 15 20 25
+
+300
+
+
+
+Solution
+
+
+Header
+
+
+#include <stdio.h> int gcd(int a, int b)
+{
+if (a == 0)
+return b;
+
+return gcd(b % a, a);
+}
+int calculateLCM(int a, int b)
+{
+
+
+
+return (a*b)/gcd(a, b);
+
+
+
+Footer
+
+
+}
+int calculateGeneralLCM( int arr[],int n){ int x = calculateLCM(arr[0],arr[1]); for(int i=2;i<n;i++){
+x = calculateLCM(x,arr[i]);
+}
+return x;
+}
+int main()
+{
+int n; scanf("%d",&n); int arr[n];
+for(int i=0;i<n;i++){ scanf("%d",&arr[i]);
+}
+printf("%d",calculateGeneralLCM(arr,n)); return 0;
+}
+
+
+Q60	Test Case
+
+Input	Output
+
+
+76	B
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+75	C
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+61	C
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+60	D
+
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+91	A
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+void checkGrades(int marks){
+
+
+
+#include<stdio.h>
+void checkGrades(int marks){ if(marks>=91){
+printf("A");
+}
+else if(marks>=76 && marks<=90){ printf("B");
+}
+else if(marks>=61 && marks<=75){ printf("C");
+}
+else{
+printf("D");
+}
+
+}
+int main()
+{
+int marks; scanf("%d",&marks); checkGrades(marks);
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int marks; scanf("%d",&marks); checkGrades(marks);
+}
+
+
+
+Q61
+
+
+Test Case
+
+
+Input
+
+
+Output
+10						1 2	3 4 5
+1 1 1 1 2	2	3	4	5	4
+
+Weightage - 25
+
+Input
+Output
+5						4 5	8
+4 5 4 8 4
+
+Weightage - 25
+
+Input
+Output
+8						1 2	3 4 5 6 7 8
+1 2 3 4 5	6	7	8
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+6
+2 2 3 3 4 4
+
+2 3 4
+
+
+
+Sample Input	Sample Output
+
+
+5	21
+21 21 21 21 21
+
+
+Solution
+
+
+Header
+
+
+#include <stdio.h> int count=0;
+int a[100],b[100];
+void deleteDuplicate(int n){
+
+
+
+
+
+int c,d;
+for (c = 0; c < n; c++)
+{
+for (d = 0; d < count; d++)
+{
+if(a[c] == b[d]) break;
+}
+if (d == count)
+{
+b[count] = a[c]; count++;
+}
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n, c; scanf("%d", &n);
+
+for (c = 0; c < n; c++) scanf("%d", &a[c]);
+
+deleteDuplicate(n);
+for (c = 0; c < count; c++) printf("%d ", b[c]);
+
+return 0;
+}
+
+
+Q62	Test Case
+
+Input	Output
+
+
+23 5 2015	6
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+24 8 2019	6
+
+Weightage - 25
+
+
+Input	Output
+
+
+15 8 2019	4
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+29 3 1998	0
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int getDay(int d, int m, int y)
+{
+
+
+
+
+
+static int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 }; y -= m < 3;
+return ( y + y/4 - y/100 + y/400 + t[m-1] + d) % 7;
+
+
+
+
+Footer
+
+
+}
+int main()
+{
+int date,month,year;
+scanf("%d %d %d",&date,&month,&year); int day = getDay(date, month, year); printf ("%d", day);
+return 0;
+}
+
+
+Q63	Test Case
+
+Input	Output
+
+
+
+6
+
+
+
+
+Weightage - 50
+
+ABCDEFGHIJKL ABCDEFGHIJ
+ABCDEFGH
+
+
+
+Input	Output
+
+
+
+9
+
+
+
+
+Weightage - 50
+
+ABCDEFGHIJKLMNOPQR ABCDEFGHIJKLMNOP
+ABCDEFGHIJKLMN
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+ABCDEFGHIJ ABCDEFGH
+ABCDEF
+
+Header
+
+
+#include<stdio.h> void pyramid(int n)
+{
+
+
+
+
+
+int i, j, num, gap;
+for (i = n; i >= 1; i--) {
+for (gap = n - 1; gap >= i; gap--) { printf(" ");
+printf(" ");
+}
+num = 'A';
+for (j = 1; j <= i; j++) { printf("%c",num++);
+}
+for (j = i - 1; j >= 0; j--) {
+printf("%c",num++);
+}
+printf("\n");
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); pyramid(n); return 0;
+}
+
+
+Q64	Test Case
+
+Input	Output
+
+
+
+6
+7 5 9 3 7 8
+
+9 8 7 7 5 3
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+10
+3 5 7 8 0 1 5 7 8 2
+
+8 8 7 7 5 5 3 2 1 0
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+5
+1 5 7 4 6
+
+7 6 5 4 1
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int * descendingSortArray(int *arr, int len)
+{
+
+int small, pos, i, j, temp; for(i = 0; i <= len-1 ; i++)
+{
+for(j = i; j < len; j++)
+{
+temp = 0;
+if(arr[i] < arr[j])
+{
+temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
+}
+}
+}
+return arr;
+
+
+
+
+
+
+Footer
+
+
+}
+
+int main()
+{
+int index, size; scanf("%d",&size); int arr[size];
+for(int i=0;i<size;i++){ scanf("%d",&arr[i]);
+}
+descendingSortArray(arr, size); for(index = 0; index < size; index++)
+printf("%d " , arr[index]); return 0;
+}
+
+
+
+Q65	Test Case
+
+Input	Output
+
+
+
+10
+7 4 9 10 34 5 25 67 90 87
+
+
+
+Weightage - 50
+
+Given linked list
+87 90 67 25 5 34 10 9 4 7
+Reversed Linked list
+
+
+
+Input	Output
+
+
+
+5
+90 89 0 87 6
+
+
+
+Weightage - 50
+
+Given linked list 6 87 0 89 90
+Reversed Linked list
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+1 2 3 4 5
+
+
+
+Solution
+
+Given linked list 5 4 3 2 1
+Reversed Linked list
+
+
+
+Header
+
+
+#include <stdio.h> #include <stdlib.h> struct Node {
+int data;
+struct Node* next;
+};
+
+static void reverse(struct Node** head_ref)
+{
+
+
+
+
+
+struct Node* prev = NULL;
+struct Node* current = *head_ref; struct Node* next = NULL;
+while (current != NULL) { next = current->next; current->next = prev; prev = current; current = next;
+}
+*head_ref = prev;
+
+
+
+Footer
+
+
+}
+void push(struct Node** head_ref, int new_data)
+{
+struct Node* new_node = (struct Node*)malloc(sizeof(struct Node)); new_node->data = new_data;
+new_node->next = (*head_ref); (*head_ref) = new_node;
+}
+void printList(struct Node* head)
+{
+struct Node* temp = head; while (temp != NULL) {
+printf("%d ", temp->data); temp = temp->next;
+}
+}
+int main()
+{
+struct Node* head = NULL; int n;
+scanf("%d",&n); int x;
+for(int i=0;i<n;i++){ scanf("%d",&x); push(&head, x);
+}
+
+printf("Given linked list\n"); printList(head); reverse(&head);
+printf("\nReversed Linked list \n"); printList(head);
+getchar();
+}
+
+
+Q66	Test Case
+
+Input	Output
+
+
+
+5
+1 8 4 6 9
+
+9 9 9 9 9
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+7
+34 5 6 3 2 7 9
+
+34 34 34 34 34 34 34
+
+
+
+Weightage - 50
+
+Sample Input	Sample Output
+
+
+
+5
+1 4 5 3 2
+
+5 5 5 5 5
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int* maxReplace(int *arr, int len)
+{
+
+
+
+
+
+int i, max; if(len>0)
+{
+// max=arr[0];
+for(i=0;i<len;i++)
+{
+//	int dummy; if(max<arr[i])
+max=arr[i];
+}
+//	dummy = 100;
+}
+for(i=0;i<len;i++) arr[i]=max;
+return arr;
+
+
+
+Footer
+
+
+}
+int main()
+{
+int	size, ind; scanf("%d",&size); int arr[size];
+for(int i=0;i<size;i++){
+scanf("%d",&arr[i]);
+}
+maxReplace(arr, size);
+for(ind = 0; ind < size; ind++) printf("%d ", arr[ind]);
+
+}
+
+
+
+Q67	Test Case
+
+Input	Output
+
+
+1	Red
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+2	Black
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+3	White
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+4	Green
+
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+5	No color
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+void printcolor(int num)
+{
+
+
+
+
+
+switch(num)
+{
+case 1: printf("Red"); break;
+case 2: printf("Black"); break;
+case 3 : printf("White"); break;
+case 4: printf("Green"); break;
+default:
+printf("No color"); break;
+}
+
+
+
+Footer
+
+
+}
+int main()
+{
+int num; scanf("%d",&num); printcolor(num);
+}
+
+
+Q68	Test Case
+
+Input	Output
+
+
+
+7
+
+
+
+
+Weightage - 25
+
+1
+212
+32123
+
+
+
+Input	Output
+
+9
+
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+1
+212
+32123
+
+
+
+
+11
+
+
+
+
+Weightage - 25
+
+1
+212
+32123
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+1
+212
+32123
+
+
+
+Header
+
+
+#include <stdio.h> void display(int n)
+{
+
+
+
+
+
+int space = n / 2, num = 1; for (int i = 1; i <= n; i++)
+{
+for (int j = 1; j <= space; j++) printf(" ");
+int count = num / 2 + 1;
+for (int k = 1; k <= num; k++)
+{
+printf("%d",count); if (k <= num /2 )
+count--;
+
+else
+
+}
+
+
+count++;
+
+printf("\n"); if (i <= n / 2)
+{
+
+
+
+
+}
+else
+{
+
+
+
+}
+}
+
+space = space - 1; num = num + 2;
+
+
+
+
+space = space + 1; num = num - 2;
+
+
+
+
+Footer
+
+
+}
+int main()
+{
+int n; scanf("%d",&n); display(n); return 0;
+}
+
+
+Q69	Test Case
+
+Input	Output
+
+
+
+9
+
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+1
+1*2
+1*2*3
+
+
+
+
+11
+
+
+
+
+Weightage - 50
+
+1
+1*2
+1*2*3
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+1
+1*2
+1*2*3
+
+
+
+Header
+
+
+#include<stdio.h> void display(int n)
+{
+
+
+
+
+
+int sp = n / 2, st = 1;
+for (int i = 1; i <= n; i++) {
+for (int j = 1; j <= sp; j++) { printf(" ");
+}
+
+int count = 1;
+for (int k = 1; k <= st; k++) { if (k % 2 == 0)
+printf("*");
+else printf("%d",count++);
+}
+printf("\n");
+if (i <= n / 2) { sp = sp - 1; st = st + 2;
+}
+else {
+sp = sp + 1; st = st - 2;
+}
+}
+
+
+
+Footer
+
+
+}
+
+int main()
+{
+int n; scanf("%d",&n); display(n); return 0;
+}
+
+
+Q70	Test Case
+
+Input	Output
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+long long int hayStack(long long int n,long long int num){
+
+
+
+
+
+long long int hash[10]={0},k=0; while(num!=0){
+hash[num%10]++; num=num/10;
+}
+return hash[n];
+
+
+
+Footer
+
+
+}
+int main(){
+long long int n,num; scanf("%lld",&n);
+scanf("%lld",&num);
+printf("Needle %lld occurs %lld times in the hash",n,hayStack(n,num));
+}
+
+
+
+Q71	Test Case
+
+Input	Output
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+1 3
+
+
+
+
+Weightage - 50
+
+
+Sample Input	Sample Output
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+int isPalindrome(int n)
+{
+int rev = 0;
+for (int i = n; i > 0; i /= 10) rev = rev*10 + i%10;
+return (n==rev);
+}
+void PalindromeCollection(int min, int max)
+{
+for (int i = min; i <= max; i++) if (isPalindrome(i)) printf("%d ",i);
+}
+void printPalindrome(int num,int n){
+
+
+
+int max_lim=1; for(int i=0;i<n;i++){
+max_lim= max_lim*10;
+}
+
+max_lim-=1; PalindromeCollection(num, max_lim);
+
+
+Footer
+
+
+}
+int main()
+{
+int num,n;
+scanf("%d %d",&num,&n); printPalindrome(num,n);
+}
+
+
+Q72	Test Case
+
+Input	Output
+
+
+0	0 0 0 0 0 0 0 0 0 0
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+10	10 20 30 40 50 60 70 80 90 100
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+12	12 24 36 48 60 72 84 96 108 120
+
+
+
+Weightage - 25
+
+
+Input	Output
+
+
+123	123 246 369 492 615 738 861 984 1107 1230
+
+
+
+Weightage - 25
+
+
+Sample Input	Sample Output
+
+
+6	6 12 18 24 30 36 42 48 54 60
+
+
+
+Solution
+
+
+Header
+
+
+#include<stdio.h>
+void printTable(int n){
+
+
+
+
+
+for(int i=0;i<10;i++){ printf("%d ",n*(i+1));
+}
+
+
+
+Footer
+
+
+}
+int main(){
+int n; scanf("%d",&n); printTable(n);
+}
+
+
+
+Q73	Test Case
+
+Input	Output
+
+
+
+9
+
+
+
+
+Weightage - 50
+
+
+Input	Output
+
+1
+1*2
+1*2*3
+
+
+
+
+11
+
+
+
+
+Weightage - 50
+
+1
+1*2
+1*2*3
+
+
+
+Sample Input	Sample Output
+
+
+
+5
+
+
+
+
+Solution
+
+1
+1*2
+1*2*3
+
+Header
+
+
+#include<stdio.h> void display(int n)
+{
+
+
+
+
+
+int sp = n / 2, st = 1;
+for (int i = 1; i <= n; i++) {
+for (int j = 1; j <= sp; j++) { printf(" ");
+}
+
+int count = 1;
+for (int k = 1; k <= st; k++) { if (k % 2 == 0)
+printf("*");
+else printf("%d",count++);
+}
+printf("\n");
+if (i <= n / 2) { sp = sp - 1; st = st + 2;
+}
+else {
+sp = sp + 1; st = st - 2;
+}
+}
+
+
+
+Footer
+
+
+}
+
+int main()
+{
+int n; scanf("%d",&n); display(n); return 0;
+}
+
+
+Q74	Test Case
+
+Input	Output
+
+
+This is a  test sentence	ecnetnes
+
+
+
+Weightage - 100
+
+
+Sample Input	Sample Output
+
+
+This is a  test sentence	sentence test a is This
+
+
+
+Solution
+
+
+
+Header
+
+
+#include <stdio.h> #include <string.h>
+void reverseWord(char string[],int len){
+
+
+char reverse[100];
+int index,wordStart,wordEnd,i; index = 0;
+wordStart = len - 1; wordEnd = len - 1;
+while(wordStart > 0)
+{
+if(string[wordStart] == ' ')
+{
+
+
+char reverse[100];
+int index,wordStart,wordEnd,i; index = 0;
+wordStart = len - 1; wordEnd = len - 1;
+while(wordStart > 0)
+{
+if(string[wordStart] == ' ')
+{
+i = wordStart + 1; while(i <= wordEnd)
+{
+reverse[index] = string[i]; i++;
+index++;
+}
+reverse[index++] = ' '; wordEnd = wordStart - 1;
+}
+wordStart--;
+}
+for(i=0; i<=wordEnd; i++)
+{
+reverse[index] = string[i]; index++;
+}
+reverse[index] = '\0'; printf("%s", reverse);
+
+i = wordStart + 1; while(i <= wordEnd)
+{
+reverse[index] = string[i]; i++;
+index++;
+}
+reverse[index++] = ' '; wordEnd = wordStart - 1;
+}
+wordStart--;
+}
+for(i=0; i<=wordEnd; i++)
+{
+reverse[index] = string[i]; index++;
+}
+reverse[index] = '\0'; printf("%s", reverse);
+
+
+
+Footer
+
+
+}
+int main()
+{
+char string[100];
+int len, i, index, wordStart, wordEnd; scanf("%[^\n]s",string);
+len = strlen(string); reverseWord(string,len);
+
+return 0;
+}
