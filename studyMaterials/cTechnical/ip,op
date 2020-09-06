@@ -6,8 +6,38 @@ diff b/w scanf/gets:
   -whitespace
   -newline
   -end of file
+whereas gets() not terminate for above mentioned parameters.
 
-  whereas gets() not terminate for above mentioned parameters.
+getc,getchar-std form
+getch-non std ***************************
+
+-getc():
+reads a single character from a given input stream
+and returns the corresponding integer value (typically ASCII value of read character) on success.
+It returns EOF on failure.
+
+getchar():
+The difference between getc() and getchar() is getc() can read from any input stream,
+but getchar() reads from standard input.
+So getchar() is equivalent to getc(stdin).
+
+getch():
+getch() is a nonstandard function
+present in conio.h header file which is mostly used by MS-DOS compilers like Turbo C.
+It is not part of the C standard library or ISO C, nor is it defined by POSIX
+
+getche()
+non-standard function present in conio.h.
+It reads a single character from the keyboard
+and displays immediately on output screen without waiting for enter key.****************
+
+printf, sprintf and fprintf:
+printf():
+ print character stream of data on stdout console
+sprintf():
+  instead of printing on console store it on char buffer
+fprintf():
+  print the string content in file but not on stdout console
 
   #include<stdio.h>
   int main()
