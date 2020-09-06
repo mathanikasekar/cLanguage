@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+    char data;
+
+    unsigned EndOfString: 1;
+
+    struct Node *left, *center, *right;
+};
+
+struct Node* newNode(char data)
+{
+    struct Node* temp = (struct Node*) malloc(sizeof( struct Node ));
+    temp->data = data;
+    temp->EndOfString = 0;
+    temp->left = temp->center = temp->right = NULL;
+    return temp;
+}
+
+void insert(struct Node** root, char *word)
+{
+
+    if (!(*root))
+        *root = newNode(*word);
+
+    if ((*word) < (*root)->data)
+        insert(&( (*root)->left ), word);
+    else if ((*word) > (*root)->data)
+        insert(&( (*root)->right ), word);
+
+    else
+    {
+        if (*(word+1))
+            insert(&( (*root)->center ), word+1);
+
+        else
+            (*root)->EndOfString = 1;
+    }
+}
+ void traverse(struct Node* root, char* str, int i)
+{
+    if (root)
+    {
+        traverse(root->left, str, i);
+        str[i] = root->data;
+        if (root->EndOfString==1)
+        {
+            str[i+1] = '\0';
+            printf( "%s\n", str);
+        }
+
+        traverse(root->center, str, i + 1);
+        traverse(root->right, str, i);
+    }
+}
+
+void print(struct Node* root)
+{
+    char str[100];
+    traverse(root, str, 0);
+}
+int search(struct Node *root,char *word)
+{
+    if(root==NULL)
+       return 0;
+    if(*word<(root)->data)
+         return search(root->left,word);
+    else if(*word>(root)->data)
+         return search(root->right,word);
+    else
+    {
+       if(*(word+1)=='\0')
+       return root->EndOfString;
+       return search(root->center,word+1);
+    }
+}
+
+int main()
+{
+    struct Node *root = NULL;
+
+    insert(&root, "cat");
+    insert(&root, "cats");
+    insert(&root, "up");
+    insert(&root, "bug");
+    insert(&root,"mad");
+    insert(&root,"city");
+
+    print(root);
+    search(root,"bug")?printf("Found\n"):printf("Not Found\n");
+    search(root,"bugs")?printf("Found\n"):printf("Not Found\n");
+    search(root,"bu")?printf("Found\n"):printf("Not Found\n");
+    search(root,"ug")?printf("Found\n"):printf("Not Found\n");
+
+
+    return 0;
+}

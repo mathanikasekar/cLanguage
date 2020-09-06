@@ -1,0 +1,6 @@
+FILE:
+ -we use int ptr to store address of integer
+ likewise we use " file * " to store address of FILE
+
+SYN:
+  

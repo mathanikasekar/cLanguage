@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+int main(void) {
+    int date,mon,year,i,nod=0;
+    scanf("%d%d%d",&date,&mon,&year);
+    // completed days
+    switch(mon-1)
+        {
+            case 11:
+               nod=nod+30;
+            case 10:
+               nod=nod+31;
+            case 9:
+               nod=nod+30;
+            case 8:
+               nod=nod+31;
+            case 7:
+               nod=nod+31;
+            case 6:
+               nod=nod+30;
+            case 5:
+               nod=nod+31;
+            case 4:
+               nod=nod+30;
+            case 3:
+               nod=nod+31;
+            case 2:
+               if(year%4==0&&year%100!=0||year%400==0)
+                 nod=nod+29;
+                else
+                nod=nod+28;
+            case 1:
+                nod=nod+31;
+        }
+        nod=nod+date;
+        if(year!=1900)
+        {
+            // total no of days in between year
+        for(i=1901;i<year;i++)
+        {
+            if(i%4==0&&i%100!=0||i%400==0)
+               nod=nod+366;
+            else
+               nod=nod+365;
+
+        }
+        // complted days
+         nod=nod+365;
+        }
+
+
+    switch(nod%7)
+        {
+            case 0:
+            printf("Sunday");
+            break;
+            case 1:
+            printf("Monday");
+            break;
+            case 2:
+            printf("Tuesday");
+            break;
+            case 3:
+            printf("Wednesday");
+            break;
+            case 4:
+            printf("Thursday");
+            break;
+            case 5:
+            printf("Friday");
+            break;
+            case 6:
+            printf("Saturday");
+        }
+    return 0;
+}
