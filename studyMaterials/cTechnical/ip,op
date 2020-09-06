@@ -1,0 +1,32 @@
+-scanf(),printf()
+-gets(),puts(),getch(),putch()
+
+diff b/w scanf/gets:
+ scanf() ends on encountering
+  -whitespace
+  -newline
+  -end of file
+
+  whereas gets() not terminate for above mentioned parameters.
+
+  #include<stdio.h>
+  int main()
+  {
+
+  int n;
+  printf("Enter number");
+  n=getchar();
+  putchar(n);
+
+  char ch;
+  printf("Enter character");
+  ch=getch();
+  putch(ch);
+
+  char s[20];
+  printf("Enter string");
+  gets(s);
+  puts(s);
+  return 0;
+
+  }
