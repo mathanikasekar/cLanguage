@@ -1,0 +1,40 @@
+Hello mam/sir,
+good mrng/evng
+ -my project is about personal diary Management system.
+ -on hearing the title we may think
+ it is just like ordinary diary
+ but actualy it is not like that
+ -this is very useful concept for us.
+ we can use this to record our day to day activites,
+ can be used to note down imp meetings, dates, travelling plans, memories, etc.
+ it is very very useful one.
+ for eg:
+ stu-homewrks,timetables
+ doctor-meetings,operations,conference
+ traveller-journey date/day/time,things to be packed,memoeries
+ homemakers-grocery list,daily expenses,monthly expenses.
+ it is user friendly one and it’s not time consuming.
+ user can daily,update,delete or just look on the files.
+
+highlights/Features:
+-Proper Log-In Systems.
+-Proper Validations.
+-Password Protected and Password System in Each Sections.
+-High Security.
+
+key feature is
+There’s maximum privacy to the recorded files.
+it is a password protected one
+each section is password Protected
+and contain high security so there is no chance for data loss.
+we can change password as many times we need.
+
+let's come to design of the project:
+ -The whole project is designed in ‘C’ language in user friendly manner.
+ -different variables,strings and methods/functions have been used.
+headerfiles:
+  the headerfiles used are
+   stdio-name of the package for std i/o
+   stdlib-
+   conio
+   string
