@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<math.h>
+
+struct point
+{
+    int x;
+    int y;
+};
+
+int *setPoint(struct point *p,int x1,int y1)
+{
+    p->x=x1;
+    p->y=y1;
+    return p;
+}
+
+int distance(struct point *p1,struct point *p2)
+{
+int ans=0,x,y;
+x=p1->x-p2->x;
+y=p1->y-p2->y;
+x=x*x;
+y=y*y;
+ans=sqrt((x+y));
+return ans;
+}
+
+int main()
+{
+    int x,y;
+    struct point *p1,*p2,*p3;
+    
+    p1=(int *)malloc(sizeof(int));
+    printf("Enter points x and y:\n");
+    scanf("%d %d",&x,&y);
+    p1=setPoint(p1,x,y);
+    
+    p2=(int *)malloc(sizeof(int));
+    printf("Enter points x and y:\n");
+    scanf("%d %d",&x,&y);
+    p2=setPoint(p2,x,y);
+    
+    p3=(int *)malloc(sizeof(int));
+    printf("Enter points x and y:\n");
+    scanf("%d %d",&x,&y);
+    p3=setPoint(p3,x,y);
+    
+    int a,b,c;
+    a=distance(p1,p2);
+    b=distance(p2,p3);
+    c=distance(p1,p3);
+    
+    if(a+b>c && b+c>a && a+c>b)
+        printf("Forms triangle");
+    else
+        printf("Does not form triangle");
+}
