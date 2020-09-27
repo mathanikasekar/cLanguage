@@ -1,0 +1,40 @@
+/*i/p: hi i am mathu
+ 1.rev sentence
+  uhtam ma i ih
+ 2.rev words
+  mathu ma i ih
+  mathu am i ih
+  mathu am i ih
+  mathu am i hi
+o/p: mathu am i hi
+*/
+#include<stdio.h>
+#include<string.h>
+void reverse(char s1[],int s,int e)
+{
+    char t;
+    for(;s<=e;s++,e--)
+    {
+        t=s1[s];
+        s1[s]=s1[e];
+        s1[e]=t;
+    }
+}
+
+int main()
+{
+    char s[30]="hi i am mathu";
+    strrev(s);
+    int len=strlen(s);
+    int i,start=0,c=0;
+    for(i=0;i<len;i++)
+    {
+        start=i;
+        while(s[i]!=' ' && s[i]!='\0')
+        {
+            i++;
+        }
+        reverse(s,start,i-1);
+    }
+    printf("%s\n",s);
+}
