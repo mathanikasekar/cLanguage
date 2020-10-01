@@ -1,0 +1,72 @@
+Taylor series
+
+e^x,n=1+x/1!+x^2/2!+x^3/3!+x^4/4!...........+x^n/n!  nth term
+e(2,3)=1+2/1!+2^2/2!+2^3/3!
+e(2,3)=1+(2/1)+(2*2/2*1)+(2*2*2/3*2*1)
+e(2,3)=1+2+2+1.333
+e(2,3)=6.333
+expont(x,n)----->  power(x,n)/fact(n)+expont(x,n-1)
+base condition is when n is 0 ----> return 1;
+
+
+1.sum of n number-----> n+sum(n-1)------>
+base condition when my n is 0---> return 0;
+2.factorial (2!)------> n*fact(n-1)------>
+base condtion when n is 1------> return 1;
+3.power (2^3)------> power(n,m)---> n*power(n,m-1)
+base condtion when m is 0 ----> return 1;
+
+
+
+program:
+#include <stdio.h>
+#include <stdlib.h>
+int fact(int n)
+{
+    if(n==0)
+        return 1;
+    return n*fact(n-1);
+
+}
+int power(int x,int n)
+{
+
+    if(n==0)
+        return 1;
+    return x*power(x,n-1);
+
+}
+/*double expont(int x,int n)
+{
+    if(n==0)
+        return 1;
+    return ((power(x,n))/((double)(fact(n))))+
+    expont(x,n-1);
+}*/
+double optimize_expont(int x,int n)//(2,2)
+//(2,1) (2,0)
+{
+    static int p=1,f=1;
+    double ans=0;
+
+    if(n==0)//(2,0)
+        return 1;
+    ans= optimize_expont(x,n-1);
+    p=p*x;// p=1*2=2---> p=2*2=4  p=4*2=8
+    f=f*n;// n=1*1=1----> 1*2=2   f=2*3=6
+    ans=ans+(p/(double)f);// 1+2.00=3.00
+    //3+2=5
+    //5+1.333=6.333
+    return ans;
+
+}
+int main()
+{
+    int x=2,n=3;
+    //printf("%d\n",fact(n));
+    //printf("%d\n",power(x,n));
+    //printf("%lf",expont(x,n));
+    printf("%f",optimize_expont(x,n));
+}
+//2^3======> 2*2*2*1
+ 
