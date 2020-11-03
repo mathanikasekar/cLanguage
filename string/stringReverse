@@ -36,7 +36,24 @@ int main()
  return 0;
 }
 
-
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char s[20],t;
+printf("Enter string");
+scanf("%s",&s);
+int start=0,end=strlen(s)-1;
+while(start<=end)
+{
+    t=s[start];
+    s[start]=s[end];
+    s[end]=t;
+    start++;
+    end--;
+}
+printf("%s",s);
+}
 
 #include <stdio.h>
 #include <string.h>
