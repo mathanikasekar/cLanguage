@@ -15,3 +15,19 @@ int main()
     }
     printf("%s",s);
 }
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s1[20]="hello world",s2[20];
+    int l1=strlen(s1),i,j=0;
+    for(i=0;i<l1;i++)
+    {
+       if(s1[i]!='a' && s1[i]!='e' &&s1[i]!='i' &&s1[i]!='o' &&s1[i]!='u' &&s1[i]!='A' && s1[i]!='E' &&s1[i]!='I' &&s1[i]!='O' &&s1[i]!='U' && s1[i]!=" ")
+       {
+           s2[j++]=s1[i];
+       }
+       s2[j]='\0';
+    }
+    printf("%s",s2);
+}

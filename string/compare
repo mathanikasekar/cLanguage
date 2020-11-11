@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s1[20]="hello";
+    char s2[20]="hello";
+    int l1=strlen(s1),l2=strlen(s2),i,f=0;
+    if(l1!=l2 || s1[0]!=s2[0])
+    {
+        printf("Not equal");
+    }
+    else
+    {
+        for(i=0;i<l1;i++)
+        {
+            if(s1[i]==s2[i])
+            {
+                f=0;
+            }
+            else
+            {
+            f=1;
+            break;
+            }
+        }
+
+    if(f==0)
+    {
+        printf("Equal");
+    }
+    else
+    {
+        printf("Not equal");
+    }
+    }
+}
