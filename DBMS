@@ -1,0 +1,56 @@
+
+DBMS:
+Data+program to handle data
+collection of interrelated data and various program  that are used to handle the data
+s/m s/w designed to store, retrieve, update, and manage data in a database.
+Store retrieve Update Manage(srum)
+File based system dis adv:
+ Limited data
+Data inconsistency,redundancy
+Difficult to update
+DBMS ADV:
+Reducing Data Redundancy.
+ Sharing of Data.
+ Data Integrity.
+Data Security.
+Privacy.
+Backup and Recovery.
+ Data Consistency
+DIS ADV:
+Cost
+Skilled person
+Particular h/w s/w required
+ATOM properties:
+A-single operation
+C-may happen/not, no partial transaction
+I-invisible to other transaction
+D-can not be reversed
+
+   Atomicity- single oprn deposit/ withdraw
+   Consistency- data shld be same at starting and ending
+       May happen or does not happen..
+     Like  or 1 ,yes or no
+     No partial transaction.
+     Deposit 500 should be same till completion
+  Isolation-intermediate state of a transaction is invisible to other transactions
+in an application that transfers funds from one account to another, the isolation property ensures that another transaction sees the transferred funds in one account or the other, but not in both, nor in neither.
+Durability- After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.
+For example, in an application that transfers funds from one account to another, the durability property ensures that the changes made to each account will not be reversed.
+FOREIGN KEY:
+referencing key.
+used to link two tables together.
+column or a combination of columns whose values match a Primary Key in a different table.
+
+tableName: employeeDetails
+Emp ID             Emp name          Designation
+001                   aaa                       manager
+002                   bbb                       assistant manager
+003                  ccc                         clerk
+004                   ddd                      pune
+CREATE:
+CREATE TABLE employeeDetails
+{
+SELECT:
+Select * from employeeDetails;
+Select  Emp name from employeeDetails;  select col1,col2,…col n from tableName
+Select *from employeeDetails  where  Emp ID=001;

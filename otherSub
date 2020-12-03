@@ -1,0 +1,79 @@
+API:
+ Application Programming Interface,
+software intermediary that allows two applications to talk to each other.
+delivers a user response to a system and sends the system's response back to a user
+eg:whether checking.
+GUI:
+Graphical use rinterface
+allows users to interact with electronic devices through graphical icons
+like voice search, text box, check box, radio button,..
+ODBC
+SQL-based Application Programming Interface (API)
+created by Microsoft
+ used by “”Windows software applications”” to access databases via SQL.
+ for any language like C,C++,Java etc.
+JDBC
+SQL-based API
+created by Sun Microsystems
+Java applications to use SQL for database access.
+Can be used only for Java languages.
+INTERUPT:
+ A signal sent to cpu
+WEB TECHNOLOGY:
+It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS)
+
+ST:
+Software Testing is a method to check whether the actual software product matches expected requirements
+identifying any errors, gaps or missing requirement versus the actual requirement.
+SDLC:
+#1) Requirement Gathering and Analysis.
+#2) Design.
+#3) Implementation or Coding.
+#4) Testing.
+#5) Deployment.(delivery)
+#6) Maintenance.
+agile:
+approach based on iterative development. Agile methods break tasks into smaller iterations, or parts do not directly involve long term planning.
+minimize the project risk and to reduce the overall project delivery time requirements.
+compilation process :
+Pre-processing, Compiling, Assembling, and Linking.
+BIG DATA:
+DEFINITION:
+describes the large volume of data
+– both structured (table-employee table )and unstructured(email,photos,videos)
+V-volume,velocity,veracity,veracity,variability.
+Vol-amt of data to be processed,
+Velocity-speed
+Measuring value of data…as data are rapidly changing
+Veracity- quality and origin of data
+Variety-type of data
+audio and video files, photos, GPS data, medical files, instrument measurements, graphics, web documents
+variability- to what extent, and how fast, is the structure of your data changing
+inconsistent speed
+HADOOP:
+Open source
+Java oriented framework for big data
+Store and process big data
+It use map reduce programming model to fast store the big data
+Map reduce-i/p map reduce o/p
+YARN:
+ Yet Another Resource Negotiator
+ main component of Hadoop
+ allows the data stored in HDFS (Hadoop Distributed File System) to be processed
+impact of covid:
+it has the impact on worldwide
+human lives affected
+agriculture, daily wages, small scale industries affected a lot
+price of food ingredients increased high..
+5 rupees products were sold for 50 rupees
+Doctors, policemen, social workers
+ have no rest they work day and night in hospitals
+schools,colleges were closed
+IT emplyees are doing work from home from march
+I spent my quarantine:
+First 2 months I enjoyed lot being hostler from 9th std I loved to spend with my family
+Ate my mother’s special items and my favorite items.
+Then I did my mini project
+Tcs ion
+Placement preparations
+Online academic classes….

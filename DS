@@ -1,0 +1,41 @@
+
+
+TECHNICAL PART:
+DATA STRUCTURES:
+real time examples:
+ array:
+  string processing
+  save contacts in phone
+  image processing
+linkedlist:
+ image viewer
+ circularly-music playlist
+stack:
+ UNDO operation
+ evaluationg expressions,
+ paranthesis evaluation,
+ recursion
+queue:
+ operating system-job scheduling
+ sending n number of mails. they store in queue and then send one by one
+ ticket booking
+graph:
+ GPS's tracking
+tree:
+ domain name server(DNS)
+hash table:
+ to store data in database
+ browsers
+ to store filename and filepath
+RED BLACK TREE:
+self balancing BST
+Step 1 - Check whether tree is Empty.
+Step 2 - If tree is Empty then insert the newNode as Root node with color Black and exit from the operation.
+Step 3 - If tree is not Empty then insert the newNode as leaf node with color Red.
+Step 4 - If the parent of newNode is Black then exit from the operation.
+Step 5 - If the parent of newNode is Red then check the color of parentnode's sibling of newNode.
+Step 6 - If it is colored Black or NULL then make suitable Rotation and Recolor it.
+Step 7 - If it is colored Red then perform Recolor. Repeat the same until tree becomes Red Black Tree.
+no two nodes should be consecutively red
+: if it so..(parent red child also red-->recolor parent to blk color)
+B-Tree:
