@@ -1,0 +1,35 @@
+get input less than 42 only
+sort them and print them
+
+#include <stdio.h>
+#include<stdlib.h>
+int main()
+{
+
+		int n,*a,i=0;
+		a=(int *)malloc(sizeof(int));
+		do
+		{
+		     scanf("%d",&n);
+		        *(a+i)=n;
+		        i++;
+		}while(n<42);
+		int n1=i,min=0,j,t;
+		for(i=0;i<n1-1;i++)
+		{
+		    for(j=i+1;j<n1;j++)
+		    {
+		    if(*(a+i)>*(a+j))
+		    {
+		        t=*(a+i);
+		        *(a+i)=*(a+j);
+		        *(a+j)=t;
+		    }
+		    }
+		}
+		    for(i=0;i<n1;i++)
+		    {
+		        printf("%d\n",*(a+i));
+		    }
+	return 0;
+}
