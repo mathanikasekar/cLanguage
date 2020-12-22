@@ -1,3 +1,62 @@
+we start with overview of the project and later on we move to technical part
+my mini project is "personal diary management system"
+on hearing this name everyone thinks that it is a usual diary system but actual it is not like that.
+actually, i got this idea by seeing my father. he has the habit of writing diary.
+daily at night, he writes whatever happend on that particular day..i think there are nearly 20 or 30 diaries in his cubboard.
+   //sir could you remember when we started to wear mask or when you attended the last family function.?
+as we are humans,we tend to come across many things in day to day life so we tend to forget some of them.
+
+as it is our first project we designed in very simple manner.
+the entire project is designed in C language.
+the spl feature is evry section of the project is password protected one.
+so there is no chance for data in security.it is a highly protected user friendly application.
+we should link our mail id,ph no because if we forget password it wil be helpful to retrieve the password.
+we use structure concept to organize the input.
+we store the input data in record format.
+each record consists of(name,password,content)
+it has 5 modules(add, delete,update,view,change password)
+
+first one is add
+this function is used to create the record
+user has to specify the name of record with password
+password jould be of minimum 8 characters
+mixture of numbers,alphabets and special characters
+after creation the message"succesfuly created" will be dispalyed.
+if due to some issues unable to create it displays error message
+in some circumstance like if record name already exist we cannot create new record
+on that time error message will be displayed
+
+view:
+we should open the file by entering record and pswd
+if it matches with the existing record, the record will be opened,
+otherwise error message will be displayed.
+we may view the contents of the record...i mean we can read the record.
+
+update:
+we should open the file by entering record and pswd
+if it matches with the existing record, the record will be opened,
+otherwise error message will be displayed.
+then we can do necessary changes in our record.
+
+change password:
+we can change password n number of times.
+to change password, there is no need to open the record
+just by entering record and older password,
+we can update or change the passsword.
+
+delete:
+if we doesn't need the record anymore in future we can delete the record.
+if record name doesn't exist,error message will be displayed.
+
+finally this application can be used by all set of people.
+like students, doctors, travellers, even homwmakers use this
+take down,note down,store.
+stu-timetable,h/w
+doc-imp seminar,surgery,operations,patient history
+travellers-travel dates,things to be packed,swt memories..
+homemakers-grocery list,imp dates(family functions)
+
+
 Hello mam/sir,
 good mrng/evng
  -my project is about personal diary Management system.
